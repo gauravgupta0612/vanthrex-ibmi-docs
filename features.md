@@ -20,5 +20,8 @@ Every feature, what it does, why it helps and how to use it.
 | [Search & navigation](features-search-navigation.md) | Find objects and source, see where things are used, and navigate RPG like a modern language. |
 | [RPG code checks](features-rpg-checks.md) | Warnings as you type, with quick fixes and per-rule switches. |
 | [System, jobs & messages](features-system.md) | Dashboard, active jobs, message replies, the CL runner and spooled files. |
+| [Object tools](features-object-tools.md) | Object information, who has an object locked, compare two libraries, and modules & exports. |
+| [SQL power tools](features-sql-tools.md) | Generate SQL (DDL), run whole scripts, SQL history and saved queries. |
+| [Procedure & copybook tools](features-procedure-tools.md) | Generate prototypes, extract code into procedures, and find unused /COPY members. |
 
 New to the extension? Start with [Installation](installation.md) and [Your first connection](first-connection.md).

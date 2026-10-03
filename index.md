@@ -28,6 +28,8 @@ One sidebar for everything you do on IBM i: connect, browse, edit, compile, quer
 | **Query and edit data** | **Ctrl+Enter** runs Db2 for i SQL with autocomplete; edit table rows in a safe, validated grid. |
 | **Work as a team** | See **who has a member locked**, ask them to release it, and get warned before overwriting someone else's change. |
 | **Keep the system healthy** | Dashboard, active jobs, QSYSOPR replies, spooled files and a CL runner. |
+| **Know your objects** | Object information, who has an object locked, and **compare DEV with PROD** — new in 0.4. |
+| **SQL power tools** | Generate DDL, run whole scripts, SQL history and saved queries — new in 0.4. |
 | **Understand the code** | Object and source search, **where used**, go to definition into /COPY members, scoped rename and RPG code checks. |
 
 ## Start here
@@ -41,4 +43,4 @@ Something not working? See [Troubleshooting](troubleshooting.md).
 
 ---
 
-Current version: **0.3.0** (preview) · [Changelog](changelog.md) · Free and open source under the MIT License.
+Current version: **0.4.0** (preview) · [Changelog](changelog.md) · Free and open source under the MIT License.

@@ -6,6 +6,39 @@ nav_order: 90
 
 # Changelog
 
+## 0.4.0
+
+**Fixes**
+
+- **Members now always open.** With the Mapepire SQL engine, opening a member could fail with *"The editor could not be opened due to an unexpected error"* (log: *Result set was null*). Statements that return no rows are now handled correctly, and if reading with source dates ever fails the member opens without dates instead of failing.
+- **Lock information works on all releases**: the lock check used a column name (`MEMBER_NAME`) that `QSYS2.OBJECT_LOCK_INFO` does not have.
+
+**New: object & job tools**
+
+- **Object information** page: owner, created/changed/last used, days used, size, source member, journaling and every other attribute — click any object in the Libraries view. Buttons to open the source, see locks, where used, edit data and generate SQL.
+- **Who has this object locked?** for any object, with job log, *Ask to release* and *End job* per lock holder.
+- **Compare two libraries** (for example DEV and PROD): objects and source members that are only in one library or different, with a side-by-side diff of changed members.
+- **Modules & exports** of a service program or ILE program, with modules whose source changed after they were compiled highlighted.
+
+**New: SQL power tools**
+
+- **Generate SQL (DDL)** for any table, view, index, procedure or function (`QSYS2.GENERATE_SQL`).
+- **Run SQL Script** (Ctrl+Shift+Enter): runs every statement in the file and shows each result, row count or error. Stops at the first error unless `vanthrex.sql.scriptStopOnError` is off.
+- **SQL history** and **saved queries**: rerun, open, insert or copy a statement; star the ones you use often.
+
+**New: procedure & copybook tools (RPG)**
+
+- **Generate prototype from procedure**: builds the DCL-PR from a procedure's DCL-PI, ready for your prototype copybook.
+- **Extract to procedure**: moves selected free-form lines into a new procedure and calls it — refused when that would change behaviour (local variables, early exits, unbalanced blocks).
+- **Check /COPY usage**: lists each copybook with the declarations the source actually uses, and comments out unused ones on request.
+
+## 0.3.1
+
+- **Documentation site**: full user documentation is now online at https://gauravgupta0612.github.io/vanthrex-ibmi-docs/ (installation, IBM i setup, every feature, commands, settings, troubleshooting and FAQ).
+- New command **Vanthrex: Open Documentation**, also in the quick menu (Ctrl+Alt+I) and in the `…` menu of the *Connections* view.
+- The Marketplace page links to the documentation.
+- Release workflow fix: GitHub Packages publishing no longer runs the Marketplace publish script.
+
 ## 0.3.0
 
 - **New name: Vanthrex for IBM i** (formerly *Silverlake*), first release on the VS Code Marketplace. Settings now start with `vanthrex.`; connections are set up again after installing.

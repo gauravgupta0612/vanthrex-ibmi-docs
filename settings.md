@@ -30,6 +30,7 @@ Open **File → Preferences → Settings** and search for *Vanthrex*, or edit `s
 | `vanthrex.sourceDates.format` | string | `"yymmdd"` | Date format: SEU-style YYMMDD or ISO YYYY-MM-DD. Values: `yymmdd`, `iso`. |
 | `vanthrex.conflictCheck` | boolean | `true` | Warn when a member is locked by another job, or changed on the IBM i after you opened it, before your save overwrites it. |
 | `vanthrex.members.sortBy` | string | `"name"` | Order of members in the Libraries view. Values: `name`, `date`. |
+| `vanthrex.sql.scriptStopOnError` | boolean | `true` | Run SQL Script: stop at the first statement that fails (off = run every statement and report failures). |
 
 ## RPG check rules
 

@@ -55,6 +55,10 @@ With **Mapepire over SSH**, the first connection uploads the server JAR to `~/.m
 
 ## Editing members
 
+### "The editor could not be opened due to an unexpected error"
+
+This happened in 0.3.x with the Mapepire SQL engine (the output log shows *Result set was null*). **Update to 0.4.0 or later**: the problem is fixed, and if reading a member with source dates ever fails, the member now opens without dates instead.
+
 ### "Saving *LIB/FILE(MBR)* failed — the previous version was put back"
 
 The member is replaced in one step from a copy staged in QTEMP. When that fails, the backup is restored, so nothing is lost. Common causes:

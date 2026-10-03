@@ -12,6 +12,7 @@ nav_order: 3
 | **Ctrl+Alt+I** | IBM i quick menu | Anywhere |
 | **Ctrl+Alt+C** | Compile the current member or IFS file | Editor |
 | **Ctrl+Enter** | Run the SQL statement under the cursor | `.sql` editor |
+| **Ctrl+Shift+Enter** | Run the whole SQL script (or the selection), statement by statement | `.sql` editor |
 | **Ctrl+Alt+L** | Run a CL command with your library list | Anywhere (connected) |
 | **Ctrl+Alt+O** | Search objects | Anywhere (connected) |
 | **Ctrl+Alt+F** | Search source code | Anywhere (connected) |
