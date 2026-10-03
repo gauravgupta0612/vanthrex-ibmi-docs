@@ -1,0 +1,37 @@
+title: Vanthrex for IBM i
+description: Documentation for Vanthrex for IBM i — an all-in-one IBM i workbench for VS Code.
+remote_theme: just-the-docs/just-the-docs@v0.10.0
+plugins:
+  - jekyll-remote-theme
+  - jekyll-relative-links
+  - jekyll-seo-tag
+
+url: https://gauravgupta0612.github.io
+baseurl: /vanthrex-ibmi-docs
+
+logo: /icon.png
+favicon_ico: /icon.png
+color_scheme: light
+search_enabled: true
+heading_anchors: true
+
+aux_links:
+  "VS Code Marketplace": https://marketplace.visualstudio.com/items?itemName=gauravgupta0612.vanthrex-ibmi
+  "Source on GitHub": https://github.com/gauravgupta0612/silverlake-ibmi
+aux_links_new_tab: true
+
+gh_edit_link: true
+gh_edit_link_text: Edit this page on GitHub
+gh_edit_repository: https://github.com/gauravgupta0612/vanthrex-ibmi-docs
+gh_edit_branch: main
+gh_edit_view_mode: tree
+
+relative_links:
+  enabled: true
+  collections: false
+
+footer_content: "Vanthrex for IBM i by Gaurav Gupta · MIT License · Not affiliated with IBM. IBM i is a trademark of IBM Corp."
+
+exclude:
+  - README.md
+  - LICENSE
