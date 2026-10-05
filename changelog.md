@@ -6,6 +6,11 @@ nav_order: 90
 
 # Changelog
 
+## 0.6.1
+
+- **Stable release:** Vanthrex for IBM i is no longer marked as *Preview* on the VS Code Marketplace.
+- Releases are published to the Marketplace automatically when a version tag is pushed (needs the `VSCE_PAT` repository secret).
+
 ## 0.6.0
 
 **New: AI assistant for IBM i (`@vanthrex`)**

@@ -48,4 +48,4 @@ Something not working? See [Troubleshooting](troubleshooting.md).
 
 ---
 
-Current version: **0.6.0** (preview) · [Changelog](changelog.md) · Free and open source under the MIT License.
+Current version: **0.6.1** · [Changelog](changelog.md) · Free and open source under the MIT License.
