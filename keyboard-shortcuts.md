@@ -16,6 +16,7 @@ nav_order: 3
 | **Ctrl+Alt+L** | Run a CL command with your library list | Anywhere (connected) |
 | **Ctrl+Alt+O** | Search objects | Anywhere (connected) |
 | **Ctrl+Alt+F** | Search source code | Anywhere (connected) |
+| **Ctrl+Alt+G** | Debug the program of the current source | RPG / CL editor |
 | **Ctrl+Alt+D** | Cycle source dates: date → sequence + date → hidden | Member editor |
 | **F4** | Prompt the fixed-format spec (RPG, DDS) or CL command at the cursor | RPG / DDS / CL editor |
 | **F12** | Go to definition (also into /COPY members) | RPG editor |

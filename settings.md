@@ -31,6 +31,21 @@ Open **File → Preferences → Settings** and search for *Vanthrex*, or edit `s
 | `vanthrex.conflictCheck` | boolean | `true` | Warn when a member is locked by another job, or changed on the IBM i after you opened it, before your save overwrites it. |
 | `vanthrex.members.sortBy` | string | `"name"` | Order of members in the Libraries view. Values: `name`, `date`. |
 | `vanthrex.sql.scriptStopOnError` | boolean | `true` | Run SQL Script: stop at the first statement that fails (off = run every statement and report failures). |
+| `vanthrex.debug.port` | number | `0` | IBM i Debug Service secured port. 0 = read it from the service configuration (usually 8005). |
+| `vanthrex.debug.ignoreCertificateErrors` | boolean | `false` | Connect to the Debug Service even when its certificate cannot be verified. Only for test systems. |
+| `vanthrex.debug.updateProductionFiles` | boolean | `false` | Allow the debugged program to update files in production libraries (UPDPROD). |
+| `vanthrex.debug.trace` | boolean | `false` | Write a trace of the debug protocol to the IBM i Debug output (for support). |
+| `vanthrex.connections.keepOthersOpen` | boolean | `true` | Keep other systems connected when you connect to another one, so you can switch between them instantly (Ctrl+Alt+S). |
+| `vanthrex.callGraph.depth` | number | `2` | How many levels of callers / callees the call graph shows at first. |
+| `vanthrex.callGraph.maxNodes` | number | `200` | Largest number of objects drawn in a call graph. |
+| `vanthrex.callGraph.hideSystemObjects` | boolean | `true` | Leave IBM-supplied objects (QCMDEXC, QSYSPRT…) out of the call graph. |
+| `vanthrex.git.authorName` | string | empty | Name used for commits made by Vanthrex's Git commands (empty = your Git configuration). |
+| `vanthrex.git.authorEmail` | string | empty | E-mail used for commits made by Vanthrex's Git commands (empty = your Git configuration). |
+| `vanthrex.ai.enabled` | boolean | `true` | Enable the @vanthrex AI assistant and the AI commands. Code you ask about is sent to the language model you selected in VS Code chat. |
+| `vanthrex.ai.useTools` | boolean | `true` | Let the AI assistant look things up on the connected IBM i (object descriptions, table columns, source, read-only queries). |
+| `vanthrex.ai.allowQueries` | boolean | `true` | Let the AI run read-only SQL queries (SELECT / WITH / VALUES only; anything that changes data is refused). |
+| `vanthrex.ai.confirmQueries` | boolean | `true` | Ask before the AI runs a query on the IBM i. |
+| `vanthrex.ai.maxSourceChars` | number | `60000` | Largest amount of source text sent to the language model in one request. |
 
 ## RPG check rules
 

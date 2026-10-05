@@ -26,6 +26,21 @@ Set up a connection, then browse libraries, source files, members, objects and t
 - Right-click a connection → **Edit** or **Remove**.
 - **Ctrl+Alt+I** opens the quick menu: dashboard, run CL, SQL scratchpad, search, edit data, disconnect.
 
+## Several systems at once
+
+**What it is:** Stay connected to several IBM i systems — for example DEV, TEST and PROD — and switch between them instantly. New in 0.6.
+
+**Why it helps:** Compare, check production or answer an operator message without disconnecting from your development system.
+
+**How:**
+
+- Click another connection: it connects and becomes the **active** system; the others stay connected in the background (a blue icon in the *Connections* view, and `+1` next to the system name in the status bar).
+- Switch with **Switch IBM i System** — the ⇄ button on the *Connections* view, the quick menu (**Ctrl+Alt+I**), or click a background connection. Switching needs no new sign-on.
+- The views (libraries, IFS, jobs, messages, spooled files) and commands always work on the active system.
+- **Safe saving:** a member or IFS file is always saved to the system it was opened from. If another system is active, the save is refused with a message telling you to switch back.
+- Disconnect one system with the ✕ next to it, or all with **Disconnect All Systems**.
+- Prefer one system at a time? Turn off `vanthrex.connections.keepOthersOpen`.
+
 ## Libraries & Source browser
 
 **What it is:** Your library list as a tree. Under each library are its **Source files** and members, and its **Objects** (programs, files, service programs…).

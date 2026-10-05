@@ -6,6 +6,55 @@ nav_order: 90
 
 # Changelog
 
+## 0.6.0
+
+**New: AI assistant for IBM i (`@vanthrex`)**
+
+- Type **@vanthrex** in the VS Code chat (GitHub Copilot Chat or any chat model) and ask about IBM i in plain language. Commands: `/explain`, `/document`, `/review`, `/modernize` (fixed format → modern **FREE RPG), `/test` (RPGUnit tests), `/fix` (explain and fix compile errors), `/sql` (Db2 for i SQL written against your real tables and columns) and `/object LIB/NAME *TYPE`.
+- The assistant knows the connected system (library list, IBM i release) and can look things up: object descriptions, table columns and indexes, source members, object search, system status and read-only queries.
+- **Safe by design:** it only reads. Queries must be a single SELECT / WITH / VALUES (data-change statements and functions with side effects such as QCMDEXC are refused), and Vanthrex asks before every query and before reading an IFS file.
+- Right-click in a source → **Vanthrex AI** (Explain, Document, Review, Modernize, Unit tests, Fix compile errors, Write SQL); the 💡 on an IBM i compile error offers **Ask AI to explain and fix**; right-click an object → **AI: Explain This Object**.
+- The same tools work in **Copilot agent mode**: `#ibmiQuery`, `#ibmiSource`, `#ibmiObject`, `#ibmiSearch`, `#ibmiStatus`.
+- Settings: `vanthrex.ai.enabled`, `vanthrex.ai.useTools`, `vanthrex.ai.allowQueries`, `vanthrex.ai.confirmQueries`, `vanthrex.ai.maxSourceChars`.
+
+**New: Git for IBM i source**
+
+- **Git: Export Source to a Git Repository** (right-click a library or source file): saves every member as `library/sourcefile/member.type`, then offers to create the repository, make the first commit and publish it (GitHub, GitLab, Azure DevOps…).
+- **Git: Get Changes from IBM i** brings in only the members changed on the system since the last sync; **Git: Upload Changed Files to IBM i** sends only the files you changed — to their own libraries or to another one (for example your development library). Files changed on both sides are flagged, never silently overwritten.
+- **Git: History of This Member**: every committed version of the member you are editing — compare with the IBM i copy, compare with the previous version, open it, or restore it into the editor.
+- **Git: Commit & Push** with the author from your Git configuration or from `vanthrex.git.authorName` / `vanthrex.git.authorEmail`.
+
+**New: call graph & impact analysis**
+
+- **Call Graph** (right-click a program, service program or file): an interactive diagram of who calls the object (callers, the impact of a change) and what it uses (programs, service programs, files with input/output/update usage), several levels deep. Pan, zoom, change depth, hide files, click any object for its actions, and **Copy as Mermaid** for docs and pull requests.
+- **Impact Analysis (Who Uses This?)**: the callers view directly, with a count of the programs and libraries affected.
+
+**New: several systems at once**
+
+- Connect to more than one IBM i (for example DEV and PROD) and switch instantly with **Switch IBM i System** (quick menu, status bar or the Connections view). Other systems stay connected in the background.
+- A member or IFS file is always saved to the system it was opened from — saving while another system is active is refused with a clear message.
+
+**New: SQL performance — Explain**
+
+- **Explain SQL (Performance)** in a SQL editor (also on the editor title): runs the query under a database monitor and summarises the access plan — table scans and why, indexes used, temporary indexes, sorts — with tips, the optimizer's **advised indexes** and the index advisor history, plus a ready-to-review `CREATE INDEX` statement.
+
+**Better: fixed → free conversion**
+
+- **Convert Fixed Format to Free** now converts **H, F, D and P specs** too: `ctl-opt`, `dcl-f` (usage, keyed, devices, program-described files), `dcl-s`, `dcl-c`, `dcl-ds` / `end-ds` (overlay → `pos`, externally described, LIKEDS), `dcl-pr` / `dcl-pi` with parameters, `dcl-proc` / `end-proc`, long names, continued keywords and literals. Compile-time data is left untouched and long statements are wrapped at column 80.
+
+**Other**
+
+- Requires VS Code 1.95 or later.
+
+## 0.5.0
+
+**New: IBM i debugger**
+
+- **Debug Program** (Ctrl+Alt+G, the 🐞 button on a program, or the editor title of an RPG/CL source): runs the program in a batch job under the IBM i debugger and opens a full VS Code debug session — breakpoints, step over/into/out, variables, watch and call stack. Parameters for the CALL are remembered per program.
+- Uses IBM's free **IBM i Debug** extension as the debug client and the **IBM i Debug Service** on the server; Vanthrex installs the client on request, reads the service's port and certificate locations, downloads and trusts the certificate, and starts the session for you.
+- **Debugger Setup Check**: one page that checks the client, the Debug Service (installed, running, certificate) and this PC's certificate, with buttons to fix each item — including **Start Debug Service**.
+- Settings: `vanthrex.debug.port`, `vanthrex.debug.ignoreCertificateErrors`, `vanthrex.debug.updateProductionFiles`, `vanthrex.debug.trace`.
+
 ## 0.4.0
 
 **Fixes**

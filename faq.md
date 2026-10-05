@@ -1,7 +1,7 @@
 ---
 layout: default
 title: FAQ
-nav_order: 8
+nav_order: 9
 ---
 
 # Frequently asked questions
@@ -57,3 +57,20 @@ Yes — anywhere VS Code 1.85 or later runs. Use **Cmd** instead of **Ctrl** on 
 ### How do I report a bug or ask for a feature?
 
 [Open an issue](https://github.com/gauravgupta0612/silverlake-ibmi/issues/new/choose) or use **Q & A** on the [Marketplace page](https://marketplace.visualstudio.com/items?itemName=gauravgupta0612.vanthrex-ibmi).
+
+### Which AI model does `@vanthrex` use? Where does my code go?
+
+The model you select in the VS Code chat (for example a GitHub Copilot model). Vanthrex sends the code you ask about, the system name, release and library list, and the results of the look-ups it makes to that model — nothing else. Turn the assistant off with `vanthrex.ai.enabled`, or stop the look-ups with `vanthrex.ai.useTools`. Check your company's rules before sending confidential source to an AI service.
+
+### Can the AI change data or run commands on my IBM i?
+
+No. It only has read tools: describe objects, read source, search objects, system status and read-only queries (single SELECT / WITH / VALUES, with known side-effect functions refused). Vanthrex asks before each query and before reading an IFS file.
+
+### Do I need GitHub to use the Git features?
+
+No. Any Git remote works (GitLab, Azure DevOps, Bitbucket, your own server) — or no remote at all, just a local repository for history.
+
+### Can I be connected to DEV and PROD at the same time?
+
+Yes, since 0.6. Switch with **Switch IBM i System**; files are always saved to the system they came from.
+

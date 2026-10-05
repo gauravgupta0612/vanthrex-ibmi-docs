@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Troubleshooting
-nav_order: 7
+nav_order: 8
 ---
 
 # Troubleshooting
@@ -88,6 +88,30 @@ The compile command must include `OPTION(*EVENTF)`; Vanthrex reads the errors fr
 ### Wrong object library
 
 Set **Compile objects into** in the connection form, or use `&OBJLIB` in your compile command.
+
+## AI assistant
+
+### "The AI assistant needs a chat provider"
+
+Install a chat extension such as **GitHub Copilot Chat** and sign in, then type **@vanthrex** in the chat.
+
+### @vanthrex says it can't look anything up
+
+Connect to an IBM i first, and check that `vanthrex.ai.useTools` and `vanthrex.ai.allowQueries` are on. Some models can't call tools; pick another model in the chat's model picker.
+
+## Git
+
+### "Git is not installed"
+
+Install Git from <https://git-scm.com> and restart VS Code. If Git is installed somewhere unusual, set VS Code's `git.path` setting.
+
+### "No IBM i source repository is open"
+
+Open the folder you exported to (**File → Open Folder**). Vanthrex finds repositories by their `.vanthrex/sync.json` file.
+
+### "This file was opened from SYSTEM-A, but the active system is now SYSTEM-B"
+
+You switched systems after opening the member. Switch back (status bar or **Switch IBM i System**) and save again — Vanthrex never saves a file to a different system than the one it came from.
 
 ## Still stuck?
 

@@ -7,13 +7,24 @@ parent: "Reference"
 
 # Commands
 
-All 84 commands contributed by Vanthrex for IBM i 0.4.0. Run any of them from the
+All 107 commands contributed by Vanthrex for IBM i 0.6.0. Run any of them from the
 Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-click menus and view toolbars.
 
 | Command | ID | Keys |
 |---|---|---|
 | Add IBM i Connection… | `vanthrex.addConnection` |  |
 | Add Library… | `vanthrex.addLibrary` |  |
+| AI: Ask the IBM i Assistant… | `vanthrex.ai.open` |  |
+| AI: Document This Code | `vanthrex.ai.document` |  |
+| AI: Explain & Fix Compile Errors | `vanthrex.ai.fix` |  |
+| AI: Explain This Code | `vanthrex.ai.explain` |  |
+| AI: Explain This Object | `vanthrex.ai.explainObject` |  |
+| AI: Generate Unit Tests (RPGUnit) | `vanthrex.ai.test` |  |
+| AI: Modernize to Free-Form RPG | `vanthrex.ai.modernize` |  |
+| AI: Open SQL in Scratchpad | `vanthrex.ai.openSql` |  |
+| AI: Review This Code | `vanthrex.ai.review` |  |
+| AI: Write SQL from a Description… | `vanthrex.ai.sql` |  |
+| Call Graph… | `vanthrex.callGraph` |  |
 | Call Program | `vanthrex.objectCall` |  |
 | Check /COPY Usage (Find Unused Copybooks) | `vanthrex.checkCopybooks` |  |
 | Choose Which Jobs to Show… | `vanthrex.filterJobs` |  |
@@ -25,24 +36,34 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Compile Current Source | `vanthrex.compile` | Ctrl+Alt+C |
 | Compile With… | `vanthrex.compileWith` |  |
 | Connect | `vanthrex.connect` |  |
-| Convert Fixed-Format C-Specs to Free | `vanthrex.convertToFree` |  |
+| Convert Fixed Format to Free (H, F, D, P and C Specs) | `vanthrex.convertToFree` |  |
+| Debug Program | `vanthrex.debugProgram` | Ctrl+Alt+G |
+| Debugger Setup Check | `vanthrex.debugSetup` |  |
 | Delete | `vanthrex.ifsDelete` |  |
 | Delete Member | `vanthrex.deleteMember` |  |
 | Delete Object | `vanthrex.objectDelete` |  |
 | Delete Spooled File | `vanthrex.spoolDelete` |  |
 | Disconnect | `vanthrex.disconnect` |  |
+| Disconnect All Systems | `vanthrex.disconnectAll` |  |
 | Edit Connection… | `vanthrex.editConnection` |  |
 | Edit Table Data… | `vanthrex.editData` |  |
 | End Job… | `vanthrex.endJob` |  |
+| Explain SQL (Performance) | `vanthrex.explainSql` |  |
 | Extract to Procedure… | `vanthrex.extractProcedure` |  |
 | Filter Members by Last Change… | `vanthrex.filterMembersByDate` |  |
 | Find & Open Member… | `vanthrex.findMember` |  |
 | Generate Prototype from Procedure | `vanthrex.generatePrototype` |  |
 | Generate SQL (DDL) | `vanthrex.generateDdl` |  |
 | Getting Started | `vanthrex.openWalkthrough` |  |
+| Git: Commit & Push IBM i Source… | `vanthrex.git.commitPush` |  |
+| Git: Export Source to a Git Repository… | `vanthrex.git.export` |  |
+| Git: Get Changes from IBM i | `vanthrex.git.download` |  |
+| Git: History of This Member… | `vanthrex.git.memberHistory` |  |
+| Git: Upload Changed Files to IBM i | `vanthrex.git.upload` |  |
 | Go to IFS Directory… | `vanthrex.ifsChangeRoot` |  |
 | Highlight Lines Changed Since… | `vanthrex.changedSince` |  |
 | Hold Job | `vanthrex.holdJob` |  |
+| Impact Analysis (Who Uses This?)… | `vanthrex.impactAnalysis` |  |
 | Member Lock: Ask Holder to Release… | `vanthrex.lockAskRelease` |  |
 | Member Lock: Check Again | `vanthrex.lockRefresh` |  |
 | Member Lock: End Holder's Job… | `vanthrex.lockEndJob` |  |
@@ -92,9 +113,11 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Show Output Log | `vanthrex.showOutput` |  |
 | Sort Members by Name / Date | `vanthrex.sortMembers` |  |
 | SQL History… | `vanthrex.sqlHistory` |  |
+| Switch IBM i System… | `vanthrex.switchConnection` |  |
 | Toggle Source Dates (SEU) | `vanthrex.toggleSourceDates` | Ctrl+Alt+D |
 | Turn Off a Code Check | `vanthrex.disableLintRule` |  |
 | Where Used… | `vanthrex.whereUsed` |  |
 | Who Has This Object Locked? | `vanthrex.objectLocks` |  |
+| Write CREATE INDEX for Advised Index | `vanthrex.explain.createIndexSql` |  |
 
 On a Mac, use **Cmd** instead of **Ctrl**. Some keys only work in a matching editor (for example **Ctrl+Enter** in `.sql` files).

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: How it works
-nav_order: 6
+nav_order: 7
 ---
 
 # How it works
@@ -70,3 +70,11 @@ The dashboard, jobs, messages and search features use standard IBM i Services, i
 | Passwords | VS Code secret store (Windows Credential Manager, macOS Keychain, libsecret) |
 | Local history of members and IFS files | VS Code's extension storage folder |
 | Settings | Normal VS Code settings |
+
+## AI assistant, Git and call graph (0.6)
+
+- **AI assistant:** a VS Code chat participant (`@vanthrex`) plus five language-model tools (`vanthrex_runQuery`, `vanthrex_readSource`, `vanthrex_describeObject`, `vanthrex_searchObjects`, `vanthrex_systemStatus`). The tools run through your Vanthrex connection with your user profile's authority; queries are checked to be read-only and confirmed by you.
+- **Git:** members are copied in batches with `CPYTOSTMF` (CCSID 1208) in one QSH job and read over SFTP; uploads use the normal member save. `.vanthrex/sync.json` keeps each member's `LAST_SOURCE_UPDATE_TIMESTAMP` and a hash of its text from the last exchange. Git itself runs on your PC with your own credentials.
+- **Call graph:** `DSPPGMREF … OUTPUT(*OUTFILE)` for each library into QTEMP, read once per session and cached.
+- **SQL Explain:** `STRDBMON OUTFILE(QTEMP/…) JOB(*)` around the query, then the monitor records (3000 table scan, 3001 index used, 3002 temporary index, 3003 sort, 3006 access plan rebuilt) and `QSYS2.SYSIXADV`.
+

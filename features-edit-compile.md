@@ -28,9 +28,21 @@ Compile with one key, see errors on the right line, convert fixed format and nev
 
 ## Fixed → free format conversion
 
-**What it is:** Converts fixed-format C-specs into free format, with indentation, indicator handling and `%FOUND` / `%EOF` checks.
+**What it is:** Converts fixed-format RPG IV into free format:
 
-**How:** Select the lines → right-click → **Convert Fixed-Format C-Specs to Free**. Anything it can't convert safely is marked `// TODO`.
+| Fixed | Free |
+|---|---|
+| H-spec | `ctl-opt …;` |
+| F-spec | `dcl-f name [device] [keyed] [usage(…)] keywords;` — program-described files get `disk(len)` and `keyed(*char:len)` |
+| D-spec S / C | `dcl-s` / `dcl-c` with the free-form type (`char`, `varchar`, `packed`, `zoned`, `int`, `date(*ISO)`, `pointer`, `ind`…) |
+| D-spec DS | `dcl-ds … end-ds;` — subfields with `pos(n)`, `OVERLAY` on the DS → `pos`, externally described DS, LIKEDS without END-DS |
+| D-spec PR / PI | `dcl-pr … end-pr;` / `dcl-pi … end-pi;` with parameters (`dcl-parm` when a name is also an op code) |
+| P-spec | `dcl-proc name [export]; … end-proc;` |
+| C-spec | free-form calculations with indentation, indicator handling and `%FOUND` / `%EOF` checks |
+
+Long names (`...`), continued keywords and literals are joined, compiler directives stay where they are, compile-time data (`**CTDATA`) is left untouched, and long statements are wrapped at column 80.
+
+**How:** Select the lines → right-click → **Convert Fixed Format to Free (H, F, D, P and C Specs)**, or run it with nothing selected to convert the whole source. Anything it can't convert safely is marked `// TODO` (I and O specs, primary/table files). To restructure the code as well, ask **@vanthrex /modernize** — see [AI assistant](features-ai.md).
 
 ## Local history and compare
 
