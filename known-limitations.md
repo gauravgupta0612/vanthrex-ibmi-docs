@@ -18,7 +18,8 @@ nav_order: 10
 - **Library compare** decides "different" from line counts, change dates, sizes and source timestamps; it does not read object contents.
 - **Debugger** needs the IBM i Debug Service and IBM's IBM i Debug extension, and debugs programs in a batch job (no service entry points or 5250 screens yet) — see [Debugging](debugging.md).
 - **AI assistant** needs a chat model in VS Code (for example GitHub Copilot Chat). The code you ask about is sent to that model. Its read-only check blocks known side effects, but user-defined SQL functions can do anything — that is why Vanthrex asks before every query.
-- **Call graph** and **SQL Explain** need a Mapepire SQL engine. The call graph can't see dynamic calls (program names in variables).
+- **Call graph** and **SQL Explain** need a Mapepire SQL engine. The call graph shows dynamic calls (program names in variables) only after **Find dynamic calls** has scanned the source; it cannot tell which program the variable will hold at run time.
+- **Who calls each exported procedure?** reads RPG and CL source only (not C or COBOL), as it is now — a source changed after compiling, or a procedure pointer set at run time, can give a different answer.
 - **Git sync** compares member change times and text; it does not track renamed or deleted members (deleted members are reported and kept in the repository).
 - **Interactive (5250) commands** such as `WRKACTJOB` can't run from the CL runner; use their `OUTPUT(*PRINT)` form or the IBM i Services SQL snippets (type `ibmi-` in a `.sql` file).
 

@@ -35,7 +35,29 @@ Before changing a file layout, a program's parameters or a service program expor
    - **Hide files**, **Fit**, drag to pan, scroll to zoom.
    - Click an object → centre the graph on it, object information, open source, edit data, or **ask the AI** about it.
    - **Copy as Mermaid** — paste the diagram into a README, wiki or pull request.
+   - **Find dynamic calls** — scan the source of the programs in the graph for calls whose target is only known at run time (see below).
    - **Rebuild cross-reference** after you compile or add programs.
+4. On a service program, click it → **Who calls each exported procedure?** (see below).
+
+## Dynamic calls (new in 0.7)
+
+DSPPGMREF only records calls whose target is written in the program. **Find dynamic calls** reads the RPG and CL source of the programs in the graph and adds a dashed red **?** node for each call whose program or procedure name is in a variable:
+
+- RPG `CALL PGMVAR` and `CALLB PROCPTR` (fixed form, RPG IV and RPG III)
+- prototypes with `EXTPGM(variable)` or `EXTPROC(variable)`, including those in /COPY members
+- CL `CALL PGM(&PGM)`, `CALL &LIB/&PGM` and `CALLPRC PRC(&PROC)`
+
+Click a **?** node to open the call in the source. Up to 150 programs are scanned per click; click again to continue.
+
+## Who calls each exported procedure? (new in 0.7)
+
+Right-click a service program → **Who Calls Each Exported Procedure?…** (also on *Object information*, *Modules & Exports* and in the call graph). Choose the libraries to analyse; Vanthrex then:
+
+1. finds the programs bound to the service program (QSYS2.BOUND_SRVPGM_INFO, or the DSPPGMREF cross-reference on older releases),
+2. reads the RPG and CL source of every bound module, with the prototypes in its /COPY and /INCLUDE members,
+3. follows each prototype to its bound symbol — `EXTPROC('SYMBOL')`, `EXTPROC(*DCLCASE)`, fixed-form `PR` specs, `CALLB 'SYMBOL'`, `%PADDR`, CL `CALLPRC`.
+
+The report lists every exported procedure with its callers, every call with its source line (click to open it), the programs bound without any call found, and what could not be scanned. Exports nobody calls are marked — check other libraries before removing them.
 
 The header shows the impact: how many programs in which libraries use the object.
 
@@ -44,5 +66,5 @@ The header shows the impact: how many programs in which libraries use the object
 - Needs a Mapepire SQL engine (the cross-reference is built in QTEMP).
 - IBM-supplied objects (QCMDEXC, QSYSPRT…) are hidden; show them with `vanthrex.callGraph.hideSystemObjects`.
 - Objects referenced through `*LIBL` are matched to the analysed libraries; if they are elsewhere they show as `*LIBL/NAME`.
-- Dynamic calls (a program name in a variable) can't be seen by DSPPGMREF.
+- Dynamic calls (a program name in a variable) can't be seen by DSPPGMREF — use **Find dynamic calls** to show them from the source.
 - Large graphs are cut at `vanthrex.callGraph.maxNodes` objects (default 200).

@@ -21,6 +21,7 @@ What is planned next. Ideas and votes are welcome in [GitHub issues](https://git
 - Call graph across systems (compare DEV and PROD references).
 
 ## Done
+- **0.7.0** — *Who calls each exported procedure?* for service programs, and *Find dynamic calls* in the call graph.
 
 - **0.6.0** — AI assistant (`@vanthrex`) with IBM i tools for Copilot agent mode, Git for IBM i source, call graph & impact analysis, several systems at once, SQL Explain, and H/F/D/P specs in the fixed → free converter.
 - **0.5.0** — IBM i debugger (batch debug with breakpoints, variables and call stack) and a debugger setup check.
