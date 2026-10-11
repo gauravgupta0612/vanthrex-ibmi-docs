@@ -7,7 +7,7 @@ parent: "Reference"
 
 # Commands
 
-All 126 commands contributed by Vanthrex for IBM i 0.9.0. Run any of them from the
+All 126 commands contributed by Vanthrex for IBM i 0.10.0. Run any of them from the
 Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-click menus and view toolbars.
 
 | Command | ID | Keys |

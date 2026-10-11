@@ -6,6 +6,14 @@ nav_order: 90
 
 # Changelog
 
+## 0.10.0
+
+**New: Vanthrex speaks your language**
+
+- The whole user interface — commands, menus, views, settings, the Getting Started walkthrough, messages, prompts and report titles — is now available in **French, Spanish, German, Italian, Portuguese (Brazil), Japanese and Simplified Chinese**, in addition to English.
+- Vanthrex follows the VS Code display language: **Ctrl+Shift+P → Configure Display Language**, pick the language (install its language pack if asked) and restart VS Code.
+- IBM i names stay as they are on the system — commands (CHGDTAARA, GRTOBJAUT…), object types (*FILE, *PGM…), message IDs and SQL — and the translations use IBM's own IBM i terminology for each language.
+
 ## 0.9.0
 
 **New: system tools**
