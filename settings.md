@@ -44,6 +44,11 @@ Open **File → Preferences → Settings** and search for *Vanthrex*, or edit `s
 | `vanthrex.ai.allowQueries` | boolean | `true` | Let the AI run read-only SQL queries (SELECT / WITH / VALUES only; anything that changes data is refused). |
 | `vanthrex.ai.confirmQueries` | boolean | `true` | Ask before the AI runs a query on the IBM i. |
 | `vanthrex.ai.maxSourceChars` | number | `60000` | Largest amount of source text sent to the language model in one request. |
+| `vanthrex.alerts.enabled` | boolean | `false` | Show VS Code notifications when a job waits for a reply (MSGW), an inquiry arrives on QSYSOPR, a batch job ends abnormally or the system ASP passes the alert level. |
+| `vanthrex.alerts.intervalSeconds` | number | `60` | How often live alerts check the IBM i, in seconds (30 or more). |
+| `vanthrex.alerts.scope` | string | `"mine"` | Whose jobs and messages live alerts watch. Values: `mine`, `all`. |
+| `vanthrex.alerts.diskPercent` | number | `85` | Alert when the system ASP is used above this percentage. |
+| `vanthrex.promotion.backupLibrary` | string | `"QGPL"` | Library for the backup and transfer save files that object promotion creates. |
 
 ## RPG check rules
 

@@ -39,6 +39,7 @@ One sidebar for everything you do on IBM i: connect, browse, edit, compile, quer
 | **Look after the system** | **Journal explorer** (who changed this table?), **authority checker** that explains *why* and offers the fix, **data queues & data areas**, and a **PTF & system health** report — [new in 0.9](features-system-tools.md). |
 | **In your language** | English, French, Spanish, German, Italian, Portuguese (Brazil), Japanese and Simplified Chinese — [new in 0.10](languages.md). |
 | **Work with… everything** | Subsystems, job and output queues, job scheduler, user profiles, system values, audit journal, save files, TCP/IP — [new in 0.11](features-work-with.md). |
+| **Run it day to day** | Storage & cleanup advisor, live alerts, message files, field finder, object promotion with backup and undo — [new in 1.0](features-operations.md). |
 | **Understand the code** | Object and source search, **where used**, go to definition into /COPY members, scoped rename and RPG code checks. |
 
 ## Start here
@@ -52,4 +53,4 @@ Something not working? See [Troubleshooting](troubleshooting.md).
 
 ---
 
-Current version: **0.11.0** · [Changelog](changelog.md) · Free and open source under the MIT License.
+Current version: **1.0.0** · [Changelog](changelog.md) · Free and open source under the MIT License.

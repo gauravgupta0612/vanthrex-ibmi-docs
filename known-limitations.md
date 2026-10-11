@@ -4,7 +4,7 @@ title: Known limitations
 nav_order: 10
 ---
 
-# Known limitations (0.9)
+# Known limitations (1.0)
 
 - **Several systems** can be connected, but the views show one (the active) system at a time.
 - **Where used** builds its cross-reference with DSPPGMREF in QTEMP, so it needs a Mapepire SQL engine (not db2util). Scanning large libraries takes a while.
@@ -21,6 +21,9 @@ nav_order: 10
 - **Authority checker** follows the usual IBM i order (*ALLOBJ, own, groups, authorization list, *PUBLIC) but does not consider adopted authority or field-level authority.
 - **PTF & system health:** the comparison with IBM's PTF levels needs internet access from the IBM i; certificate and default-password checks need *ALLOBJ and *SECADM. Checks that can't run are listed as *not checked*.
 - **Data queues** are peeked as text; DDM data queues can't be peeked.
+- **Live alerts** poll the IBM i (every 60 s by default) only while VS Code is open and connected; they are off until you turn them on.
+- **Object promotion** copies with SAVOBJ / RSTOBJ: objects in use in the target can't be replaced, and *Undo* restores the replaced objects but does not delete objects that were new.
+- **Storage advisor:** "last used" dates are kept by IBM i but not for every kind of use (for example some SQL reads) — check before deleting.
 - **Debugger** needs the IBM i Debug Service and IBM's IBM i Debug extension, and debugs programs in a batch job (no service entry points or 5250 screens yet) — see [Debugging](debugging.md).
 - **AI assistant** needs a chat model in VS Code (for example GitHub Copilot Chat). The code you ask about is sent to that model. Its read-only check blocks known side effects, but user-defined SQL functions can do anything — that is why Vanthrex asks before every query.
 - **Call graph** and **SQL Explain** need a Mapepire SQL engine. The call graph can't see dynamic calls (program names in variables).

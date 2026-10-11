@@ -6,6 +6,19 @@ nav_order: 90
 
 # Changelog
 
+## 1.0.0
+
+**Vanthrex for IBM i 1.0 — stable release**
+
+1.0 brings together everything since 0.1: editing and compiling with SEU habits kept, SQL and data tools, debugging, the AI assistant, insights, system tools, the *Work with…* screens and 8 languages. New in 1.0:
+
+- **Storage & cleanup advisor** (quick menu, or right-click a library): libraries and objects by size, objects not used for 90–730 days, files with many deleted rows (one-click RGZPFM), saved journal receivers older than 30 days (DLTJRNRCV), and spooled files older than 30 days by user (delete them in one go) — with an estimate of the space you can free. **IFS folders by size** does the same for the IFS.
+- **Live alerts** (turn on in the *Jobs* view toolbar → *Live Alerts*, or `vanthrex.alerts.enabled`): a VS Code notification when one of your jobs — or anyone's, with `vanthrex.alerts.scope: all` — waits for a reply (MSGW), an inquiry arrives on QSYSOPR (reply straight from the notification), a batch job ends abnormally, or the system ASP passes 85%. A bell in the status bar counts what is waiting.
+- **Message files** (right-click a `*MSGF`): every message description with its text, help and severity; add (with the next free ID proposed), change, copy as ADDMSGD or remove.
+- **Field finder**: find every file, table and view that has a field — by name, wildcard or description — see where the same field is defined with different types or lengths, and jump to the programs using each file.
+- **Object promotion (DEV → TEST → PROD)** (right-click objects or a library): pick objects, compare them with the target first (new, newer in source, **newer in target**, physical files that carry data), then copy them with SAVOBJ / RSTOBJ after an automatic backup of the objects being replaced. Every promotion is recorded in a **promotion log**, from which you can undo it.
+- All new screens are translated into the 7 languages added in 0.10.
+
 ## 0.11.0
 
 **New: the IBM i "Work with" screens, in VS Code**
