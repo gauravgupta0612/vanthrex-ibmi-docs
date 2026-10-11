@@ -6,6 +6,44 @@ nav_order: 90
 
 # Changelog
 
+## 0.9.0
+
+**New: system tools**
+
+- **Journal Explorer: Who Changed This Table?** (right-click a file): row changes from the journal for a time range — added, updated, deleted, by which user, program and job — with before/after images of updates, a "who changed it" summary and the history of a single row. Offers `STRJRNPF` when the file isn't journaled.
+- **Check Authority (Can a User Use This?)** (right-click any object): resolves a user's authority in IBM i order (*ALLOBJ → own → groups → authorization list → *PUBLIC), checks the library too, explains where the authority comes from and what is missing, and offers the `GRTOBJAUT` fix.
+- **Data queues & data areas** (right-click a `*DTAQ` / `*DTAARA`): peek at data queue entries without removing them, send a test entry, clear the queue; view a data area and change its value with type, length and decimal checks.
+- **PTF & System Health** (quick menu, or right-click the active connection): PTF groups compared with IBM's latest levels, PTFs waiting for an IPL, system ASP use, certificates expiring within 60 days, and user profiles with default or expiring passwords — worst first, with what to do.
+
+## 0.8.0
+
+**New: insights for faster troubleshooting**
+
+- **Index Advisor** (right-click a library, or the quick menu): every index Db2 for i itself recommended while your application ran (`QSYS2.SYSIXADV`) across your libraries, most requested first, with the cost of the most expensive query. Click a suggestion to create the index — a name is proposed and the SQL is shown before it runs. *Show Queries Running Now* lists the active SQL on the system.
+- **Compare table data (DEV ↔ PROD)** (right-click a file): compares the rows of the same table in two libraries by key (primary key pre-selected) — exact counts of rows only in one copy and changed rows, a field-by-field list of what changed (`BALANCE: 10.00 → 12.50`), and CSV export.
+- **Message help everywhere**: hover any message ID (CPF9801, MCH1211, RNQ0102, SQL0204…) in any editor — job logs, compile listings, spooled files, comments — to see IBM's text, severity, plain-language advice and the full help text. **Explain Message ID…** does the same on demand.
+- **Job log analyzer** (right-click a job → *Analyze Job Log*): groups the errors, highlights the most likely root cause (not the generic CPF9999 function check) and says what to do.
+
+## 0.7.1
+
+**New: SQL editor with results, right where you are**
+
+- **Run SQL Query…** on any library, source file, member or object in the *Libraries & Source* view (right-click), in the call graph (**Run SQL…** button, or click an object), on *Object information*, *Who calls each exported procedure?* and in the quick menu.
+- It opens an SQL editor already filled with a useful query for what you clicked — first 100 rows, row count and columns of a file; program information, bound modules, exports and the programs bound to a service program; objects, tables and source members of a library; lock holders; and more. Pick another ready-made query from the list or write your own.
+- **▶ Run** (or Ctrl+Enter) shows the data underneath: sort by clicking a column, filter rows, copy as CSV, or open the query in an SQL scratchpad. Destructive statements still ask first.
+
+## 0.7.0
+
+**New: Who calls each exported procedure?**
+
+- Right-click a service program → **Who Calls Each Exported Procedure?…** (also on the object information page, *Modules & Exports* and the call graph). Vanthrex finds the programs bound to it (QSYS2.BOUND_SRVPGM_INFO, or the DSPPGMREF cross-reference), reads their RPG and CL source — with the prototypes in their /COPY members — and lists, for every exported procedure, each program, source line and statement that calls it.
+- Prototypes are followed: `EXTPROC('SYMBOL')`, `EXTPROC(*DCLCASE)`, fixed-form `PR` specs (long names too), `CALLB`, `%PADDR` and CL `CALLPRC`.
+- Exported procedures nobody calls in the analysed libraries are marked, as are calls matched by name only because a /COPY member could not be read. Click a call to open the source at that line.
+
+**New: dynamic calls in the call graph**
+
+- **Find dynamic calls** scans the source of the programs in the graph for calls whose target is only known at run time — `CALL` with a variable in RPG, prototypes with `EXTPGM(variable)` / `EXTPROC(variable)`, CL `CALL PGM(&VAR)` — and shows them as dashed red nodes. Click one to open the call. DSPPGMREF cannot see these calls, so the graph now tells you where it is blind.
+
 ## 0.6.1
 
 - **Stable release:** Vanthrex for IBM i is no longer marked as *Preview* on the VS Code Marketplace.

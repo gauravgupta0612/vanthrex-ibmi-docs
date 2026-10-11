@@ -26,6 +26,8 @@ Every feature, what it does, why it helps and how to use it.
 | [AI assistant](features-ai.md) *(new in 0.6)* | `@vanthrex` in the chat: explain, document, review, modernize, unit tests, fix compile errors, SQL against your real tables. |
 | [Git for IBM i source](features-git.md) *(new in 0.6)* | Export libraries to Git, get and upload changes, commit & push, and the history of any member. |
 | [Call graph & impact analysis](features-call-graph.md) *(new in 0.6)* | Interactive diagram of callers and callees, with Copy as Mermaid. |
+| [Insights](features-insights.md) *(new in 0.8)* | Index advisor, DEV ↔ PROD table data compare, message help on hover and a job log analyzer. |
+| [System tools](features-system-tools.md) *(new in 0.9)* | Journal explorer (who changed which rows), authority checker with the fix, data queue & data area viewer/editor, and a PTF & system health report. |
 | [Debugging](debugging.md) | Breakpoints, stepping, variables and call stack for RPG, COBOL and CL (new in 0.5). |
 
 New to the extension? Start with [Installation](installation.md) and [Your first connection](first-connection.md).

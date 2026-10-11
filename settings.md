@@ -39,8 +39,6 @@ Open **File → Preferences → Settings** and search for *Vanthrex*, or edit `s
 | `vanthrex.callGraph.depth` | number | `2` | How many levels of callers / callees the call graph shows at first. |
 | `vanthrex.callGraph.maxNodes` | number | `200` | Largest number of objects drawn in a call graph. |
 | `vanthrex.callGraph.hideSystemObjects` | boolean | `true` | Leave IBM-supplied objects (QCMDEXC, QSYSPRT…) out of the call graph. |
-| `vanthrex.git.authorName` | string | empty | Name used for commits made by Vanthrex's Git commands (empty = your Git configuration). |
-| `vanthrex.git.authorEmail` | string | empty | E-mail used for commits made by Vanthrex's Git commands (empty = your Git configuration). |
 | `vanthrex.ai.enabled` | boolean | `true` | Enable the @vanthrex AI assistant and the AI commands. Code you ask about is sent to the language model you selected in VS Code chat. |
 | `vanthrex.ai.useTools` | boolean | `true` | Let the AI assistant look things up on the connected IBM i (object descriptions, table columns, source, read-only queries). |
 | `vanthrex.ai.allowQueries` | boolean | `true` | Let the AI run read-only SQL queries (SELECT / WITH / VALUES only; anything that changes data is refused). |
