@@ -7,12 +7,13 @@ parent: "Reference"
 
 # Commands
 
-All 126 commands contributed by Vanthrex for IBM i 0.10.0. Run any of them from the
+All 148 commands contributed by Vanthrex for IBM i 0.11.0. Run any of them from the
 Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-click menus and view toolbars.
 
 | Command | ID | Keys |
 |---|---|---|
 | Add IBM i Connection… | `vanthrex.addConnection` |  |
+| Add Job Schedule Entry… | `vanthrex.addJobSchedule` |  |
 | Add Library… | `vanthrex.addLibrary` |  |
 | AI: Ask the IBM i Assistant… | `vanthrex.ai.open` |  |
 | AI: Document This Code | `vanthrex.ai.document` |  |
@@ -51,6 +52,7 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Delete Spooled File | `vanthrex.spoolDelete` |  |
 | Disconnect | `vanthrex.disconnect` |  |
 | Disconnect All Systems | `vanthrex.disconnectAll` |  |
+| Download Save File… | `vanthrex.downloadSaveFile` |  |
 | Edit Connection… | `vanthrex.editConnection` |  |
 | Edit Table Data… | `vanthrex.editData` |  |
 | End Job… | `vanthrex.endJob` |  |
@@ -72,8 +74,12 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Grant Missing Authority | `vanthrex.grantAuthority` |  |
 | Highlight Lines Changed Since… | `vanthrex.changedSince` |  |
 | Hold Job | `vanthrex.holdJob` |  |
+| IBM i: Work with… | `vanthrex.workWith` |  |
 | Impact Analysis (Who Uses This?)… | `vanthrex.impactAnalysis` |  |
 | Index Advisor | `vanthrex.indexAdvisor` |  |
+| IP Interfaces and Routes | `vanthrex.wrkInterfaces` |  |
+| Jobs in Subsystem | `vanthrex.wrkSubsystemJobs` |  |
+| Jobs on Job Queue | `vanthrex.wrkJobQueue` |  |
 | Journal Explorer: Who Changed This Table? | `vanthrex.journalExplorer` |  |
 | Member Lock: Ask Holder to Release… | `vanthrex.lockAskRelease` |  |
 | Member Lock: Check Again | `vanthrex.lockRefresh` |  |
@@ -107,16 +113,19 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Remove Library from List | `vanthrex.removeLibrary` |  |
 | Remove Message | `vanthrex.removeMessage` |  |
 | Reply… | `vanthrex.replyMessage` |  |
+| Restore from Save File… | `vanthrex.restoreFromSaveFile` |  |
 | Run CL Command… | `vanthrex.runCl` | Ctrl+Alt+L |
 | Run RPG Code Checks | `vanthrex.lintCurrent` |  |
 | Run SQL Query… | `vanthrex.sqlQuery` |  |
 | Run SQL Script (All Statements) | `vanthrex.runSqlScript` | Ctrl+Shift+Enter |
 | Run SQL Statement | `vanthrex.runSql` | Ctrl+Enter |
+| Save Library or Objects to a Save File… | `vanthrex.saveToSaveFile` |  |
 | Save Query… | `vanthrex.saveQuery` |  |
 | Save Spooled File As… | `vanthrex.spoolDownload` |  |
 | Saved Queries… | `vanthrex.savedQueries` |  |
 | Search Objects… | `vanthrex.searchObjects` | Ctrl+Alt+O |
 | Search Source Code… | `vanthrex.searchSource` | Ctrl+Alt+F |
+| Security Audit Journal (QAUDJRN)… | `vanthrex.auditJournal` |  |
 | Select for Compare | `vanthrex.selectForCompare` |  |
 | Send Data Queue Entry… | `vanthrex.sendDataQueue` |  |
 | Send Message… | `vanthrex.sendMessage` |  |
@@ -127,16 +136,29 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Show Modules & Exports | `vanthrex.serviceProgramInfo` |  |
 | Show Output Log | `vanthrex.showOutput` |  |
 | Show Queries Running Now | `vanthrex.activeQueries` |  |
+| Show Save File Contents | `vanthrex.saveFileContents` |  |
 | Sort Members by Name / Date | `vanthrex.sortMembers` |  |
+| Spooled Files on Output Queue | `vanthrex.wrkOutputQueue` |  |
 | SQL History… | `vanthrex.sqlHistory` |  |
 | Switch IBM i System… | `vanthrex.switchConnection` |  |
 | Toggle Source Dates (SEU) | `vanthrex.toggleSourceDates` | Ctrl+Alt+D |
 | Turn Off a Code Check | `vanthrex.disableLintRule` |  |
+| Upload Save File from this PC… | `vanthrex.uploadSaveFile` |  |
 | View Data Area | `vanthrex.dataArea` |  |
 | View Data Queue Entries | `vanthrex.dataQueue` |  |
 | Where Used… | `vanthrex.whereUsed` |  |
 | Who Calls Each Exported Procedure?… | `vanthrex.procedureCallers` |  |
 | Who Has This Object Locked? | `vanthrex.objectLocks` |  |
+| Work with Job Queues | `vanthrex.wrkJobQueues` |  |
+| Work with Job Schedule Entries | `vanthrex.wrkJobSchedule` |  |
+| Work with Output Queues | `vanthrex.wrkOutputQueues` |  |
+| Work with Save Files | `vanthrex.wrkSaveFiles` |  |
+| Work with Subsystems | `vanthrex.wrkSubsystems` |  |
+| Work with System Values | `vanthrex.wrkSystemValues` |  |
+| Work with TCP/IP Connections (NETSTAT) | `vanthrex.wrkConnections` |  |
+| Work with TCP/IP Servers | `vanthrex.wrkTcpServers` |  |
+| Work with User Profiles | `vanthrex.wrkUserProfiles` |  |
+| Work with: Options | `vanthrex.ww.row` |  |
 | Write CREATE INDEX for Advised Index | `vanthrex.explain.createIndexSql` |  |
 
 On a Mac, use **Cmd** instead of **Ctrl**. Some keys only work in a matching editor (for example **Ctrl+Enter** in `.sql` files).

@@ -25,6 +25,7 @@ What is planned next. Ideas and votes are welcome in [GitHub issues](https://git
 - **0.8.0** — index advisor, table data compare (DEV ↔ PROD), message help on hover and job log analyzer.
 - **0.9.0** — journal explorer, authority checker, data queues & data areas, PTF & system health.
 - **0.10.0** — the interface in French, Spanish, German, Italian, Portuguese (Brazil), Japanese and Simplified Chinese.
+- **0.11.0** — Work with… screens: work management, users & security, save / restore, network & services.
 
 - **0.6.0** — AI assistant (`@vanthrex`) with IBM i tools for Copilot agent mode, Git for IBM i source, call graph & impact analysis, several systems at once, SQL Explain, and H/F/D/P specs in the fixed → free converter.
 - **0.5.0** — IBM i debugger (batch debug with breakpoints, variables and call stack) and a debugger setup check.

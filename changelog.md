@@ -6,6 +6,18 @@ nav_order: 90
 
 # Changelog
 
+## 0.11.0
+
+**New: the IBM i "Work with" screens, in VS Code**
+
+Open them all from **IBM i: Work with…** (quick menu, the *Jobs* view toolbar, or right-click the active connection). Every list can be filtered, and clicking a row shows its options; every command is shown before it runs.
+
+- **Work management:** subsystems (start, end, the jobs in each — WRKSBS), job queues (hold, release, clear, and release / hold / prioritise / end the waiting jobs — WRKJOBQ), output queues and the spooled files on any of them (open, hold, release, move, delete — WRKOUTQ), and the job scheduler (add, hold, release, remove entries — WRKJOBSCDE).
+- **Users & security:** user profiles with filters (non-IBM, disabled, special authorities, groups) — enable, disable, expire the password, see a user's active jobs and owned objects (WRKUSRPRF); all system values with the important ones explained (WRKSYSVAL, read-only); and the security audit journal QAUDJRN — authority failures, invalid passwords, profile and system value changes, deleted objects… — for a time range and user.
+- **Save / restore:** save files in a library and what is inside them, SAVLIB / SAVOBJ to a save file (target release, compression, run now or in batch), RSTLIB / RSTOBJ (also into another library), and download / upload a save file between the IBM i and your PC. Right-click a library or a save file.
+- **Network & services:** TCP/IP connections with the job and user behind each (end a connection), listening ports, the TCP/IP servers (SSH, host servers, DDM, FTP, Telnet, HTTP admin, NetServer, SMTP) with start / end, and IP interfaces and routes.
+- All of it is translated into the 7 languages added in 0.10.
+
 ## 0.10.0
 
 **New: Vanthrex speaks your language**
