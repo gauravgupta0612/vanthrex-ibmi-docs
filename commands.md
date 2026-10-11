@@ -7,7 +7,7 @@ parent: "Reference"
 
 # Commands
 
-All 161 commands contributed by Vanthrex for IBM i 1.0.0. Run any of them from the
+All 171 commands contributed by Vanthrex for IBM i 1.1.0. Run any of them from the
 Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-click menus and view toolbars.
 
 | Command | ID | Keys |
@@ -35,6 +35,7 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Choose Which Jobs to Show… | `vanthrex.filterJobs` |  |
 | Clear Data Queue… | `vanthrex.clearDataQueue` |  |
 | Clear SQL History | `vanthrex.clearSqlHistory` |  |
+| Code Metrics | `vanthrex.codeMetrics` |  |
 | Compare Table Data (DEV ↔ PROD)… | `vanthrex.compareData` |  |
 | Compare Two Libraries… | `vanthrex.compareLibraries` |  |
 | Compare with Another Member… | `vanthrex.compareMembers` |  |
@@ -60,11 +61,16 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Explain Message ID… | `vanthrex.explainMessage` |  |
 | Explain SQL (Performance) | `vanthrex.explainSql` |  |
 | Export Data Differences (CSV)… | `vanthrex.exportDataCompare` |  |
+| Export Query Result (Excel, CSV, JSON)… | `vanthrex.exportQuery` |  |
+| Export Table Data (Excel, CSV, JSON)… | `vanthrex.exportData` |  |
 | Extract to Procedure… | `vanthrex.extractProcedure` |  |
 | Field Finder… | `vanthrex.fieldFinder` |  |
 | Filter Members by Last Change… | `vanthrex.filterMembersByDate` |  |
 | Find & Open Member… | `vanthrex.findMember` |  |
+| Find RPGUnit Tests… | `vanthrex.rpgunit.discover` |  |
+| Generate Documentation (Markdown) | `vanthrex.generateDocs` |  |
 | Generate Prototype from Procedure | `vanthrex.generatePrototype` |  |
+| Generate RPGUnit Tests… | `vanthrex.rpgunit.generate` |  |
 | Generate SQL (DDL) | `vanthrex.generateDdl` |  |
 | Getting Started | `vanthrex.openWalkthrough` |  |
 | Git: Commit & Push IBM i Source… | `vanthrex.git.commitPush` |  |
@@ -79,6 +85,7 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | IBM i: Work with… | `vanthrex.workWith` |  |
 | IFS Folders by Size… | `vanthrex.ifsStorage` |  |
 | Impact Analysis (Who Uses This?)… | `vanthrex.impactAnalysis` |  |
+| Import CSV or Excel into Table… | `vanthrex.importData` |  |
 | Index Advisor | `vanthrex.indexAdvisor` |  |
 | IP Interfaces and Routes | `vanthrex.wrkInterfaces` |  |
 | Jobs in Subsystem | `vanthrex.wrkSubsystemJobs` |  |
@@ -98,11 +105,13 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Object Information | `vanthrex.objectInfo` |  |
 | Open Documentation | `vanthrex.openDocs` |  |
 | Open Local History Folder | `vanthrex.openHistoryFolder` |  |
+| Open Member | `vanthrex.codeMetrics.open` |  |
 | Open Program Source | `vanthrex.openProgramSource` |  |
 | Open Source at Line | `vanthrex.openSourceAtLine` |  |
 | Open Spooled File | `vanthrex.spoolOpen` |  |
 | Open System Dashboard | `vanthrex.openDashboard` |  |
 | Options | `vanthrex.extras.row` |  |
+| Performance Monitor | `vanthrex.performanceMonitor` |  |
 | Preview Data (first rows) | `vanthrex.objectQuery` |  |
 | Promote Objects (DEV → TEST → PROD)… | `vanthrex.promoteObjects` |  |
 | Promotion Log | `vanthrex.promotionLog` |  |
@@ -123,6 +132,7 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Reply… | `vanthrex.replyMessage` |  |
 | Restore from Save File… | `vanthrex.restoreFromSaveFile` |  |
 | Run CL Command… | `vanthrex.runCl` | Ctrl+Alt+L |
+| Run Import | `vanthrex.importData.run` |  |
 | Run Promotion | `vanthrex.promote.run` |  |
 | Run RPG Code Checks | `vanthrex.lintCurrent` |  |
 | Run SQL Query… | `vanthrex.sqlQuery` |  |

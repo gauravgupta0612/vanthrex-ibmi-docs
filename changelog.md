@@ -6,6 +6,18 @@ nav_order: 90
 
 # Changelog
 
+## 1.1.0
+
+**New: data, performance, code quality and unit tests**
+
+- **Export table data to Excel, CSV or JSON** (right-click a file): with an optional WHERE filter; numbers stay numbers in Excel and the header row is frozen. **Export Query Result** does the same for the SQL statement under the cursor in a `.sql` editor.
+- **Import a CSV or Excel file into a table** (right-click a file): columns are matched by name, a preview shows the mapping, the first rows and any values that don't fit (too long, not a number, too many decimals) before anything is written. Add to the table or replace its rows.
+- **Performance monitor** (*Jobs* view toolbar, quick menu or right-click the active connection): live charts of CPU, system ASP, active jobs and temporary storage with hover values, top jobs by CPU and by disk I/O (click for the job log) and memory pools — refreshed every 5 seconds.
+- **Code metrics** (right-click a source file, or a member's editor menu): lines, free vs fixed, procedures, subroutines, SQL, complexity, nesting, numbered indicators and GOTOs per member, with a grade A–D and modernization advice.
+- **Generate documentation** for the open RPG or CL source as Markdown: description, parameters, files, calls, copybooks, procedures with their comments, and metrics.
+- **RPGUnit tests**: generate a test member for the exported procedures of the open source (one test per procedure, with the right `aEqual` / `iEqual` / `nEqual`), and run tests from VS Code's **Testing** view — RUCRTRPG compiles, RUCALLTST runs, and each test shows as passed or failed with its message. Test members are found when you open them or with **Find RPGUnit Tests…** on a source file. Needs iRPGUnit on the IBM i.
+- All new screens are translated into the 7 languages.
+
 ## 1.0.0
 
 **Vanthrex for IBM i 1.0 — stable release**

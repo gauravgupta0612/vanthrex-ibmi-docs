@@ -30,6 +30,7 @@ Every feature, what it does, why it helps and how to use it.
 | [System tools](features-system-tools.md) *(new in 0.9)* | Journal explorer (who changed which rows), authority checker with the fix, data queue & data area viewer/editor, and a PTF & system health report. |
 | [Work with… (WRK screens)](features-work-with.md) *(new in 0.11)* | Subsystems, job queues, output queues, job scheduler, user profiles, system values, audit journal, save files and TCP/IP. |
 | [Operations](features-operations.md) *(new in 1.0)* | Storage & cleanup advisor, live alerts, message files, field finder and object promotion DEV → TEST → PROD. |
+| [Data, performance & quality](features-data-quality.md) *(new in 1.1)* | Import / export Excel, CSV, JSON; performance monitor; code metrics; documentation from source; RPGUnit tests. |
 | [Debugging](debugging.md) | Breakpoints, stepping, variables and call stack for RPG, COBOL and CL (new in 0.5). |
 
 New to the extension? Start with [Installation](installation.md) and [Your first connection](first-connection.md).

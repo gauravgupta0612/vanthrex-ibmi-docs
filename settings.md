@@ -49,6 +49,10 @@ Open **File → Preferences → Settings** and search for *Vanthrex*, or edit `s
 | `vanthrex.alerts.scope` | string | `"mine"` | Whose jobs and messages live alerts watch. Values: `mine`, `all`. |
 | `vanthrex.alerts.diskPercent` | number | `85` | Alert when the system ASP is used above this percentage. |
 | `vanthrex.promotion.backupLibrary` | string | `"QGPL"` | Library for the backup and transfer save files that object promotion creates. |
+| `vanthrex.export.maxRows` | number | `100000` | Maximum number of rows exported to Excel, CSV or JSON. |
+| `vanthrex.performance.intervalSeconds` | number | `5` | How often the performance monitor samples the IBM i, in seconds. |
+| `vanthrex.rpgunit.library` | string | `"RPGUNIT"` | Library where RPGUnit (iRPGUnit) is installed; added to the library list to compile and run tests. |
+| `vanthrex.rpgunit.testLibrary` | string | `""` | Library for the compiled test programs. Empty = your current library. |
 
 ## RPG check rules
 
