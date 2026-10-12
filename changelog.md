@@ -6,6 +6,16 @@ nav_order: 90
 
 # Changelog
 
+## 1.3.0
+
+**New: see your screens and your database, compare two systems, and share spooled files**
+
+- **Screen preview for display files.** Open a DSPF member and click **Preview Screen** (editor title): the record format is drawn as it looks on a 5250 — constants, input fields (underlined), output fields, colors and display attributes, 24×80 or 27×132, windows, and a subfile control with its subfile rows. It follows the record your cursor is in and updates as you type; click a field to jump to its source line.
+- **Database diagram.** Right-click a library → **Database Diagram**: the tables with their columns and primary keys, the foreign keys between them, and — because many IBM i databases never declared them — relationships inferred from column names (dashed). Click a table to highlight its links, zoom, **Copy as Mermaid** for Markdown / GitHub / wikis, or **Save as SVG**.
+- **Compare with another system.** With two systems connected, compare a source member (VS Code diff), the objects of a library, the rows of a table by key, the system values, or the PTF group levels between DEV and PROD — the data is read from each system, so they never need to reach each other.
+- **Spooled files to PDF and e-mail.** Right-click a spooled file → **Save as PDF…** or **Send by E-mail…**; in a `.sql` editor, **E-mail Query Result** sends the result as an Excel file. PDFs are made in VS Code from the spool text (or by the IBM i with `vanthrex.spool.pdfMode: server`); e-mail is sent by the IBM i with SNDSMTPEMM.
+- All new screens are translated into the 7 languages.
+
 ## 1.2.0
 
 **New: safer and sturdier — protection for production systems, a self-check, and errors that explain themselves**

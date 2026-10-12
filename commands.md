@@ -7,7 +7,7 @@ parent: "Reference"
 
 # Commands
 
-All 174 commands contributed by Vanthrex for IBM i 1.2.0. Run any of them from the
+All 180 commands contributed by Vanthrex for IBM i 1.3.0. Run any of them from the
 Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-click menus and view toolbars.
 
 | Command | ID | Keys |
@@ -39,6 +39,7 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Compare Table Data (DEV ↔ PROD)… | `vanthrex.compareData` |  |
 | Compare Two Libraries… | `vanthrex.compareLibraries` |  |
 | Compare with Another Member… | `vanthrex.compareMembers` |  |
+| Compare with Another System… | `vanthrex.compareSystems` |  |
 | Compare with Copy on IBM i | `vanthrex.compareWithServer` |  |
 | Compare with Selected | `vanthrex.compareWithSelected` |  |
 | Compile Current Source | `vanthrex.compile` | Ctrl+Alt+C |
@@ -47,6 +48,7 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Convert Fixed Format to Free (H, F, D, P and C Specs) | `vanthrex.convertToFree` |  |
 | Copy Self-Check Report | `vanthrex.selfCheck.copy` |  |
 | Create Advised Index | `vanthrex.createAdvisedIndex` |  |
+| Database Diagram | `vanthrex.databaseDiagram` |  |
 | Debug Program | `vanthrex.debugProgram` | Ctrl+Alt+G |
 | Debugger Setup Check | `vanthrex.debugSetup` |  |
 | Delete | `vanthrex.ifsDelete` |  |
@@ -56,6 +58,7 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Disconnect | `vanthrex.disconnect` |  |
 | Disconnect All Systems | `vanthrex.disconnectAll` |  |
 | Download Save File… | `vanthrex.downloadSaveFile` |  |
+| E-mail Query Result (Excel)… | `vanthrex.emailQuery` |  |
 | Edit Connection… | `vanthrex.editConnection` |  |
 | Edit Table Data… | `vanthrex.editData` |  |
 | End Job… | `vanthrex.endJob` |  |
@@ -114,6 +117,7 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Options | `vanthrex.extras.row` |  |
 | Performance Monitor | `vanthrex.performanceMonitor` |  |
 | Preview Data (first rows) | `vanthrex.objectQuery` |  |
+| Preview Screen (Display File) | `vanthrex.previewDspf` |  |
 | Promote Objects (DEV → TEST → PROD)… | `vanthrex.promoteObjects` |  |
 | Promotion Log | `vanthrex.promotionLog` |  |
 | Prompt (F4) | `vanthrex.prompt` | F4 |
@@ -139,6 +143,7 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Run SQL Query… | `vanthrex.sqlQuery` |  |
 | Run SQL Script (All Statements) | `vanthrex.runSqlScript` | Ctrl+Shift+Enter |
 | Run SQL Statement | `vanthrex.runSql` | Ctrl+Enter |
+| Save as PDF… | `vanthrex.spoolPdf` |  |
 | Save Library or Objects to a Save File… | `vanthrex.saveToSaveFile` |  |
 | Save Query… | `vanthrex.saveQuery` |  |
 | Save Spooled File As… | `vanthrex.spoolDownload` |  |
@@ -148,6 +153,7 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Security Audit Journal (QAUDJRN)… | `vanthrex.auditJournal` |  |
 | Select for Compare | `vanthrex.selectForCompare` |  |
 | Self-Check (Is This System Ready?) | `vanthrex.selfCheck` |  |
+| Send by E-mail… | `vanthrex.spoolEmail` |  |
 | Send Data Queue Entry… | `vanthrex.sendDataQueue` |  |
 | Send Message… | `vanthrex.sendMessage` |  |
 | Set as Current Library | `vanthrex.setCurrentLibrary` |  |

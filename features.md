@@ -32,6 +32,7 @@ Every feature, what it does, why it helps and how to use it.
 | [Operations](features-operations.md) *(new in 1.0)* | Storage & cleanup advisor, live alerts, message files, field finder and object promotion DEV → TEST → PROD. |
 | [Data, performance & quality](features-data-quality.md) *(new in 1.1)* | Import / export Excel, CSV, JSON; performance monitor; code metrics; documentation from source; RPGUnit tests. |
 | [Safe on production](features-safety.md) *(new in 1.2)* | Production / read-only protection, self-check of the system, errors that explain what to do. |
+| [See and share](features-see-share.md) *(new in 1.3)* | 5250 screen preview, database diagrams, compare two systems, spooled files to PDF / e-mail. |
 | [Debugging](debugging.md) | Breakpoints, stepping, variables and call stack for RPG, COBOL and CL (new in 0.5). |
 
 New to the extension? Start with [Installation](installation.md) and [Your first connection](first-connection.md).

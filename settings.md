@@ -54,6 +54,8 @@ Open **File → Preferences → Settings** and search for *Vanthrex*, or edit `s
 | `vanthrex.rpgunit.library` | string | `"RPGUNIT"` | Library where RPGUnit (iRPGUnit) is installed; added to the library list to compile and run tests. |
 | `vanthrex.rpgunit.testLibrary` | string | `""` | Library for the compiled test programs. Empty = your current library. |
 | `vanthrex.selfCheck.onConnect` | boolean | `true` | Check the system the first time you connect to it in a session and warn about setup problems (SQL engine, CCSID, library list…). |
+| `vanthrex.spool.pdfMode` | string | `"local"` | How spooled files become PDF: "local" converts the text in VS Code (works everywhere); "server" asks the IBM i (CPYSPLF WSCST(*PDF)) and keeps fonts and graphics, falling back to local. Values: `local`, `server`. |
+| `vanthrex.compare.maxRows` | number | `50000` | Maximum rows read from each system when comparing a table across two systems. |
 
 ## RPG check rules
 
