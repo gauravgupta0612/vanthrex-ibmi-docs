@@ -53,6 +53,7 @@ Open **File → Preferences → Settings** and search for *Vanthrex*, or edit `s
 | `vanthrex.performance.intervalSeconds` | number | `5` | How often the performance monitor samples the IBM i, in seconds. |
 | `vanthrex.rpgunit.library` | string | `"RPGUNIT"` | Library where RPGUnit (iRPGUnit) is installed; added to the library list to compile and run tests. |
 | `vanthrex.rpgunit.testLibrary` | string | `""` | Library for the compiled test programs. Empty = your current library. |
+| `vanthrex.selfCheck.onConnect` | boolean | `true` | Check the system the first time you connect to it in a session and warn about setup problems (SQL engine, CCSID, library list…). |
 
 ## RPG check rules
 

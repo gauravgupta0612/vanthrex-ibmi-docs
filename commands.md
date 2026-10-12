@@ -7,7 +7,7 @@ parent: "Reference"
 
 # Commands
 
-All 171 commands contributed by Vanthrex for IBM i 1.1.0. Run any of them from the
+All 174 commands contributed by Vanthrex for IBM i 1.2.0. Run any of them from the
 Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-click menus and view toolbars.
 
 | Command | ID | Keys |
@@ -45,6 +45,7 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Compile With… | `vanthrex.compileWith` |  |
 | Connect | `vanthrex.connect` |  |
 | Convert Fixed Format to Free (H, F, D, P and C Specs) | `vanthrex.convertToFree` |  |
+| Copy Self-Check Report | `vanthrex.selfCheck.copy` |  |
 | Create Advised Index | `vanthrex.createAdvisedIndex` |  |
 | Debug Program | `vanthrex.debugProgram` | Ctrl+Alt+G |
 | Debugger Setup Check | `vanthrex.debugSetup` |  |
@@ -146,9 +147,11 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Search Source Code… | `vanthrex.searchSource` | Ctrl+Alt+F |
 | Security Audit Journal (QAUDJRN)… | `vanthrex.auditJournal` |  |
 | Select for Compare | `vanthrex.selectForCompare` |  |
+| Self-Check (Is This System Ready?) | `vanthrex.selfCheck` |  |
 | Send Data Queue Entry… | `vanthrex.sendDataQueue` |  |
 | Send Message… | `vanthrex.sendMessage` |  |
 | Set as Current Library | `vanthrex.setCurrentLibrary` |  |
+| Set Protection (Production / Read-Only)… | `vanthrex.setProtection` |  |
 | Show IBM i Quick Menu | `vanthrex.showMenu` | Ctrl+Alt+I |
 | Show Job Log | `vanthrex.jobLog` |  |
 | Show Local History… | `vanthrex.showHistory` |  |

@@ -28,6 +28,7 @@ What is planned next. Ideas and votes are welcome in [GitHub issues](https://git
 - **0.11.0** — Work with… screens: work management, users & security, save / restore, network & services.
 - **1.0.0** — stable release: storage & cleanup advisor, live alerts, message files, field finder, object promotion.
 - **1.1.0** — import / export (Excel, CSV, JSON), performance monitor, code metrics & documentation, RPGUnit tests.
+- **1.2.0** — production / read-only protection, self-check, plain-language errors.
 
 - **0.6.0** — AI assistant (`@vanthrex`) with IBM i tools for Copilot agent mode, Git for IBM i source, call graph & impact analysis, several systems at once, SQL Explain, and H/F/D/P specs in the fixed → free converter.
 - **0.5.0** — IBM i debugger (batch debug with breakpoints, variables and call stack) and a debugger setup check.

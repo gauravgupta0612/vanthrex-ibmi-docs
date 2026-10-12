@@ -6,6 +6,14 @@ nav_order: 90
 
 # Changelog
 
+## 1.2.0
+
+**New: safer and sturdier — protection for production systems, a self-check, and errors that explain themselves**
+
+- **Protect production systems.** Mark a connection as *Production* (every change asks first, with *Allow once* or *Allow for 15 minutes*) or *Read-only* (Vanthrex refuses every change). It covers CL commands, SQL that changes data or objects, member saves and IFS writes — Vanthrex's own work in QTEMP and its temporary files is not affected. The status bar shows a shield or a lock and turns red / amber so you always know where you are. Set it in the connection form or with **Set Protection…** on a connection.
+- **Self-check.** **Self-Check (Is This System Ready?)** tests SSH and SQL round-trip times, QSH and CL, the SQL engine and Java version, your profile's CCSID (65535 is flagged), home directory, library list, IBM i release and Db2 PTF group, your special authorities, RPGUnit and the debug service — and lists which IBM i services Vanthrex uses are missing on this system and which features they affect. Every problem comes with how to fix it, and **Copy the report** makes support issues easy. It also runs quietly the first time you connect to a system and warns only about real problems (`vanthrex.selfCheck.onConnect`).
+- **Errors that say what to do.** Error messages from IBM i, Db2 and SSH now end with a plain-language hint — a missing IBM i service points to the Db2 PTF group, "not authorized" points to *Check Authority*, SQL7008 suggests WITH NC or journaling, locks point to *Who Has It Locked?*, lost connections say how to reconnect — in all 8 languages.
+
 ## 1.1.0
 
 **New: data, performance, code quality and unit tests**
