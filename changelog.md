@@ -6,6 +6,45 @@ nav_order: 90
 
 # Changelog
 
+## 2.1.0
+
+**New: Security Admin center for users with *SECADM**
+
+- **Shown only to security administrators.** Vanthrex checks whether you (or one of your group profiles) have *SECADM special authority; the *Security Admin* button and commands appear only then. Everyone else does not see them.
+- **User profiles in one place:** every non-IBM profile with status, class, special authorities, group, last sign-on, failed sign-ons and password expiry; profiles with *ALLOBJ / *SECADM and locked-out profiles are highlighted.
+- **Create a user** with a guided form (class, special authorities, group, current library, first password that must be changed at first sign-on — or no password for service accounts and groups), or **copy an existing user** (same class, authorities, groups, library, menu and job description).
+- **Change, reset, enable / disable, expire the password, delete** a profile. Deleting asks what to do with the objects it owns (give them to another profile or delete them) and requires typing the profile name.
+- **Unused profiles:** enabled profiles that have not signed on for 30–365 days, with **Disable all**.
+- **Powerful profiles:** who has *ALLOBJ, *SECADM, *AUDIT, *SERVICE or a *SECOFR / *SECADM class, including the members of powerful groups.
+- **Group profiles** with their members, and **authorization lists**: create one, add or remove users, change authorities, and see the objects it secures.
+- **Passwords are never shown, stored or logged**: they are typed in hidden fields, and every command, confirmation, log line and error has them masked.
+
+**Also new in 2.1**
+
+- **Objects out of sync with their source** (right-click a library): programs, service programs, modules, commands and files whose source member changed after the last compile — or whose source member is gone — so you know what runs code that is not what the source shows.
+- **What changed (release notes)** (right-click a library): source members and objects changed in the last 1–90 days, with **Copy as Markdown** for release notes or a code review.
+- **New member from a template** (right-click a source file): RPG program, NOMAIN module, SQLRPGLE with a cursor, CL with error handling, binder source, SQL table, display file, physical file — or your own templates (`vanthrex.templates`).
+- **Retrieve binder source** of a service program (RTVBNDSRC) and **work with binding directories** (add / remove entries).
+- **Who is locking rows?** (right-click a file): every locked row with its job, status and the first columns of the row; open the job log or end the job.
+- **Running SQL statements** (Jobs view toolbar): what SQL runs now and for how long, with **Cancel** (QSYS2.CANCEL_SQL).
+- **Exit points and exit programs**: registered exit programs, and which network exit points (ODBC, FTP, remote command, file server…) have none.
+- **Change owner or authority of many objects** (right-click a library): CHGOBJOWN for every matching object, or one GRTOBJAUT / RVKOBJAUT with a generic name.
+- **Installed software and license keys**: every installed product option, and license keys with usage limits and expiry (expiring within 60 days highlighted).
+- **Is this PTF installed?**: paste PTF IDs from an IBM page and see applied / loaded / superseded / not on the system.
+- **Journals** (quick menu or right-click a library): every journal with its attached receiver, receiver count and size, objects journaled; change the receiver now (CHGJRN *GEN) or journal every new table of a library (STRJRNLIB).
+- **IFS permissions** (right-click a file or folder): who has which data authority, the owner; change authority or owner, for a folder optionally everything below it.
+- **Compare the structure of a table** between two libraries — or two connected systems: columns (type, length, nulls, default) and indexes, plus an ALTER TABLE script that makes the second copy match.
+- **Find unused code** in an RPG source: standalone fields, constants, prototypes, subroutines and internal procedures nothing refers to.
+- **Find hard-coded libraries** in a source or a whole source file: LIB/OBJECT names written into RPG, CL and SQL that break when code moves from DEV to PROD (`vanthrex.scan.allowedLibraries`).
+- **Work with any message queue** (QSYSOPR by default): reply to waiting inquiry messages, remove messages, explain them, open the sender's job log, or send a message.
+- **What is this job doing?** (right-click a job): status, current user, CPU, temporary storage, the SQL it runs, what it waits for, its call stack (your programs highlighted), the locks it holds and its activation groups.
+- **System history log (QHST)**: messages of the last hours or days, filtered by severity, message ID or text, with Explain.
+- **What depends on this file?** (right-click a file): logical files, indexes, views, constraints, triggers and foreign keys that use it.
+- **Indicator usage** (right-click in an RPG or DDS editor): where each numbered indicator is set and tested, and the ones that are set but never tested (or the reverse).
+- **IFS character set (CCSID)** (right-click a file or folder): the CCSID of each file, tag one file or a whole folder tree (CHGATR), or convert a file's text to UTF-8 or another CCSID.
+- **Can the IBM i reach this host?**: PING from the IBM i itself, so firewall and DNS problems show up where the programs run.
+- **Call a web API from the IBM i**: GET or POST through QSYS2.HTTP_*_VERBOSE, with headers, status and a formatted body — Authorization headers are never remembered.
+
 ## 2.0.0
 
 **Vanthrex for IBM i 2.0 — 20 new features**
