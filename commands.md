@@ -7,7 +7,7 @@ parent: "Reference"
 
 # Commands
 
-All 180 commands contributed by Vanthrex for IBM i 1.3.0. Run any of them from the
+All 201 commands contributed by Vanthrex for IBM i 2.0.0. Run any of them from the
 Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-click menus and view toolbars.
 
 | Command | ID | Keys |
@@ -27,6 +27,7 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | AI: Review This Code | `vanthrex.ai.review` |  |
 | AI: Write SQL from a Description… | `vanthrex.ai.sql` |  |
 | Analyze Job Log | `vanthrex.analyzeJobLog` |  |
+| Apply Replace | `vanthrex.replaceInSourceFile.apply` |  |
 | Call Graph… | `vanthrex.callGraph` |  |
 | Call Program | `vanthrex.objectCall` |  |
 | Change Data Area Value… | `vanthrex.editDataArea` |  |
@@ -39,13 +40,17 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Compare Table Data (DEV ↔ PROD)… | `vanthrex.compareData` |  |
 | Compare Two Libraries… | `vanthrex.compareLibraries` |  |
 | Compare with Another Member… | `vanthrex.compareMembers` |  |
+| Compare with Another Spooled File… | `vanthrex.spoolCompare` |  |
 | Compare with Another System… | `vanthrex.compareSystems` |  |
 | Compare with Copy on IBM i | `vanthrex.compareWithServer` |  |
 | Compare with Selected | `vanthrex.compareWithSelected` |  |
+| Compile Changed Members… | `vanthrex.batchCompile` |  |
 | Compile Current Source | `vanthrex.compile` | Ctrl+Alt+C |
 | Compile With… | `vanthrex.compileWith` |  |
 | Connect | `vanthrex.connect` |  |
 | Convert Fixed Format to Free (H, F, D, P and C Specs) | `vanthrex.convertToFree` |  |
+| Copy Members to Another Source File… | `vanthrex.copyMembers` |  |
+| Copy Objects to Another Library… | `vanthrex.copyObjects` |  |
 | Copy Self-Check Report | `vanthrex.selfCheck.copy` |  |
 | Create Advised Index | `vanthrex.createAdvisedIndex` |  |
 | Database Diagram | `vanthrex.databaseDiagram` |  |
@@ -71,11 +76,18 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Field Finder… | `vanthrex.fieldFinder` |  |
 | Filter Members by Last Change… | `vanthrex.filterMembersByDate` |  |
 | Find & Open Member… | `vanthrex.findMember` |  |
+| Find a CL Command… | `vanthrex.findCommand` |  |
+| Find and Replace in Source File… | `vanthrex.replaceInSourceFile` |  |
+| Find Duplicate Rows… | `vanthrex.findDuplicates` |  |
 | Find RPGUnit Tests… | `vanthrex.rpgunit.discover` |  |
+| Follow File (tail -f) | `vanthrex.followIfsFile` |  |
+| Format SQL | `vanthrex.formatSql` |  |
 | Generate Documentation (Markdown) | `vanthrex.generateDocs` |  |
 | Generate Prototype from Procedure | `vanthrex.generatePrototype` |  |
+| Generate RPG Code for This Table | `vanthrex.generateRpgForTable` |  |
 | Generate RPGUnit Tests… | `vanthrex.rpgunit.generate` |  |
 | Generate SQL (DDL) | `vanthrex.generateDdl` |  |
+| Generate Test Data… | `vanthrex.generateTestData` |  |
 | Getting Started | `vanthrex.openWalkthrough` |  |
 | Git: Commit & Push IBM i Source… | `vanthrex.git.commitPush` |  |
 | Git: Export Source to a Git Repository… | `vanthrex.git.export` |  |
@@ -91,16 +103,19 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Impact Analysis (Who Uses This?)… | `vanthrex.impactAnalysis` |  |
 | Import CSV or Excel into Table… | `vanthrex.importData` |  |
 | Index Advisor | `vanthrex.indexAdvisor` |  |
+| Insert Test Data | `vanthrex.generateTestData.run` |  |
 | IP Interfaces and Routes | `vanthrex.wrkInterfaces` |  |
 | Jobs in Subsystem | `vanthrex.wrkSubsystemJobs` |  |
 | Jobs on Job Queue | `vanthrex.wrkJobQueue` |  |
 | Journal Explorer: Who Changed This Table? | `vanthrex.journalExplorer` |  |
+| Library List Sets… | `vanthrex.librarySets` |  |
 | Live Alerts | `vanthrex.alerts.show` |  |
 | Member Lock: Ask Holder to Release… | `vanthrex.lockAskRelease` |  |
 | Member Lock: Check Again | `vanthrex.lockRefresh` |  |
 | Member Lock: End Holder's Job… | `vanthrex.lockEndJob` |  |
 | Member Lock: Notify Me When Free | `vanthrex.lockWatch` |  |
 | Member Lock: Options… | `vanthrex.lockActions` |  |
+| My Recent Jobs | `vanthrex.myRecentJobs` |  |
 | New File… | `vanthrex.ifsNewFile` |  |
 | New Folder… | `vanthrex.ifsNewFolder` |  |
 | New Member… | `vanthrex.newMember` |  |
@@ -118,6 +133,7 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Performance Monitor | `vanthrex.performanceMonitor` |  |
 | Preview Data (first rows) | `vanthrex.objectQuery` |  |
 | Preview Screen (Display File) | `vanthrex.previewDspf` |  |
+| Print Preview (Printer File) | `vanthrex.previewPrtf` |  |
 | Promote Objects (DEV → TEST → PROD)… | `vanthrex.promoteObjects` |  |
 | Promotion Log | `vanthrex.promotionLog` |  |
 | Prompt (F4) | `vanthrex.prompt` | F4 |
@@ -133,6 +149,7 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Remove Connection | `vanthrex.deleteConnection` |  |
 | Remove Library from List | `vanthrex.removeLibrary` |  |
 | Remove Message | `vanthrex.removeMessage` |  |
+| Rename or Move… | `vanthrex.moveRenameObject` |  |
 | Reply to Inquiry Message | `vanthrex.alerts.reply` |  |
 | Reply… | `vanthrex.replyMessage` |  |
 | Restore from Save File… | `vanthrex.restoreFromSaveFile` |  |
@@ -150,6 +167,7 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Saved Queries… | `vanthrex.savedQueries` |  |
 | Search Objects… | `vanthrex.searchObjects` | Ctrl+Alt+O |
 | Search Source Code… | `vanthrex.searchSource` | Ctrl+Alt+F |
+| Search Text in Files… | `vanthrex.searchIfs` |  |
 | Security Audit Journal (QAUDJRN)… | `vanthrex.auditJournal` |  |
 | Select for Compare | `vanthrex.selectForCompare` |  |
 | Self-Check (Is This System Ready?) | `vanthrex.selfCheck` |  |
@@ -169,7 +187,9 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Spooled Files on Output Queue | `vanthrex.wrkOutputQueue` |  |
 | SQL History… | `vanthrex.sqlHistory` |  |
 | Storage & Cleanup Advisor… | `vanthrex.storageAdvisor` |  |
+| Submit to Batch and Watch… | `vanthrex.submitAndWatch` |  |
 | Switch IBM i System… | `vanthrex.switchConnection` |  |
+| Table Statistics | `vanthrex.tableStatistics` |  |
 | Toggle Source Dates (SEU) | `vanthrex.toggleSourceDates` | Ctrl+Alt+D |
 | Turn Live Alerts On/Off | `vanthrex.alerts.toggle` |  |
 | Turn Off a Code Check | `vanthrex.disableLintRule` |  |
@@ -177,6 +197,7 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Upload Save File from this PC… | `vanthrex.uploadSaveFile` |  |
 | View Data Area | `vanthrex.dataArea` |  |
 | View Data Queue Entries | `vanthrex.dataQueue` |  |
+| Watch This Job (Notify When It Ends) | `vanthrex.watchJob` |  |
 | Where Used… | `vanthrex.whereUsed` |  |
 | Who Calls Each Exported Procedure?… | `vanthrex.procedureCallers` |  |
 | Who Has This Object Locked? | `vanthrex.objectLocks` |  |

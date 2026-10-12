@@ -43,6 +43,7 @@ One sidebar for everything you do on IBM i: connect, browse, edit, compile, quer
 | **Data, performance & quality** | Excel / CSV / JSON import & export, live performance charts, code metrics, docs from source, RPGUnit tests — [new in 1.1](features-data-quality.md). |
 | **Safe on production** | Mark a system Production (every change asks) or Read-only, a self-check with fixes, errors that explain what to do — [new in 1.2](features-safety.md). |
 | **See and share** | 5250 screen preview for display files, database diagrams, DEV ↔ PROD system compare, spooled files to PDF and e-mail — [new in 1.3](features-see-share.md). |
+| **2.0: 20 new helpers** | RPG code from a table, SQL formatter, find & replace in members, batch compile, print preview, test data, submit & watch, library list sets… — [new in 2.0](features-2-0.md). |
 | **Understand the code** | Object and source search, **where used**, go to definition into /COPY members, scoped rename and RPG code checks. |
 
 ## Start here
@@ -56,4 +57,4 @@ Something not working? See [Troubleshooting](troubleshooting.md).
 
 ---
 
-Current version: **1.3.0** · [Changelog](changelog.md) · Free and open source under the MIT License.
+Current version: **2.0.0** · [Changelog](changelog.md) · Free and open source under the MIT License.

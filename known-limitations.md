@@ -4,7 +4,7 @@ title: Known limitations
 nav_order: 10
 ---
 
-# Known limitations (1.3)
+# Known limitations (2.0)
 
 - **Several systems** can be connected, but the views show one (the active) system at a time.
 - **Where used** builds its cross-reference with DSPPGMREF in QTEMP, so it needs a Mapepire SQL engine (not db2util). Scanning large libraries takes a while.
@@ -31,6 +31,9 @@ nav_order: 10
 - **Screen preview** draws every field as if all indicators were on, and shows reference fields (REFFLD) without a length as 10 long; it does not run the program.
 - **Database diagram:** inferred relationships are guesses from column names — check them before relying on them.
 - **Spool to PDF (local)** uses the spool's text, so fonts, barcodes and graphics of AFP spools are not kept; use `vanthrex.spool.pdfMode: server` for those. E-mail needs SMTP set up on the IBM i.
+- **Print preview** prints each record format once and shows every field as if all indicators were on; it does not run the program.
+- **Find and replace** reads at most 1,000 members of a source file and skips members someone has open.
+- **Test data** fills every column with made-up values that fit its type; constraints, triggers and check rules on the table may still refuse some rows.
 - **Debugger** needs the IBM i Debug Service and IBM's IBM i Debug extension, and debugs programs in a batch job (no service entry points or 5250 screens yet) — see [Debugging](debugging.md).
 - **AI assistant** needs a chat model in VS Code (for example GitHub Copilot Chat). The code you ask about is sent to that model. Its read-only check blocks known side effects, but user-defined SQL functions can do anything — that is why Vanthrex asks before every query.
 - **Call graph** and **SQL Explain** need a Mapepire SQL engine. The call graph can't see dynamic calls (program names in variables).

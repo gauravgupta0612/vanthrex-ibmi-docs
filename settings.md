@@ -56,6 +56,7 @@ Open **File → Preferences → Settings** and search for *Vanthrex*, or edit `s
 | `vanthrex.selfCheck.onConnect` | boolean | `true` | Check the system the first time you connect to it in a session and warn about setup problems (SQL engine, CCSID, library list…). |
 | `vanthrex.spool.pdfMode` | string | `"local"` | How spooled files become PDF: "local" converts the text in VS Code (works everywhere); "server" asks the IBM i (CPYSPLF WSCST(*PDF)) and keeps fonts and graphics, falling back to local. Values: `local`, `server`. |
 | `vanthrex.compare.maxRows` | number | `50000` | Maximum rows read from each system when comparing a table across two systems. |
+| `vanthrex.ifs.followLines` | number | `500` | How many lines at the end of a file "Follow File (tail -f)" shows; it refreshes every 2 seconds. |
 
 ## RPG check rules
 

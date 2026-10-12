@@ -30,6 +30,7 @@ What is planned next. Ideas and votes are welcome in [GitHub issues](https://git
 - **1.1.0** — import / export (Excel, CSV, JSON), performance monitor, code metrics & documentation, RPGUnit tests.
 - **1.2.0** — production / read-only protection, self-check, plain-language errors.
 - **1.3.0** — screen preview, database diagram, compare two systems, spool to PDF & e-mail.
+- **2.0.0** — 20 new helpers for development, data and operations.
 
 - **0.6.0** — AI assistant (`@vanthrex`) with IBM i tools for Copilot agent mode, Git for IBM i source, call graph & impact analysis, several systems at once, SQL Explain, and H/F/D/P specs in the fixed → free converter.
 - **0.5.0** — IBM i debugger (batch debug with breakpoints, variables and call stack) and a debugger setup check.

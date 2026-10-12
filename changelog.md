@@ -6,6 +6,35 @@ nav_order: 90
 
 # Changelog
 
+## 2.0.0
+
+**Vanthrex for IBM i 2.0 — 20 new features**
+
+Development
+- **Generate RPG code for a table** (right-click a file): a qualified data structure plus get / add / update / delete procedures and a cursor loop in embedded SQL, using the table's key.
+- **Format SQL**: Db2 for i statements formatted with keywords in capitals and one clause per line (Shift+Alt+F in `.sql` files, or right-click → Format SQL).
+- **Find and replace in a source file** (right-click a source file): text, whole word or regular expression across every member, with a preview of each line before anything changes; source dates are kept and changed lines get today's date; members someone has open are skipped.
+- **Compile changed members** (right-click a source file): compile everything changed today, this week or this month — or pick members — with a result per member.
+- **Print preview for printer files**: a PRTF drawn on a page, following SKIPB / SPACEB / SKIPA / SPACEA, with a field table that jumps to the source line.
+- **Copy members to another source file** (CPYSRCF, keeps sequence numbers and dates) and **copy objects to another library** (CRTDUPOBJ, with or without data); **rename or move** an object.
+- **Find a CL command** by a word from its name or description, then prompt it with F4.
+
+Data
+- **Export as SQL INSERT statements**, next to Excel, CSV and JSON.
+- **Generate test data** for a table: rows that fit each column's type and length, keys continuing after the highest existing key, previewed before insert.
+- **Find duplicate rows** by any columns.
+- **Table statistics** of a library: rows, deleted rows, size, last change and last use.
+
+Operations
+- **Submit to batch and watch**: SBMJOB, then a status-bar spinner and a notification when the job ends — normally or not, with the job log and analysis one click away. **Watch This Job** does the same for any job in the Jobs view.
+- **My recent jobs**: your jobs of the last days, abnormal ends highlighted.
+- **Compare two spooled files** side by side — handy to check a program change did not alter a report.
+- **Follow an IFS file** like `tail -f`, refreshed every 2 seconds.
+- **Search text in IFS files** of a folder, optionally only some file names.
+- **Library list sets**: save named library lists (DEV, TEST, a project…) per system and switch between them in one click.
+
+All new screens are translated into the 7 languages.
+
 ## 1.3.0
 
 **New: see your screens and your database, compare two systems, and share spooled files**
