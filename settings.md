@@ -65,6 +65,7 @@ Open **File → Preferences → Settings** and search for *Vanthrex*, or edit `s
 | `vanthrex.memberStatusBar` | boolean | `true` | Show, for the member you are editing, whether its program is up to date with the source and who else has it open (status bar; click for details). |
 | `vanthrex.connections.autoReconnect` | boolean | `true` | When a connection drops (network, VPN, sleep), reconnect by itself with the saved sign-on: 5 attempts over about 2 minutes. Changes that could not be saved meanwhile are kept on this computer and saved when the system is back. |
 | `vanthrex.connections.healthCheckSeconds` | number | `60` | Check every N seconds that the active system still answers (a tiny query). A slow answer shows in the status bar; two misses in a row reconnect. `0` turns it off. |
+| `vanthrex.notes.sharedFile` | string | `""` | Share member notes with your team: an IFS file such as `/home/TEAM/vanthrex-notes.json` that everybody can read and write. Empty keeps notes on this computer only. |
 
 ## RPG check rules
 

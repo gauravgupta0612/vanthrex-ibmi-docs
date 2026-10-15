@@ -28,6 +28,27 @@ Stay connected when the network drops, create a library or an IFS folder from an
 
 With two systems connected, right-click a member or an IFS file (or use the editor menu) → *Copy to Another System…*. Pick the target system and name; the source file and member are created when missing, and you see how many lines would change before anything is written. A protected system still asks before the change.
 
+## Call a program with typed parameters
+
+Right-click a program → *Call Program (Typed Parameters)…* (also PDM option 16). Vanthrex finds the program's source (through its entry module for ILE programs), reads its parameter list — free-form `dcl-pi`, fixed `D … PI`, `*ENTRY PLIST`, or `PGM PARM(…)` in CL — and asks for each value with its type, checking it as you type.
+
+| Parameter | What a plain CALL passes | What Vanthrex passes |
+|---|---|---|
+| packed(9:2), value -12.5 | packed(15,5) — the program reads garbage | `X'000001250D'` |
+| zoned(5:2), value -1.23 | packed(15,5) | `'0012L'` |
+| int(10), value 42 | packed(15,5) | `X'0000002A'` |
+| char(50), value `ABC` | 32 bytes — the rest is whatever follows | `'ABC'` padded to 50 |
+
+Then run it, submit it to batch, or copy the command. Your last values are remembered per program. When the source cannot be found, describe the parameters yourself.
+
+## Who is signed on
+
+Jobs view toolbar, quick menu or System Tracker: every 5250 session (user, job, subsystem, status, what it is doing) and the server connections per user (ODBC/JDBC, file server, remote command, SSH…). Click a session for details, its job log, a break message, or to end it (controlled or immediately — asked first). *Message everyone signed on* sends a break message to every session.
+
+## Member notes
+
+Right-click a line in a member → *Add Note to This Line*. Notes appear at the end of the line and as a *📝 N notes* lens at the top of the member; they follow their line when code moves. *Notes on This Member* and *All Member Notes…* list them. To share notes with your team, set `vanthrex.notes.sharedFile` to an IFS file everybody can read and write (for example `/home/TEAM/vanthrex-notes.json`).
+
 ## Create Library
 
 Libraries view toolbar, quick menu (Ctrl+Alt+I), System Tracker, or F6 on the PDM library screen. Four short steps: name, text, *TEST or *PROD, and what else to do at the same time — add it to your library list, make it your current library, and create the usual source files (QRPGLESRC, QCLLESRC, QDDSSRC, QSQLSRC, QCPYSRC, QSRVSRC, QCMDSRC, record length 112). At the end you can open it in PDM.

@@ -21,6 +21,12 @@ nav_order: 90
 - **Editors come back:** member and IFS tabs that could not be read while offline (for example after restarting VS Code) reopen by themselves once you are connected.
 - **Disconnect asks first** when members or IFS files have unsaved changes (*Save and Disconnect* / *Disconnect Anyway*).
 
+**Call, sign-on and notes**
+
+- **Call Program (Typed Parameters)…** (right-click a program, PDM option 16): reads the parameters from the program's source — free-form `dcl-pi`, fixed `D … PI`, `*ENTRY PLIST` or a CL `PGM PARM(…)` — asks for each value with its type, checks it as you type, and builds a CALL the program receives exactly: packed, zoned and integer values become the right hex or zoned literals instead of the packed(15,5) that a plain CALL passes, and long character parameters are padded. Run it, submit it to batch or copy the command; your last values are remembered.
+- **Who Is Signed On** (Jobs view toolbar, quick menu, System Tracker): every 5250 session and the server connections per user (ODBC/JDBC, file server, remote command, SSH…); for a session: details, job log, a break message or ending it (asked first); **Message everyone signed on**.
+- **Member notes:** right-click a line → *Add Note to This Line*; notes show at the end of the line and as a *📝 N notes* lens at the top, follow the line when code moves, and are listed with *All Member Notes…*. Share them with your team through an IFS file (`vanthrex.notes.sharedFile`).
+
 **New tools**
 
 - **Source Quality Report** (right-click a source file): every RPG member checked — code checks, share of fixed format, numbered indicators, GOTO / CABxx, subroutines and procedures — with a score and a grade from A to E, lowest first, and the most frequent findings for the whole file.

@@ -7,7 +7,7 @@ parent: "Reference"
 
 # Commands
 
-All 282 commands contributed by Vanthrex for IBM i 2.3.0. Run any of them from the
+All 289 commands contributed by Vanthrex for IBM i 2.3.0. Run any of them from the
 Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-click menus and view toolbars.
 
 | Command | ID | Keys |
@@ -19,6 +19,7 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Add Library to Library List | `vanthrex.tracker.addLibrary` |  |
 | Add Library… | `vanthrex.addLibrary` |  |
 | Add Message Description… | `vanthrex.messageFile.add` |  |
+| Add Note to This Line… | `vanthrex.notes.add` |  |
 | Add User to Authorization List… | `vanthrex.secadm.addAutlEntry` |  |
 | AI: Ask the IBM i Assistant… | `vanthrex.ai.open` |  |
 | AI: Document This Code | `vanthrex.ai.document` |  |
@@ -30,6 +31,7 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | AI: Open SQL in Scratchpad | `vanthrex.ai.openSql` |  |
 | AI: Review This Code | `vanthrex.ai.review` |  |
 | AI: Write SQL from a Description… | `vanthrex.ai.sql` |  |
+| All Member Notes… | `vanthrex.notes.all` |  |
 | Analyze Job Log | `vanthrex.analyzeJobLog` |  |
 | Apply Replace | `vanthrex.replaceInSourceFile.apply` |  |
 | Authorization List Entries | `vanthrex.secadm.autlEntries` |  |
@@ -38,6 +40,7 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Call a Web API from the IBM i… | `vanthrex.callWebApi` |  |
 | Call Graph… | `vanthrex.callGraph` |  |
 | Call Program | `vanthrex.objectCall` |  |
+| Call Program (Typed Parameters)… | `vanthrex.callTyped` |  |
 | Can the IBM i Reach This Host? (Ping)… | `vanthrex.networkTest` |  |
 | Cancel SQL Statement… | `vanthrex.activeSql.cancel` |  |
 | Change Character Set (CCSID)… | `vanthrex.ifsCcsid.change` |  |
@@ -157,6 +160,7 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Member Lock: End Holder's Job… | `vanthrex.lockEndJob` |  |
 | Member Lock: Notify Me When Free | `vanthrex.lockWatch` |  |
 | Member Lock: Options… | `vanthrex.lockActions` |  |
+| Message Everyone Signed On… | `vanthrex.signedOn.broadcast` |  |
 | Message Options | `vanthrex.messageQueue.row` |  |
 | Move Down | `vanthrex.pin.moveDown` |  |
 | Move Up | `vanthrex.pin.moveUp` |  |
@@ -167,6 +171,7 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | New Member… | `vanthrex.newMember` |  |
 | New Source File… | `vanthrex.newSourceFile` |  |
 | New SQL Scratchpad | `vanthrex.newSqlScratchpad` |  |
+| Notes on This Member | `vanthrex.notes.show` |  |
 | Object Information | `vanthrex.objectInfo` |  |
 | Objects Built from This Source | `vanthrex.builtFrom` |  |
 | Objects Out of Sync with Source | `vanthrex.outOfSync` |  |
@@ -239,6 +244,7 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Send Data Queue Entry… | `vanthrex.sendDataQueue` |  |
 | Send Message to Queue… | `vanthrex.messageQueue.send` |  |
 | Send Message… | `vanthrex.sendMessage` |  |
+| Session Options | `vanthrex.signedOn.row` |  |
 | Set *PUBLIC Authority | `vanthrex.publicAuthority.set` |  |
 | Set as Current Library | `vanthrex.setCurrentLibrary` |  |
 | Set Protection (Production / Read-Only)… | `vanthrex.setProtection` |  |
@@ -279,6 +285,7 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Who Calls Each Exported Procedure?… | `vanthrex.procedureCallers` |  |
 | Who Has This Object Locked? | `vanthrex.objectLocks` |  |
 | Who Is Locking Rows? | `vanthrex.rowLocks` |  |
+| Who Is Signed On | `vanthrex.signedOn` |  |
 | Work with Binding Directory | `vanthrex.bindingDirectory` |  |
 | Work with Job Queues | `vanthrex.wrkJobQueues` |  |
 | Work with Job Schedule Entries | `vanthrex.wrkJobSchedule` |  |
