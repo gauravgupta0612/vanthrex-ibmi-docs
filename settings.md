@@ -59,6 +59,10 @@ Open **File → Preferences → Settings** and search for *Vanthrex*, or edit `s
 | `vanthrex.ifs.followLines` | number | `500` | How many lines at the end of a file "Follow File (tail -f)" shows; it refreshes every 2 seconds. |
 | `vanthrex.templates` | array | `[]` | Your own templates for "New Member from Template…": name, source type (RPGLE, CLLE, SQL…), description and text. &NAME, &TEXT, &DATE and &USER are filled in. |
 | `vanthrex.scan.allowedLibraries` | array | `[]` | Libraries that may be named in source without being reported by "Find Hard-Coded Libraries" (IBM libraries and QTEMP are always allowed). |
+| `vanthrex.pdm.userOptions` | object | `{}` | PDM user-defined options (F16): option code → CL command. Variables: `&L` library, `&F` file, `&N` name, `&T` type, `&A` attribute, `&O` object library, `&U` user, `&X` text. Built-in: CB, CS, CC, DF, PF, RS (set one to an empty string to hide it). |
+| `vanthrex.compileOnSave` | string | `"off"` | Compile a source member after you save it: `off`, `ask` (a notification with Compile / Always / Not now) or `always`. Copy members (INC, RPGLEINC…) are never compiled. Values: `off`, `ask`, `always`. |
+| `vanthrex.compileOnSave.types` | array | `[]` | Only compile on save these source types (for example `RPGLE`, `SQLRPGLE`). Empty = every type that can be compiled. |
+| `vanthrex.memberStatusBar` | boolean | `true` | Show, for the member you are editing, whether its program is up to date with the source and who else has it open (status bar; click for details). |
 
 ## RPG check rules
 

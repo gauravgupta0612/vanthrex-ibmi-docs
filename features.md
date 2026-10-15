@@ -35,6 +35,8 @@ Every feature, what it does, why it helps and how to use it.
 | [See and share](features-see-share.md) *(new in 1.3)* | 5250 screen preview, database diagrams, compare two systems, spooled files to PDF / e-mail. |
 | [New in 2.0](features-2-0.md) *(new in 2.0)* | 20 helpers: RPG code from a table, SQL formatter, find & replace across members, compile changed members, print preview, test data, submit & watch, library list sets and more. |
 | [Security Admin and more](features-security-admin.md) *(2.1)* | User profiles, groups and authorization lists for *SECADM users; objects out of sync with source, release notes, templates, row locks, running SQL, exit points, bulk authority, job details, QHST, indicator usage, IFS CCSID, ping and web API calls. |
+| [PDM in one screen](features-pdm.md) *(new in 2.2)* | WRKLIBPDM, WRKOBJPDM and WRKMBRPDM in one view: option numbers, F-keys, subset, user-defined options. |
+| [System Tracker](features-tracker.md) *(new in 2.2)* | The whole system in one page: what needs attention, every library, jobs, storage, QSYSOPR, users, PTFs and your own work. |
 | [Debugging](debugging.md) | Breakpoints, stepping, variables and call stack for RPG, COBOL and CL (new in 0.5). |
 
 New to the extension? Start with [Installation](installation.md) and [Your first connection](first-connection.md).

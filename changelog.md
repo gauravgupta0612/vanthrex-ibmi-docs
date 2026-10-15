@@ -6,6 +6,69 @@ nav_order: 90
 
 # Changelog
 
+## 2.2.0
+
+**New: System Tracker — the whole system in one place**
+
+- **One button** (the pulse icon in the Connections view, the inline button on the active connection, Ctrl+Alt+T, or the quick menu) opens a page with tabs:
+  - **Overview:** system and release, CPU, system ASP use, jobs, waiting jobs, QSYSOPR replies, time since IPL, PTF level, libraries and your compile results as colour-coded tiles — and **Needs attention**: ASP almost full, inquiry messages, MSGW / LCKW jobs, high CPU, sources that did not compile, library list entries that do not exist, expired passwords — each with a button that takes you there.
+  - **Libraries:** every library on the system with type, text, owner, created and last-used dates and its place in your library list; filter, sort, hide IBM libraries, and calculate objects and size on request. Each row: open in PDM, add to the library list, pin, storage advisor.
+  - **Jobs:** waiting jobs (MSGW, LCKW), the top jobs by CPU and the subsystems — with details, job log and live job log on every job.
+  - **Storage**, **QSYSOPR** (latest messages, inquiries highlighted, Explain, the sender's job log), **Users** (enabled, disabled, not signed on for 90 days, expired passwords, *ALLOBJ / *SECADM profiles), **PTFs & software** and **My work** (your jobs, spooled files, members changed in your library list in the last 7 days, broken compiles, pins).
+- **Libraries tab shows every library** (it showed only QSYS: `OBJECT_STATISTICS('QSYS', '*LIB')` returns QSYS itself). Libraries are now read with `OBJECT_STATISTICS('*ALL', '*LIB')`, completed from the SQL catalog (SYSSCHEMAS). The same fix applies to PDM (WRKLIBPDM), Self-check and *Add library*, which could report existing libraries as missing.
+- **Libraries tab:** tiles for libraries you can see, user and TEST libraries, your library list (and missing entries), libraries not used for a year (cleanup candidates), measured size and *your special authorities*; with *ALLOBJ every library is listed. Filter *Not used for a year*; *Calculate objects and size* now measures every library that passes the filters (not only the rows on screen), and sizes are remembered per system.
+- **Storage tab:** largest libraries (measured). **Every table:** *Export CSV*. **Auto-refresh** every minute (header).
+- **Jobs:** the counts are exact (the badge showed the 200-row query limit). The badge counts jobs waiting for a reply (MSGW); LCKW is counted only for batch and interactive jobs.
+- **Health score:** the Overview opens with one number from 0 to 100 (✓ healthy, ⚠ keep an eye on it, ✗ action needed) and the reasons that lowered it (disk, messages waiting, MSGW jobs, CPU, QSECURITY, security settings…), with its trend.
+- **Trends:** CPU, system ASP and jobs keep their history between refreshes (per system) and show a small trend line; CPU and ASP also show a meter. Problems are listed red first.
+- **Queues tab:** job queues (held, or not attached to a subsystem, while jobs wait — flagged) and output queues by number of spooled files, with **Hold / Release** (asked first, protection respected).
+- **Network tab:** every listening port with the service behind it (SSH, Telnet, host servers, Mapepire, DRDA…), its open connections, which services are not encrypted, and the addresses with the most connections.
+- **Security settings** on the Users tab: QSECURITY, QPWDLVL, QMAXSIGN, QPWDEXPITV, QPWDMINLEN, QAUDCTL, QCRTAUT, QINACTITV and QALWOBJRST with ✓ / ⚠ / ✗ and what to change.
+- **Copy summary:** a short Markdown summary of the system (score, key numbers, what needs attention) to paste into a chat or a ticket.
+- **Scheduled jobs tab:** the whole job schedule (next run first, today's runs highlighted, held entries flagged) with **Hold / Release**.
+- **Journals tab:** journals in user libraries, largest first — receivers kept, total size, journaled objects; 50+ receivers or 10 GB+ flagged for cleanup.
+- **What changed tab:** objects changed today or in 7 days, or the largest objects — in your library list (fast) or every user library — with information, PDM and locks on each.
+- **All systems tab:** every system you are connected to side by side (health score, CPU, ASP, MSGW, QSYSOPR replies) — *Open* switches to it.
+- **Subsystems** with status and maximum jobs (full ones flagged), and **failed sign-on attempts** on the Users tab.
+- **Save report:** the whole tracker as one HTML page (light theme, prints well) to send to your team or keep as a record.
+- Every part is read independently: if one IBM i service is missing on a release or you are not authorized to it, the rest of the page still works and that part says why.
+
+**Fixed**
+
+- **Members could not be saved after PDM option 5** (issue #3): *Display* marked the member read-only for the whole VS Code session, so editing it later (option 2 or the Libraries view) showed a 🔒 and Ctrl+S did nothing. Option 5 now opens a separate read-only view; members already stuck are made editable again as soon as you switch to them.
+- **A save no longer fails when the source-date save hits a technical problem** (QTEMP, SQL job…): the member is saved without source dates and you are told. Data problems (line too long, characters the CCSID cannot hold) still stop the save, so nothing is lost.
+- **PDM option 14 compiled the active editor** instead of the member on the row; it now compiles each member you typed 14 on.
+
+**New: history, live job logs and pins**
+
+- **Compile History** (Libraries view menu, quick menu): every compile on this computer — when, which source, which object, ✓ / ✗ with errors and warnings, on which system. *Broken right now* lists the sources whose last compile failed, with **Recompile the broken sources** in one click.
+- **Show My Changes Since the Last Compile** (editor menu, member menu, PDM option **SC**, or from *Objects Built from This Source*): highlights the lines changed after the program was last compiled, with a list to jump to each one.
+- **Live Job Log** (right-click a job, or quick menu): new job log messages stream into an output panel every few seconds; escape messages and severity 30+ pop up with **Explain**; it stops by itself when the job ends.
+- **Pinned view:** pin the members, source files, libraries, objects and IFS files you use every day (right-click → *Pin / Unpin*, or **PN** in PDM). One click opens a member, a source file or library in PDM, an object's information or an IFS file; pins are kept per system and can be reordered.
+- **Batch compiles no longer stop on the first failure:** the error notification no longer has to be closed before the next member of a PDM option 14 batch, compile on save or *Recompile broken* runs.
+
+**New: knowing what your source became**
+
+- **Objects Built from This Source** (right-click a member or in the editor, or PDM option **OB**): every program and service program compiled from the member (QSYS2.PROGRAM_INFO for OPM, BOUND_MODULE_INFO for ILE modules), when, and whether the source changed after the compile — with *Compile now*.
+- **Member status bar:** while you edit a member, the status bar shows ✓ the program it went into, ⚠ how many objects are out of date with your source, or that it was never compiled — and 🔒 who else has the member open. Click for details (`vanthrex.memberStatusBar`).
+- **Compile on save** (`vanthrex.compileOnSave`: off / ask / always, optionally only for some source types): copy members are never compiled.
+- **Find & Open Member…** (Ctrl+Alt+M) now searches your library list or every user library, accepts a source type (`ORD* RPGLE`), sorts by library-list order (first = what *LIBL would use) and opens the result in the editor, in PDM, or shows the objects built from it.
+
+**New: PDM in one screen — Work with Libraries, Objects and Members using PDM**
+
+- **The PDM you know, in VS Code:** right-click a library, a source file or a file and choose *Work with Using PDM…* (or the list button on the Libraries view, the quick menu, or type `WRKMBRPDM FILE(LIB/QRPGLESRC)`, `WRKOBJPDM LIB(X)`, `WRKLIBPDM LIB(A*)` or `STRPDM` in *Run CL Command*).
+- **Type options and press Enter**, on as many rows as you like, with the PDM numbers: members 2 edit, 3 copy, 4 delete, 5 display (read-only), 6 print, 7 rename, 8 description, 13 change text and type, 14 compile, 15 create module, 16 local history, 25 find string, 54 compare two members; objects 4, 5, 7, 8, 11 move, 12 work with members, 13, 15 duplicate, 16 call, 18 edit data, 34 debug; libraries 5 / 12 work with objects, 8, 13. Deletes are confirmed once for the whole batch.
+- **Function keys:** F3 exit, F5 refresh, F6 create (member, source file or library), F9 undo delete, F12 back, F13 repeat an option down the list, F16 user-defined options, F17 subset, F21 export the list to CSV, F23 more options. Shift+F1…F12 work as F13…F24 like in a 5250 emulator; ↑ / ↓ move between option fields.
+- **All source files at once:** type `*ALL` (or a generic name like `Q*SRC`) in *File* — or `WRKMBRPDM FILE(MYLIB/*ALL)`, or option **AM** on a library — to list the members of every source file of a library in one list, with a *File* column; every option works across files.
+- **Subset and position to:** generic names (ORD*, \*CUST\*), type, text, changed since, *Needs compile*, *In use*, or click a type chip (RPGLE 120, CLLE 30…); click a column to sort, double-click a row for its usual option.
+- **User-defined options (F16)** with PDM variables &L &F &N &T &A &O &U &X, and parameters from the command line appended (for example `CB` + `TGTRLS(V7R4M0)`). Built-in: CB, CS, CC, DF, PF, RS (RUNSQLSTM) (`vanthrex.pdm.userOptions`).
+- **Robust by design:**
+  - **Undo delete (F9):** members removed with option 4 are copied first and can be put back with F9 (or `UNDO` on the command line); copies are also kept on disk. Members in use by another job are not deleted or renamed.
+  - **Failed options stay on their rows** with the IBM i message (CPF…) in the Status column, so you fix and press Enter again — like PDM, but with the reason.
+  - **Batches show progress and can be cancelled;** more than 10 changing options ask first. Renames to an existing name are stopped before they run.
+- **See more at a glance:** an *Object* column (✓ up to date, ⚠ source changed after the last compile, ○ not compiled yet — in your object library), an *In use by* column with the job that has the member open, and a **preview pane** (tick *Preview*, click a member or move with the arrow keys).
+- **Extras PDM never had:** Git history (GH), unused code (UC), hard-coded libraries (HL), where used (WU), who has it locked (LK), what depends on this file (DP), source files only (SF), add to library list (LL), set current library (CL), a status column per row and recently used lists.
+
 ## 2.1.0
 
 **New: Security Admin center for users with *SECADM**
