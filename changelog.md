@@ -13,11 +13,20 @@ nav_order: 90
 - **Create Library…** (Libraries view toolbar, quick menu, System Tracker, F6 in PDM): name, text, *TEST or *PROD, and in the same step add it to your library list, make it your current library and create the usual source files (QRPGLESRC, QCLLESRC, QDDSSRC, QSQLSRC, QCPYSRC, QSRVSRC, QCMDSRC) — then open it in PDM.
 - **Create IFS Folder or File…** (IFS view toolbar, right-click a folder, quick menu, System Tracker): any path, missing parent folders created, new files tagged UTF-8 (CCSID 1208) and opened in the editor, optional permissions (chmod).
 
+**More stable connections**
+
+- **Automatic reconnect:** when the connection drops (network, VPN, laptop sleep), Vanthrex reconnects by itself with your saved sign-on — 5 attempts over about 2 minutes, shown in the status bar — and makes that system active again (`vanthrex.connections.autoReconnect`). Disconnecting on purpose never reconnects.
+- **Connection health:** every minute a tiny query checks that the active system still answers; a slow answer shows its response time in the status bar, and a system that stops answering is reconnected even when SSH did not notice (`vanthrex.connections.healthCheckSeconds`, *Check Connection Health*, *Reconnect Now*).
+- **No lost saves:** if a member or IFS file cannot be saved because the connection is gone, the change is kept on this computer and offered for saving as soon as the system is back (*Save Now*, *Show*, *Discard*; *Changes Kept While Offline…*).
+- **Editors come back:** member and IFS tabs that could not be read while offline (for example after restarting VS Code) reopen by themselves once you are connected.
+- **Disconnect asks first** when members or IFS files have unsaved changes (*Save and Disconnect* / *Disconnect Anyway*).
+
 **New tools**
 
 - **Source Quality Report** (right-click a source file): every RPG member checked — code checks, share of fixed format, numbered indicators, GOTO / CABxx, subroutines and procedures — with a score and a grade from A to E, lowest first, and the most frequent findings for the whole file.
 - **Library list from a job description or a user profile**: see what changes, then replace your library list or add the missing libraries (*SYSVAL follows QUSRLIBL).
 - **\*PUBLIC Authority Scan** (right-click a library, or *PUBLIC in the System Tracker): objects that give *ALL or *CHANGE to everybody, riskiest first, with a one-click fix to *PUBLIC *USE (asked first).
+- **Copy to Another System…** (right-click a member or IFS file, or the editor menu, with two systems connected): copy a member or a stream file from one system to another — the target source file and member are created when missing, and you see how many lines change before anything is written; protected systems still ask.
 - **Compare System Values with Another System** (Connections view with two systems connected, or the *All systems* tab): what differs between DEV and PROD, with the values that differ on purpose (dates, serial numbers, devices) kept apart.
 
 ## 2.2.0

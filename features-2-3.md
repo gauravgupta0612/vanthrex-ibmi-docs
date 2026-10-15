@@ -1,18 +1,32 @@
 ---
 layout: default
-title: "Create & check (2.3)"
+title: "New in 2.3"
 nav_order: 26
 parent: "Features"
 ---
 
-# Create & check (2.3)
+# New in 2.3: create, check and stay connected
 {: .no_toc }
 
-Create a library or an IFS folder from anywhere, grade your RPG sources, take a library list from a job description, find objects open to everybody and compare two systems.
+Stay connected when the network drops, create a library or an IFS folder from anywhere, grade your RPG sources, take a library list from a job description, find objects open to everybody and compare two systems.
 {: .fs-6 .fw-300 }
 
 1. TOC
 {:toc}
+
+## Stable connections
+
+| What happens | What Vanthrex does |
+|---|---|
+| The network, VPN or laptop sleep drops the connection | Reconnects by itself with the saved sign-on: 5 attempts over about 2 minutes, shown in the status bar; the system becomes active again. Turn off with `vanthrex.connections.autoReconnect`. |
+| The system stops answering but SSH did not notice | Every minute (`vanthrex.connections.healthCheckSeconds`) a tiny query checks it; a slow answer shows its time in the status bar, two misses in a row reconnect. *Check Connection Health* and *Reconnect Now* are on the active connection. |
+| You save while the connection is gone | The change is kept on this computer and offered for saving when the system is back (*Save Now*, *Show*, *Discard*); *Changes Kept While Offline…* lists them. |
+| VS Code restarts with member or IFS tabs open | The tabs that could not be read reopen by themselves once you are connected. |
+| You disconnect with unsaved members | You are asked: *Save and Disconnect* or *Disconnect Anyway*. |
+
+## Copy to Another System
+
+With two systems connected, right-click a member or an IFS file (or use the editor menu) → *Copy to Another System…*. Pick the target system and name; the source file and member are created when missing, and you see how many lines would change before anything is written. A protected system still asks before the change.
 
 ## Create Library
 

@@ -7,7 +7,7 @@ parent: "Reference"
 
 # Commands
 
-All 278 commands contributed by Vanthrex for IBM i 2.3.0. Run any of them from the
+All 282 commands contributed by Vanthrex for IBM i 2.3.0. Run any of them from the
 Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-click menus and view toolbars.
 
 | Command | ID | Keys |
@@ -44,9 +44,11 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Change Data Area Value… | `vanthrex.editDataArea` |  |
 | Change Owner or Authority of Many Objects… | `vanthrex.bulkOwnerAuthority` |  |
 | Change Permission… | `vanthrex.ifsPermissions.row` |  |
+| Changes Kept While Offline… | `vanthrex.pendingSaves` |  |
 | Character Set (CCSID)… | `vanthrex.ifsCcsid` |  |
 | Check /COPY Usage (Find Unused Copybooks) | `vanthrex.checkCopybooks` |  |
 | Check Authority (Can a User Use This?)… | `vanthrex.checkAuthority` |  |
+| Check Connection Health | `vanthrex.connection.health` |  |
 | Choose Which Jobs to Show… | `vanthrex.filterJobs` |  |
 | Clear Compile History | `vanthrex.compileHistory.clear` |  |
 | Clear Data Queue… | `vanthrex.clearDataQueue` |  |
@@ -72,6 +74,7 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Copy Release Notes | `vanthrex.changeReport.copy` |  |
 | Copy Self-Check Report | `vanthrex.selfCheck.copy` |  |
 | Copy System Summary | `vanthrex.tracker.copySummary` |  |
+| Copy to Another System… | `vanthrex.copyToSystem` |  |
 | Copy User Profile… | `vanthrex.secadm.copyUser` |  |
 | Create Advised Index | `vanthrex.createAdvisedIndex` |  |
 | Create Authorization List… | `vanthrex.secadm.createAutl` |  |
@@ -193,6 +196,7 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Prompt and Run CL Command (F4)… | `vanthrex.promptCl` |  |
 | PTF & System Health | `vanthrex.systemHealth` |  |
 | Recompile Broken Sources | `vanthrex.compileHistory.recompileBroken` |  |
+| Reconnect Now | `vanthrex.connection.reconnectNow` |  |
 | Refresh | `vanthrex.refreshLibraries` |  |
 | Refresh | `vanthrex.refreshIfs` |  |
 | Refresh | `vanthrex.refreshSpool` |  |
