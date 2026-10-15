@@ -6,6 +6,20 @@ nav_order: 90
 
 # Changelog
 
+## 2.3.0 (not released yet)
+
+**Create from anywhere**
+
+- **Create Library…** (Libraries view toolbar, quick menu, System Tracker, F6 in PDM): name, text, *TEST or *PROD, and in the same step add it to your library list, make it your current library and create the usual source files (QRPGLESRC, QCLLESRC, QDDSSRC, QSQLSRC, QCPYSRC, QSRVSRC, QCMDSRC) — then open it in PDM.
+- **Create IFS Folder or File…** (IFS view toolbar, right-click a folder, quick menu, System Tracker): any path, missing parent folders created, new files tagged UTF-8 (CCSID 1208) and opened in the editor, optional permissions (chmod).
+
+**New tools**
+
+- **Source Quality Report** (right-click a source file): every RPG member checked — code checks, share of fixed format, numbered indicators, GOTO / CABxx, subroutines and procedures — with a score and a grade from A to E, lowest first, and the most frequent findings for the whole file.
+- **Library list from a job description or a user profile**: see what changes, then replace your library list or add the missing libraries (*SYSVAL follows QUSRLIBL).
+- **\*PUBLIC Authority Scan** (right-click a library, or *PUBLIC in the System Tracker): objects that give *ALL or *CHANGE to everybody, riskiest first, with a one-click fix to *PUBLIC *USE (asked first).
+- **Compare System Values with Another System** (Connections view with two systems connected, or the *All systems* tab): what differs between DEV and PROD, with the values that differ on purpose (dates, serial numbers, devices) kept apart.
+
 ## 2.2.0
 
 **New: System Tracker — the whole system in one place**

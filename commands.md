@@ -7,11 +7,12 @@ parent: "Reference"
 
 # Commands
 
-All 271 commands contributed by Vanthrex for IBM i 2.2.0. Run any of them from the
+All 278 commands contributed by Vanthrex for IBM i 2.3.0. Run any of them from the
 Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-click menus and view toolbars.
 
 | Command | ID | Keys |
 |---|---|---|
+| *PUBLIC Authority Scan | `vanthrex.publicAuthorityScan` |  |
 | Add Binding Directory Entry… | `vanthrex.bnddir.add` |  |
 | Add IBM i Connection… | `vanthrex.addConnection` |  |
 | Add Job Schedule Entry… | `vanthrex.addJobSchedule` |  |
@@ -51,6 +52,7 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Clear Data Queue… | `vanthrex.clearDataQueue` |  |
 | Clear SQL History | `vanthrex.clearSqlHistory` |  |
 | Code Metrics | `vanthrex.codeMetrics` |  |
+| Compare System Values with Another System… | `vanthrex.compareSystemValues` |  |
 | Compare Table Data (DEV ↔ PROD)… | `vanthrex.compareData` |  |
 | Compare Table Structure… | `vanthrex.compareStructure` |  |
 | Compare Two Libraries… | `vanthrex.compareLibraries` |  |
@@ -73,6 +75,8 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Copy User Profile… | `vanthrex.secadm.copyUser` |  |
 | Create Advised Index | `vanthrex.createAdvisedIndex` |  |
 | Create Authorization List… | `vanthrex.secadm.createAutl` |  |
+| Create IFS Folder or File… | `vanthrex.createIfs` |  |
+| Create Library… | `vanthrex.createLibrary` |  |
 | Create User Profile… | `vanthrex.secadm.createUser` |  |
 | Database Diagram | `vanthrex.databaseDiagram` |  |
 | Debug Program | `vanthrex.debugProgram` | Ctrl+Alt+G |
@@ -141,6 +145,7 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Journal Explorer: Who Changed This Table? | `vanthrex.journalExplorer` |  |
 | Journal Options | `vanthrex.journals.row` |  |
 | Journals | `vanthrex.journals` |  |
+| Library List from a Job Description or User Profile… | `vanthrex.libraryListFromJobd` |  |
 | Library List Sets… | `vanthrex.librarySets` |  |
 | Live Alerts | `vanthrex.alerts.show` |  |
 | Live Job Log | `vanthrex.jobLogLive` |  |
@@ -230,6 +235,7 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Send Data Queue Entry… | `vanthrex.sendDataQueue` |  |
 | Send Message to Queue… | `vanthrex.messageQueue.send` |  |
 | Send Message… | `vanthrex.sendMessage` |  |
+| Set *PUBLIC Authority | `vanthrex.publicAuthority.set` |  |
 | Set as Current Library | `vanthrex.setCurrentLibrary` |  |
 | Set Protection (Production / Read-Only)… | `vanthrex.setProtection` |  |
 | Show IBM i Quick Menu | `vanthrex.showMenu` | Ctrl+Alt+I |
@@ -241,6 +247,7 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Show Queries Running Now | `vanthrex.activeQueries` |  |
 | Show Save File Contents | `vanthrex.saveFileContents` |  |
 | Sort Members by Name / Date | `vanthrex.sortMembers` |  |
+| Source Quality Report | `vanthrex.sourceQuality` |  |
 | Spooled Files on Output Queue | `vanthrex.wrkOutputQueue` |  |
 | SQL History… | `vanthrex.sqlHistory` |  |
 | Stop Live Job Log | `vanthrex.jobLogLive.stop` |  |
