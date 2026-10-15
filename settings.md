@@ -66,6 +66,7 @@ Open **File → Preferences → Settings** and search for *Vanthrex*, or edit `s
 | `vanthrex.connections.autoReconnect` | boolean | `true` | When a connection drops (network, VPN, sleep), reconnect by itself with the saved sign-on: 5 attempts over about 2 minutes. Changes that could not be saved meanwhile are kept on this computer and saved when the system is back. |
 | `vanthrex.connections.healthCheckSeconds` | number | `60` | Check every N seconds that the active system still answers (a tiny query). A slow answer shows in the status bar; two misses in a row reconnect. `0` turns it off. |
 | `vanthrex.notes.sharedFile` | string | `""` | Share member notes with your team: an IFS file such as `/home/TEAM/vanthrex-notes.json` that everybody can read and write. Empty keeps notes on this computer only. |
+| `vanthrex.dsLayout.hover` | boolean | `true` | Show the position and length of a data structure subfield when you hover over its definition. |
 
 ## RPG check rules
 

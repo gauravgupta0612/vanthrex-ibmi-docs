@@ -27,6 +27,13 @@ nav_order: 90
 - **Who Is Signed On** (Jobs view toolbar, quick menu, System Tracker): every 5250 session and the server connections per user (ODBC/JDBC, file server, remote command, SSH…); for a session: details, job log, a break message or ending it (asked first); **Message everyone signed on**.
 - **Member notes:** right-click a line → *Add Note to This Line*; notes show at the end of the line and as a *📝 N notes* lens at the top, follow the line when code moves, and are listed with *All Member Notes…*. Share them with your team through an IFS file (`vanthrex.notes.sharedFile`).
 
+**Layout, includes, signatures and failed jobs**
+
+- **Data Structure Layout** (right-click in an RPG source): every subfield of the data structure at the cursor with its type, from and to positions and length in bytes — free and fixed form, POS, OVERLAY (also `*NEXT`), DIM, LIKE and LIKEDS within the source, and EXTNAME / externally described structures with their fields read from the database. Hover a subfield definition to see its positions; copy the layout as a Markdown table.
+- **Show Source with /COPY Expanded** (right-click in an RPG source): a read-only copy of the source with every /COPY and /INCLUDE merged in place (nested ones too, each marked with where it starts and ends), so you can read or search the whole program the way the compiler sees it.
+- **Check Service Program Signatures** (right-click a service program): every program and service program bound to it, with the ones that would fail with a signature violation at the next call shown first, and a one-click re-bind (UPDPGM / UPDSRVPGM with MODULE(*NONE), asked first) — one object or all of them.
+- **Failed Jobs** (Jobs view toolbar, quick menu, System Tracker): jobs that ended abnormally in the last hour, day or week from the history log, with the meaning of each end code, which job names fail most, and their job log one click away.
+
 **New tools**
 
 - **Source Quality Report** (right-click a source file): every RPG member checked — code checks, share of fixed format, numbered indicators, GOTO / CABxx, subroutines and procedures — with a score and a grade from A to E, lowest first, and the most frequent findings for the whole file.

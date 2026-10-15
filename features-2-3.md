@@ -82,3 +82,44 @@ Right-click a library, or *PUBLIC on a library in the System Tracker. Objects th
 ## Compare System Values
 
 With two systems connected: Connections view (… menu) or the *All systems* tab of the System Tracker. Values that differ come first; values that differ on purpose (dates, serial numbers, devices) are listed apart.
+
+## Data Structure Layout
+
+Right-click in an RPG source → *Data Structure Layout (Positions and Lengths)*, with the cursor in a data structure (otherwise you pick one). You get every subfield with its type, from and to positions and length in bytes, like the compile listing — without compiling:
+
+- free form (`dcl-ds`) and fixed form (`D … DS`, from/to or length notation);
+- `POS`, `OVERLAY` (also `*NEXT`), `DIM` (arrays count all elements), `LEN`;
+- `LIKE` and `LIKEDS` of definitions in the same source;
+- `EXTNAME` and externally described structures: the fields are read from the database (your library list, or the library in `EXTNAME('LIB/FILE')`).
+
+When a length cannot be known (for example `LIKE` of something in a copy member), the later positions are left empty and the page says why. Hover a subfield definition to see its positions (`vanthrex.dsLayout.hover`), and *Copy as a Markdown table* for documentation.
+
+## Show Source with /COPY Expanded
+
+Right-click in an RPG source → *Show Source with /COPY Expanded*. A read-only copy opens beside the source with every `/COPY` and `/INCLUDE` replaced by the member it names — nested ones too — between `>>>>>` and `<<<<<` comments. A member that is included twice is not repeated, and one that is not found is marked. Nothing is saved on the system.
+
+## Check Service Program Signatures
+
+Right-click a service program → *Check Service Program Signatures*, and search your library list or all libraries. You see every program and service program bound to it:
+
+| State | Meaning |
+|---|---|
+| Signature violation | The bound signature is no longer exported: the program fails when it calls the service program |
+| Older signature | Still valid because the binder source keeps the old signature |
+| Current signature | Fine |
+
+Click a failing object, or *Re-bind all failing objects*, to run `UPDPGM` / `UPDSRVPGM … MODULE(*NONE) BNDSRVPGM(…)` (asked first). This only picks up the current signature: recompile instead when procedures were removed or their parameters changed. Needs IBM i 7.3 or later with a recent Db2 PTF group.
+
+## Failed Jobs
+
+Jobs view toolbar, quick menu or the System Tracker. Jobs that ended with end code 20 or higher (or 10 and higher, if you include controlled ends) in the last hour, day or week, read from the CPF1164 messages in the history log:
+
+| End code | Meaning |
+|---|---|
+| 20 | Exceeded the end severity (ENDSEV) |
+| 30 | Ended abnormally |
+| 40 / 50 | Ended before or while active |
+| 60 / 70 | Subsystem or system ended abnormally |
+| 80 / 90 | ENDJOBABN, or forced to end after the time limit |
+
+A second table counts failures per job name, so a job that fails every night stands out. Click a job to open its job log (QPJOBLOG, or the pending job log) or its other spooled files.

@@ -7,7 +7,7 @@ parent: "Reference"
 
 # Commands
 
-All 289 commands contributed by Vanthrex for IBM i 2.3.0. Run any of them from the
+All 297 commands contributed by Vanthrex for IBM i 2.3.0. Run any of them from the
 Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-click menus and view toolbars.
 
 | Command | ID | Keys |
@@ -52,6 +52,7 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Check /COPY Usage (Find Unused Copybooks) | `vanthrex.checkCopybooks` |  |
 | Check Authority (Can a User Use This?)… | `vanthrex.checkAuthority` |  |
 | Check Connection Health | `vanthrex.connection.health` |  |
+| Check Service Program Signatures | `vanthrex.signatureCheck` |  |
 | Choose Which Jobs to Show… | `vanthrex.filterJobs` |  |
 | Clear Compile History | `vanthrex.compileHistory.clear` |  |
 | Clear Data Queue… | `vanthrex.clearDataQueue` |  |
@@ -72,6 +73,7 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Compile With… | `vanthrex.compileWith` |  |
 | Connect | `vanthrex.connect` |  |
 | Convert Fixed Format to Free (H, F, D, P and C Specs) | `vanthrex.convertToFree` |  |
+| Copy Data Structure Layout | `vanthrex.dsLayout.copy` |  |
 | Copy Members to Another Source File… | `vanthrex.copyMembers` |  |
 | Copy Objects to Another Library… | `vanthrex.copyObjects` |  |
 | Copy Release Notes | `vanthrex.changeReport.copy` |  |
@@ -84,6 +86,7 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Create IFS Folder or File… | `vanthrex.createIfs` |  |
 | Create Library… | `vanthrex.createLibrary` |  |
 | Create User Profile… | `vanthrex.secadm.createUser` |  |
+| Data Structure Layout (Positions and Lengths) | `vanthrex.dsLayout` |  |
 | Database Diagram | `vanthrex.databaseDiagram` |  |
 | Debug Program | `vanthrex.debugProgram` | Ctrl+Alt+G |
 | Debugger Setup Check | `vanthrex.debugSetup` |  |
@@ -106,6 +109,8 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Export Query Result (Excel, CSV, JSON)… | `vanthrex.exportQuery` |  |
 | Export Table Data (Excel, CSV, JSON)… | `vanthrex.exportData` |  |
 | Extract to Procedure… | `vanthrex.extractProcedure` |  |
+| Failed Job Options | `vanthrex.failedJobs.row` |  |
+| Failed Jobs (Ended Abnormally) | `vanthrex.failedJobs` |  |
 | Field Finder… | `vanthrex.fieldFinder` |  |
 | Filter Members by Last Change… | `vanthrex.filterMembersByDate` |  |
 | Find & Open Member… | `vanthrex.findMember` | Ctrl+Alt+M |
@@ -200,6 +205,8 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Prompt (F4) | `vanthrex.prompt` | F4 |
 | Prompt and Run CL Command (F4)… | `vanthrex.promptCl` |  |
 | PTF & System Health | `vanthrex.systemHealth` |  |
+| Re-bind All Failing Objects | `vanthrex.signatureCheck.rebindAll` |  |
+| Re-bind to the Current Signature | `vanthrex.signatureCheck.rebind` |  |
 | Recompile Broken Sources | `vanthrex.compileHistory.recompileBroken` |  |
 | Reconnect Now | `vanthrex.connection.reconnectNow` |  |
 | Refresh | `vanthrex.refreshLibraries` |  |
@@ -256,6 +263,7 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Show Output Log | `vanthrex.showOutput` |  |
 | Show Queries Running Now | `vanthrex.activeQueries` |  |
 | Show Save File Contents | `vanthrex.saveFileContents` |  |
+| Show Source with /COPY Expanded | `vanthrex.expandCopies` |  |
 | Sort Members by Name / Date | `vanthrex.sortMembers` |  |
 | Source Quality Report | `vanthrex.sourceQuality` |  |
 | Spooled Files on Output Queue | `vanthrex.wrkOutputQueue` |  |
