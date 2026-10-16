@@ -7,7 +7,7 @@ parent: "Reference"
 
 # Commands
 
-All 297 commands contributed by Vanthrex for IBM i 2.3.0. Run any of them from the
+All 301 commands contributed by Vanthrex for IBM i 2.3.0. Run any of them from the
 Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-click menus and view toolbars.
 
 | Command | ID | Keys |
@@ -24,12 +24,15 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | AI: Ask the IBM i Assistant… | `vanthrex.ai.open` |  |
 | AI: Document This Code | `vanthrex.ai.document` |  |
 | AI: Explain & Fix Compile Errors | `vanthrex.ai.fix` |  |
+| AI: Explain Compile Errors | `vanthrex.ai.errors` |  |
+| AI: Explain Program Dependencies | `vanthrex.ai.dependencies` |  |
 | AI: Explain This Code | `vanthrex.ai.explain` |  |
 | AI: Explain This Object | `vanthrex.ai.explainObject` |  |
 | AI: Generate Unit Tests (RPGUnit) | `vanthrex.ai.test` |  |
 | AI: Modernize to Free-Form RPG | `vanthrex.ai.modernize` |  |
 | AI: Open SQL in Scratchpad | `vanthrex.ai.openSql` |  |
 | AI: Review This Code | `vanthrex.ai.review` |  |
+| AI: Why Did This Job Fail? | `vanthrex.ai.jobLog` |  |
 | AI: Write SQL from a Description… | `vanthrex.ai.sql` |  |
 | All Member Notes… | `vanthrex.notes.all` |  |
 | Analyze Job Log | `vanthrex.analyzeJobLog` |  |
@@ -188,6 +191,7 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Open Program Source | `vanthrex.openProgramSource` |  |
 | Open Source | `vanthrex.compileHistory.open` |  |
 | Open Source at Line | `vanthrex.openSourceAtLine` |  |
+| Open Source at Line | `vanthrex.ai.openAt` |  |
 | Open Spooled File | `vanthrex.spoolOpen` |  |
 | Open System Dashboard | `vanthrex.openDashboard` |  |
 | Options | `vanthrex.extras.row` |  |

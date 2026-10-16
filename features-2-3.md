@@ -123,3 +123,17 @@ Jobs view toolbar, quick menu or the System Tracker. Jobs that ended with end co
 | 80 / 90 | ENDJOBABN, or forced to end after the time limit |
 
 A second table counts failures per job name, so a job that fails every night stands out. Click a job to open its job log (QPJOBLOG, or the pending job log) or its other spooled files.
+
+## AI-powered development
+
+The `@vanthrex` chat participant (needs GitHub Copilot Chat or another chat model in VS Code) now works from the real system, not only from the open file:
+
+| Ask | What it reads from the system | What you get |
+|---|---|---|
+| `/errors` — or *Explain with AI* when a compile fails, or the light bulb on an error | The compile errors, the source lines around each one, IBM's help text for each message ID | Each error in plain words, errors with the same cause grouped, the smallest fix |
+| `/document` | The program compiled from the source: files used and how, programs called, service programs | Documentation comments in the style of the source, plus a short wiki summary |
+| `/test` | Procedure signatures and data structure layouts | The behaviours worth testing, then RPGUnit test source and the build / run commands |
+| `/depends LIB/PGM` — or right-click a program | Modules and their sources, service programs, DSPPGMREF references, programs bound to a service program | How it is built and what it uses, and what to recompile, re-bind or promote when something changes |
+| `/joblog 123456/USER/JOB` — or right-click a job, *Failed Jobs*, or the job log analysis page | The job log (or the spooled QPJOBLOG of an ended job), the failing program and statement, its source around that statement | What happened, the root cause and a concrete fix; a button opens the failing line |
+
+The statement in a job log is matched to a source line through the source sequence numbers (compile with `OPTION(*SRCSTMT)` for exact lines); when the match is approximate, the answer says so. Queries the assistant runs itself are read-only and ask first (`vanthrex.ai.confirmQueries`). `/depends` reads file and program references with DSPPGMREF in QTEMP, which needs the Mapepire SQL engine.

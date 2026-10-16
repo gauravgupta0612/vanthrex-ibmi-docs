@@ -34,6 +34,14 @@ nav_order: 90
 - **Check Service Program Signatures** (right-click a service program): every program and service program bound to it, with the ones that would fail with a signature violation at the next call shown first, and a one-click re-bind (UPDPGM / UPDSRVPGM with MODULE(*NONE), asked first) — one object or all of them.
 - **Failed Jobs** (Jobs view toolbar, quick menu, System Tracker): jobs that ended abnormally in the last hour, day or week from the history log, with the meaning of each end code, which job names fail most, and their job log one click away.
 
+**AI-powered development** (with GitHub Copilot Chat or another VS Code chat model, through `@vanthrex`)
+
+- **Explain compile errors** (`/errors`, *AI: Explain Compile Errors*, the light bulb on an error, or *Explain with AI* when a compile fails): every error explained in plain words with the source lines around it and IBM's own help text for the message, errors with the same cause grouped, and the smallest fix for each — without rewriting the source.
+- **Generate RPG documentation** (`/document`): the header now describes the files the compiled program really uses and how (read, update…), the programs it calls and its service programs, read from the system; comments follow the source's style (free or fixed form), plus a short wiki summary.
+- **Suggest unit tests** (`/test`): first the behaviours worth testing for each procedure (normal cases, boundaries, error paths, each branch), using the real procedure signatures and data structure layouts, then the RPGUnit test source and the RUCRTRPG / RUCALLTST commands.
+- **Explain program dependencies** (`/depends LIB/PGM`, right-click a program or service program → *AI: Explain Program Dependencies*): modules and their sources, service programs, files used and how, programs and data areas referenced (DSPPGMREF), who is bound to a service program, and what to recompile, re-bind or promote together when something changes.
+- **Recommend fixes from real job logs** (`/joblog number/user/name`, right-click a job, *Failed Jobs* → *Ask AI why it failed*, or the job log analysis page): reads the job log — or the spooled QPJOBLOG of an ended job —, finds the user program and statement where it failed, opens its source at that statement (SRCSEQ / *SRCSTMT mapping), and asks for the root cause and a concrete fix; a button opens the failing line.
+
 **New tools**
 
 - **Source Quality Report** (right-click a source file): every RPG member checked — code checks, share of fixed format, numbered indicators, GOTO / CABxx, subroutines and procedures — with a score and a grade from A to E, lowest first, and the most frequent findings for the whole file.
