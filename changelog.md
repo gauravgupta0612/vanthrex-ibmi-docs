@@ -6,7 +6,7 @@ nav_order: 90
 
 # Changelog
 
-## 2.3.0 (not released yet)
+## 2.3.0
 
 **Create from anywhere**
 
