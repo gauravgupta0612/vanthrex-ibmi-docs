@@ -7,7 +7,7 @@ parent: "Reference"
 
 # Commands
 
-All 301 commands contributed by Vanthrex for IBM i 2.3.0. Run any of them from the
+All 306 commands contributed by Vanthrex for IBM i 2.3.0. Run any of them from the
 Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-click menus and view toolbars.
 
 | Command | ID | Keys |
@@ -61,6 +61,8 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Clear Data Queue… | `vanthrex.clearDataQueue` |  |
 | Clear SQL History | `vanthrex.clearSqlHistory` |  |
 | Code Metrics | `vanthrex.codeMetrics` |  |
+| Command Line (5250 Style) | `vanthrex.commandLine` | Ctrl+Alt+K |
+| Command Line Function Key | `vanthrex.commandLine.key` | F12 / F4 / F9 |
 | Compare System Values with Another System… | `vanthrex.compareSystemValues` |  |
 | Compare Table Data (DEV ↔ PROD)… | `vanthrex.compareData` |  |
 | Compare Table Structure… | `vanthrex.compareStructure` |  |
@@ -183,6 +185,7 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Object Information | `vanthrex.objectInfo` |  |
 | Objects Built from This Source | `vanthrex.builtFrom` |  |
 | Objects Out of Sync with Source | `vanthrex.outOfSync` |  |
+| Open 5250 Session | `vanthrex.open5250` |  |
 | Open ALTER Script | `vanthrex.compareStructure.script` |  |
 | Open Documentation | `vanthrex.openDocs` |  |
 | Open Local History Folder | `vanthrex.openHistoryFolder` |  |
@@ -298,6 +301,8 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Who Has This Object Locked? | `vanthrex.objectLocks` |  |
 | Who Is Locking Rows? | `vanthrex.rowLocks` |  |
 | Who Is Signed On | `vanthrex.signedOn` |  |
+| Work with Active Jobs | `vanthrex.wrkactjob` |  |
+| Work with Active Jobs Function Key | `vanthrex.wrkactjob.key` | F10 / F11 / F5 |
 | Work with Binding Directory | `vanthrex.bindingDirectory` |  |
 | Work with Job Queues | `vanthrex.wrkJobQueues` |  |
 | Work with Job Schedule Entries | `vanthrex.wrkJobSchedule` |  |

@@ -67,6 +67,12 @@ Open **File → Preferences → Settings** and search for *Vanthrex*, or edit `s
 | `vanthrex.connections.healthCheckSeconds` | number | `60` | Check every N seconds that the active system still answers (a tiny query). A slow answer shows in the status bar; two misses in a row reconnect. `0` turns it off. |
 | `vanthrex.notes.sharedFile` | string | `""` | Share member notes with your team: an IFS file such as `/home/TEAM/vanthrex-notes.json` that everybody can read and write. Empty keeps notes on this computer only. |
 | `vanthrex.dsLayout.hover` | boolean | `true` | Show the position and length of a data structure subfield when you hover over its definition. |
+| `vanthrex.5250.client` | string | `"auto"` | Which program opens a 5250 session for the active system. Values: `auto`, `acs`, `tn5250`, `command`. |
+| `vanthrex.5250.acsPath` | string | `""` | Path to acslaunch_win-64.exe, acslaunch_linux-64, the ACS app or acsbundle.jar (empty: found automatically). |
+| `vanthrex.5250.command` | string | `""` | Command that starts your 5250 emulator, with `${host}`, `${user}`, `${device}` and `${port}` replaced, for example `"C:\\Program Files\\IBM\\Client Access\\Emulator\\pcsws.exe" /H=${host}`. |
+| `vanthrex.5250.deviceName` | string | `""` | Display device name to use (tn5250 and your own command). |
+| `vanthrex.5250.ssl` | boolean | `false` | Use TLS (port 992) for tn5250. |
+| `vanthrex.5250.port` | number | `0` | Telnet port when it is not the default (23, or 992 with TLS). |
 
 ## RPG check rules
 

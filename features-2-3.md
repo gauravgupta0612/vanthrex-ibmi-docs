@@ -146,3 +146,34 @@ The statement in a job log is matched to a source line through the source sequen
 - **Report pages:** rows are drawn 300 at a time (*Show more*), the filter is instant and every column sorts with a click.
 - **Shared lists:** the library list, the objects of a library and the members of a source file are reused by the views for a short time; Refresh, F5 in PDM and any change you make read them again.
 - **Finding what is slow:** the SQL engine starts as soon as you connect; queries slower than 3 seconds and slow start-up steps are written to *View → Output → Vanthrex for IBM i*.
+
+## Green screen
+
+**Open 5250 Session** — right-click the active connection (or the Connections toolbar, or the quick menu). Vanthrex opens a real 5250 session on that system:
+
+| `vanthrex.5250.client` | What opens |
+|---|---|
+| `auto` (default) | IBM i Access Client Solutions when it is installed, otherwise tn5250 in a VS Code terminal |
+| `acs` | IBM i Access Client Solutions (`vanthrex.5250.acsPath` if it is not found by itself) |
+| `tn5250` | tn5250 in a VS Code terminal (`vanthrex.5250.ssl`, `vanthrex.5250.port`, `vanthrex.5250.deviceName`) |
+| `command` | Your own emulator: `vanthrex.5250.command`, with `${host}`, `${user}`, `${device}` and `${port}` replaced |
+
+**Command line (5250 style)** — Ctrl+Alt+K. Type at `===>` and press Enter; F4 prompts the command, F9 or ↑ brings back earlier commands, F12 clears.
+
+- Every command shows its messages as a green screen would (click a message ID for IBM's help text).
+- Display commands (DSPLIBL, DSPFD, DSPFFD, DSPOBJAUT, DSPJOB, DSPPGMREF, WRKSYSSTS…) print their output and it is shown under the command; the spooled file is removed afterwards.
+- Interactive commands open the Vanthrex screen that does the same: WRKACTJOB, WRKOBJLCK, DSPJOBLOG, WRKJOB / DSPJOB, DSPMSG / WRKMSGQ, WRKSYSVAL, WRKUSRPRF, WRKOUTQ, WRKJOBQ, WRKSBS, WRKSBSJOB, WRKJOBSCDE, NETSTAT, WRKSYSSTS, DSPOBJD, DSPFD, STRSQL, STRSEU, WRKSAVF, WRKMBRPDM / WRKOBJPDM / WRKLIBPDM.
+- Commands that only work on a display (STRSDA, SIGNOFF, STRDBG…) offer to open a 5250 session.
+
+**Work with Active Jobs** — Jobs view toolbar, the connection menu, the System Tracker, or WRKACTJOB on the command line. Jobs are grouped by subsystem; type an option next to one or more jobs and press Enter:
+
+| Option | Action |
+|---|---|
+| 3 / 6 | Hold / release |
+| 4 | End — controlled or immediately, asked once for all the jobs |
+| 5 / 11 | Work with the job (details, call stack, locks) |
+| 7 | Display and answer the message the job waits for |
+| 8 | Its spooled files |
+| 10 / L | Job log / live job log |
+
+F5 refreshes, F10 restarts the statistics (CPU %, disk I/O), F11 shows other columns (threads, temporary storage, CPU time, disk I/O, pool, priority). Filter by subsystem, user, job or status, position to a job, or refresh every 5 to 60 seconds.
