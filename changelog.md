@@ -44,11 +44,13 @@ nav_order: 90
 
 **Faster and more reliable**
 
+- **Pages open at once:** the 90 report pages (job details, object information, who is signed on, failed jobs, security, Work with…) open straight away with a loader — a spinner, what is being read, the seconds it takes and the outline of the page — instead of only a message in the status bar; refreshing a page shows a thin busy bar on it, as VS Code does. PDM, the System Tracker, the dashboard and the data editor use the same loader.
 - **System Tracker opens at once:** the last page of the system is shown immediately while it refreshes, and the Overview is drawn as soon as its own figures are back; libraries, network, journals and the other tabs fill in when they arrive (*loading the rest…*).
 - **PDM shows the member list first:** who has a member locked and whether its object is older than the source follow a moment later, without moving the cursor; options wait for them, so a locked member is still never deleted.
 - **Report pages with thousands of rows** open at once: rows are drawn 300 at a time (*Show more*), the filter is instant, and every column sorts with a click.
 - **Less waiting for the same list:** the library list, the objects of a library and the members of a source file are shared between the views for a short time instead of being read again by each one; Refresh (and any change you make) reads them again. Two views asking the same question at the same time now run it once.
 - **The SQL engine starts as soon as you connect**, so the first view does not wait for Java on the IBM i; queries slower than 3 seconds and slow start-up steps are written to the Vanthrex log to find what is slow.
+- **One look everywhere:** all pages share the same styles, loader, busy bar and paged / filtered / sortable table (`src/features/ui/kit.ts`), so they look and behave alike in light, dark and high-contrast themes.
 - **Clearer code:** the modules that were named after release batches are now one module per subject (for example `dataStructures`, `programCall`, `jobTools`, `security`, `memberToolsView`, `sourceAnalysisView`), with their tests named the same way.
 
 **New tools**

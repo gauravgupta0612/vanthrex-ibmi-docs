@@ -140,6 +140,7 @@ The statement in a job log is matched to a source line through the source sequen
 
 ## Faster and more reliable
 
+- **Pages open at once:** every report page opens straight away with a loader (what is being read and the seconds it takes); refreshing a page shows a thin busy bar on it.
 - **System Tracker:** opens with the last page of the system at once while it refreshes; the Overview is drawn as soon as its own figures are back and the other tabs fill in after (*loading the rest…*).
 - **PDM:** the member list shows first; locks and the object status (*source newer*, *not compiled*) follow a moment later. Options wait for them, so a locked member is still never deleted.
 - **Report pages:** rows are drawn 300 at a time (*Show more*), the filter is instant and every column sorts with a click.
