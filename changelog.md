@@ -42,6 +42,15 @@ nav_order: 90
 - **Explain program dependencies** (`/depends LIB/PGM`, right-click a program or service program → *AI: Explain Program Dependencies*): modules and their sources, service programs, files used and how, programs and data areas referenced (DSPPGMREF), who is bound to a service program, and what to recompile, re-bind or promote together when something changes.
 - **Recommend fixes from real job logs** (`/joblog number/user/name`, right-click a job, *Failed Jobs* → *Ask AI why it failed*, or the job log analysis page): reads the job log — or the spooled QPJOBLOG of an ended job —, finds the user program and statement where it failed, opens its source at that statement (SRCSEQ / *SRCSTMT mapping), and asks for the root cause and a concrete fix; a button opens the failing line.
 
+**Faster and more reliable**
+
+- **System Tracker opens at once:** the last page of the system is shown immediately while it refreshes, and the Overview is drawn as soon as its own figures are back; libraries, network, journals and the other tabs fill in when they arrive (*loading the rest…*).
+- **PDM shows the member list first:** who has a member locked and whether its object is older than the source follow a moment later, without moving the cursor; options wait for them, so a locked member is still never deleted.
+- **Report pages with thousands of rows** open at once: rows are drawn 300 at a time (*Show more*), the filter is instant, and every column sorts with a click.
+- **Less waiting for the same list:** the library list, the objects of a library and the members of a source file are shared between the views for a short time instead of being read again by each one; Refresh (and any change you make) reads them again. Two views asking the same question at the same time now run it once.
+- **The SQL engine starts as soon as you connect**, so the first view does not wait for Java on the IBM i; queries slower than 3 seconds and slow start-up steps are written to the Vanthrex log to find what is slow.
+- **Clearer code:** the modules that were named after release batches are now one module per subject (for example `dataStructures`, `programCall`, `jobTools`, `security`, `memberToolsView`, `sourceAnalysisView`), with their tests named the same way.
+
 **New tools**
 
 - **Source Quality Report** (right-click a source file): every RPG member checked — code checks, share of fixed format, numbered indicators, GOTO / CABxx, subroutines and procedures — with a score and a grade from A to E, lowest first, and the most frequent findings for the whole file.

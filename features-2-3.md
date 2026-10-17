@@ -137,3 +137,11 @@ The `@vanthrex` chat participant (needs GitHub Copilot Chat or another chat mode
 | `/joblog 123456/USER/JOB` — or right-click a job, *Failed Jobs*, or the job log analysis page | The job log (or the spooled QPJOBLOG of an ended job), the failing program and statement, its source around that statement | What happened, the root cause and a concrete fix; a button opens the failing line |
 
 The statement in a job log is matched to a source line through the source sequence numbers (compile with `OPTION(*SRCSTMT)` for exact lines); when the match is approximate, the answer says so. Queries the assistant runs itself are read-only and ask first (`vanthrex.ai.confirmQueries`). `/depends` reads file and program references with DSPPGMREF in QTEMP, which needs the Mapepire SQL engine.
+
+## Faster and more reliable
+
+- **System Tracker:** opens with the last page of the system at once while it refreshes; the Overview is drawn as soon as its own figures are back and the other tabs fill in after (*loading the rest…*).
+- **PDM:** the member list shows first; locks and the object status (*source newer*, *not compiled*) follow a moment later. Options wait for them, so a locked member is still never deleted.
+- **Report pages:** rows are drawn 300 at a time (*Show more*), the filter is instant and every column sorts with a click.
+- **Shared lists:** the library list, the objects of a library and the members of a source file are reused by the views for a short time; Refresh, F5 in PDM and any change you make read them again.
+- **Finding what is slow:** the SQL engine starts as soon as you connect; queries slower than 3 seconds and slow start-up steps are written to *View → Output → Vanthrex for IBM i*.

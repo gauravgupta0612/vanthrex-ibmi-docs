@@ -138,7 +138,7 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Git: History of This Member… | `vanthrex.git.memberHistory` |  |
 | Git: Upload Changed Files to IBM i | `vanthrex.git.upload` |  |
 | Go to IFS Directory… | `vanthrex.ifsChangeRoot` |  |
-| Go to Line | `vanthrex.v22.gotoLine` |  |
+| Go to Line | `vanthrex.gotoLine` |  |
 | Go to Pinned Folder | `vanthrex.pin.ifsDir` |  |
 | Grant Missing Authority | `vanthrex.grantAuthority` |  |
 | Group Profiles | `vanthrex.secadm.groups` |  |
