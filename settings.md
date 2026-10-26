@@ -83,6 +83,10 @@ Open **File → Preferences → Settings** and search for *Vanthrex*, or edit `s
 | `vanthrex.notebook.maxRows` | number | `1000` | Rows an SQL cell of an IBM i notebook reads (a cell can ask for more with `-- rows: N`). |
 | `vanthrex.editor.columnHints` | boolean | `true` | Show the fixed-format field under the cursor (RPG and DDS) in the status bar. |
 | `vanthrex.editor.rpgIndent` | number | `2` | Spaces per level when **Format Document** re-indents fully free RPG. |
+| `vanthrex.editor.clCommandHelp` | boolean | `true` | In CL sources, show what a command does when you hover it and offer its keywords and allowed values while typing (read from the command definitions on the connected system). |
+| `vanthrex.editor.sqlCodeLens` | boolean | `true` | Show **Run**, **Explain** and **RPG code** links above each statement of an SQL file. |
+| `vanthrex.codeGen.arraySize` | number | `100` | Number of elements (`dim`) of arrays in generated RPG (JSON arrays, rows read per FETCH). |
+| `vanthrex.codeGen.insertRows` | number | `1000` | Rows **Copy Rows as SQL INSERT Script** reads at most. |
 
 ## RPG check rules
 

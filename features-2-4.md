@@ -8,7 +8,7 @@ parent: "Features"
 # New in 2.4: local development, notebooks and a smarter editor
 {: .no_toc }
 
-Work from a local Git folder and build on the IBM i, open a PASE shell, keep SQL / CL / shell runbooks as notebooks with charts, find who gets which SQL error, browse a schema, call stored procedures, and get folding, parameter hints, formatting and CL navigation in the editor.
+Work from a local Git folder and build on the IBM i, open a PASE shell, keep SQL / CL / shell runbooks as notebooks with charts, find who gets which SQL error, browse a schema, call stored procedures, generate RPG from queries and JSON, get CL command help and quick fixes, and do more with the IFS and job descriptions.
 {: .fs-6 .fw-300 }
 
 1. TOC
@@ -60,3 +60,28 @@ Right-click a library → *Browse Schema (SQL Objects)…*: tables, views, index
 ## IFS folders
 
 Right-click an IFS folder → *Upload Files or a Folder Here…*, or drag files and folders from the Explorer or the desktop onto the IFS view. Right-click a file or folder → *Download to This PC…*. Whole trees in one step; `.git` is skipped; one question before replacing.
+
+## CL help, quick fixes and command sources
+
+| Feature | How |
+|---|---|
+| CL command help | Hover a command in a CL source: what it does and every parameter. While typing, the keywords not used yet (with their default) and, inside `KWD(`, the allowed values. Read from the connected system, so your own commands work too (`vanthrex.editor.clCommandHelp`). |
+| Quick fixes | After a compile, **Ctrl+.** on *RNF7030 name not defined* → *Declare it here* or *Declare it globally*; unused declarations (*RNF7031*) are faded with *Remove unused declaration*. |
+| Command sources (.cmd) | What CRTCMD would reject is underlined as you type; *Preview Command Prompt (F4) from Source* shows the prompt and builds the command from the values you try. |
+| Retrieve CL Source | Right-click a CL program → *Retrieve CL Source (RTVCLSRC)*. |
+
+## SQL and code generation
+
+- **Run / Explain / RPG code** links above every statement of a `.sql` file (`vanthrex.editor.sqlCodeLens`).
+- **Generate RPG for This Query**: column types read from the system, a cursor and a multi-row FETCH loop, null indicators when needed.
+- **Generate RPG from a JSON Sample**: templates, `dim()` arrays with count fields, RPG-valid names, and the DATA-INTO / DATA-GEN statements.
+- **Find a Value in Table Data…**: the rows (and the column) where a value is, in any column of a file.
+- **Copy Rows as SQL INSERT Script…**: rows chosen with a WHERE condition as `INSERT … WITH NC` statements.
+- **My SQL Job**: library list and job log of the job that runs Vanthrex's SQL.
+
+## More for the IFS and work management
+
+- **Compare Folder with IFS…**: newer / different / only-on-one-side files, with diff, upload or download per file.
+- **Extract Here…** and **Compress (zip / tar)…** on IFS files and folders.
+- **Copy To…** and **Move or Rename…** for IFS files and folders.
+- **Work with Job Descriptions**: user, job queue, initial library list, logging; change the library list or job queue, or use the library list for your connection.

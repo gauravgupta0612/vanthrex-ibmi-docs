@@ -31,6 +31,29 @@ nav_order: 90
 - **Fixed-format fields**: the status bar shows the RPG or DDS field under the cursor (spec, name, columns); **Ctrl+Alt+]** / **Ctrl+Alt+[** jump to the next / previous field, *Fields of This Line…* lists every field with its value.
 - **CL language support**: an outline (variables with type and length, files, labels, subroutines), Go to Definition for `&variables`, `GOTO` labels and `CALLSUBR`, Find All References, highlights, and hovers with the declaration.
 
+**CL and RPG editing**
+
+- **CL command help from your own system**: hover a command in a CL source for what it does and every parameter (keyword, prompt, default, allowed values, required ones marked); while typing, the keywords not used yet are offered (required first, with their default filled in) and inside `KWD(` its allowed values. Read from the command definitions on the connected system (the same ones F4 uses), so your own commands work too; `vanthrex.editor.clCommandHelp`.
+- **Quick fixes for compile errors**: on *RNF7030 name not defined* the light bulb offers **Declare it here** (a `dcl-s` in the procedure that uses it, after its interface) or **Declare it globally**, with the type picked from a list; fixed-format sources get a D-spec in the right columns. Unused declarations (*RNF7031*) are now shown faded, with **Remove unused declaration**.
+- **Command definition sources (.cmd)**: problems CRTCMD would reject are underlined as you type (duplicate keywords, a TYPE pointing to no QUAL/ELEM label, MIN larger than MAX, DFT on a required parameter, RSTD(*YES) without values, DEP on an unknown parameter, missing prompts), and **Preview Command Prompt (F4) from Source** shows the prompt screen before compiling — try values and copy the command they build.
+- **Retrieve CL Source (RTVCLSRC)** on a CL program: the source of a program created with ALWRTVSRC(*YES) opens in an editor, no source file needed.
+
+**SQL and code generation**
+
+- **Run / Explain / RPG code links** above every statement of an SQL file (`vanthrex.editor.sqlCodeLens`): work through a script one statement at a time without selecting.
+- **Generate RPG for This Query**: a cursor loop with a multi-row FETCH and a data structure whose subfields have the real column types (read from the system), null indicators when a column can be null.
+- **Generate RPG from a JSON Sample**: select JSON, copy it, or right-click a .json file — qualified templates for nested objects, `dim()` arrays with their count fields, names made RPG-valid (with the JSON name as a comment), and the DATA-INTO / DATA-GEN statements for YAJL.
+- **Find a Value in Table Data…** (right-click a file): every row where any column holds the value — text anywhere in text columns (any case), numbers in number columns, dates by their start — with the column it was found in.
+- **Copy Rows as SQL INSERT Script…** (right-click a file): the rows you choose with a WHERE condition as `INSERT … WITH NC` statements, to load a test system or keep a data fix.
+- **My SQL Job**: the job that runs Vanthrex's SQL, F4 and command line — its library list and its job log (newest first, message IDs explained in a click).
+
+**IFS and work management**
+
+- **Compare Folder with IFS…**: a local folder against an IFS folder — newer on the PC, newer in the IFS, different, only on one side — with a diff, upload or download for each file.
+- **Extract Here…** (.zip, .jar, .tar, .tar.gz, .gz) and **Compress (zip / tar)…** on the IFS, with `unzip` / `zip` when installed and `jar` otherwise.
+- **Copy To…** and **Move or Rename…** for IFS files and folders (whole folders, CCSID tags and permissions kept, one question before replacing).
+- **Work with Job Descriptions** (WRKJOBD): user, job queue, initial library list and logging of every job description of a library; change the library list or the job queue (CHGJOBD after a confirmation), or use the library list for your connection.
+
 **IFS**
 
 - **Upload Files or a Folder Here…** and **drag and drop** from the Explorer or the desktop onto the IFS view: whole folder trees, parents created, `.git` skipped, one question before replacing, one progress bar.
