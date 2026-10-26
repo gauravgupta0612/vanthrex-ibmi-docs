@@ -73,6 +73,16 @@ Open **File → Preferences → Settings** and search for *Vanthrex*, or edit `s
 | `vanthrex.5250.deviceName` | string | `""` | Display device name to use (tn5250 and your own command). |
 | `vanthrex.5250.ssl` | boolean | `false` | Use TLS (port 992) for tn5250. |
 | `vanthrex.5250.port` | number | `0` | Telnet port when it is not the default (23, or 992 with TLS). |
+| `vanthrex.deploy.directory` | string | `""` | IFS folder a local workspace folder is deployed to. `${home}`, `${user}` and `${folder}` are replaced. Empty: `${home}/builds/${folder}`. |
+| `vanthrex.deploy.ignore` | array | `["node_modules/", ".vscode/", "*.vsix", "*.log", ".env", ".env.*", "*.pem", "*.key"]` | Files and folders that are never deployed (`*` and `**` wildcards, a trailing `/` for folders). `.git` is always skipped. |
+| `vanthrex.deploy.buildCommand` | string | `""` | Command **Build Project on IBM i** runs in PASE in the deploy folder, for example `makei build` (Bob) or `gmake`. `CURLIB` and `LIBL` are set from the connection. |
+| `vanthrex.deploy.ccsid` | number | `1208` | CCSID the deployed files are tagged with (1208 = UTF-8, so compilers read them correctly). 0 leaves the tag alone. |
+| `vanthrex.deploy.onSave` | boolean | `false` | Upload a local file to its deploy folder every time it is saved. |
+| `vanthrex.deploy.compileDeploysChanges` | boolean | `true` | Before compiling a local file, deploy every changed file of the folder too (so changed copybooks and includes are used). |
+| `vanthrex.terminal.openSourcePath` | boolean | `true` | Put `/QOpenSys/pkgs/bin` (yum open-source tools: bash, git, python…) first on the PATH of a new PASE terminal. |
+| `vanthrex.notebook.maxRows` | number | `1000` | Rows an SQL cell of an IBM i notebook reads (a cell can ask for more with `-- rows: N`). |
+| `vanthrex.editor.columnHints` | boolean | `true` | Show the fixed-format field under the cursor (RPG and DDS) in the status bar. |
+| `vanthrex.editor.rpgIndent` | number | `2` | Spaces per level when **Format Document** re-indents fully free RPG. |
 
 ## RPG check rules
 

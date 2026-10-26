@@ -6,6 +6,36 @@ nav_order: 90
 
 # Changelog
 
+## 2.4.0 (not released yet)
+
+**Local development (like Code for IBM i, with less setup)**
+
+- **Deploy Changes to IBM i (IFS)** (right-click in the Explorer, quick menu): keep your source in a local Git folder and upload only new and changed files to an IFS folder of their own (`${home}/builds/<folder>` by default, `vanthrex.deploy.directory`). Missing folders are created, files are tagged CCSID 1208 so the compilers read them right, `.git`, `node_modules`, `.vscode`, keys and logs are never sent (`vanthrex.deploy.ignore`). **Deploy All Files** sends everything again; `vanthrex.deploy.onSave` uploads each file as you save it. A protected system asks once for the whole deploy.
+- **Compile Local File on IBM i** (editor title button, right-click, and the normal Compile key on a local file): deploys the file (and every changed copybook, so `/COPY` and `/INCLUDE` see your latest version), compiles it from the stream file with your compile actions, and shows the errors **on the local file** — and on the local copybook when the error is in one.
+- **Build Project on IBM i**: runs your build command (`makei build` for Bob / IBM i Project Explorer, `gmake`, your own script) in PASE in the deploy folder, with the open-source tools on the PATH and `CURLIB` / `LIBL` from the connection. Output in the *Vanthrex Build* panel, the message IDs it found and the exit code in the summary.
+- **PASE terminal** (Ctrl+Alt+P, connection right-click, the terminal **+** menu as *IBM i (PASE)*, *Open PASE Terminal Here* on IFS folders): a real interactive shell on the IBM i in VS Code's terminal panel, over the connection you already have — no second sign-on, `/QOpenSys/pkgs/bin` first on the PATH, resizes with the panel.
+
+**SQL and Db2 for i**
+
+- **IBM i notebooks** (`.vxnb`, *New IBM i Notebook*): SQL, CL and PASE shell cells with Markdown notes in one file — a runbook, a health check, an investigation you can share. Results are tables (and stay out of the file), CL cells show every message and printed output, shell cells their output; **Export Notebook to Markdown** for a ticket or a wiki.
+- **Charts from SQL**: put `-- chart: bar|line|pie Title` above a query in a notebook and the result is drawn (labels from the first column, up to four number columns); `-- rows: 5000` reads more rows.
+- **SQL Error Log** (*Who Gets Which SQL Error?*): the SQL Error Logging Facility (SELF) shows which programs and jobs get which SQLCODE, how often and with which statement — most frequent first, each one explained in a click. **Turn SQL Error Logging On or Off…** for the whole system (`*ERR`, `*ALL`, chosen codes, `*NONE`) or only your session.
+- **Browse Schema (SQL Objects)** (right-click a library, quick menu): every table, view, index, procedure, function, trigger, sequence and global variable of a schema with long and system names, counts by kind and a filter; click one for its **CREATE statement**, its data, what depends on it, or to call it. Kinds a release does not have are reported and the rest still shows.
+- **Call Stored Procedure…**: finds the procedure, asks for each parameter with its SQL type (numbers and lengths checked as you type, `NULL`, empty = default), remembers your last values, and shows the **OUT / INOUT values** and the **result set** — OUT values come back through global variables in QTEMP, no host program needed.
+
+**Editor**
+
+- **Folding** for RPG (free and fixed form: procedures, DS / PR / PI, IF, DO, FOR, SELECT, MONITOR, BEGSR, P-specs) and CL (DO / ENDDO including `THEN(DO)`, SELECT, SUBR).
+- **Parameter hints** while typing an RPG call: the parameters of the procedure or prototype (free and fixed D-specs) with the current one highlighted, and of the common built-in functions (%SUBST, %SCAN, %DEC, %DATE, %SPLIT…).
+- **Format Document** for fully free RPG (`**FREE`): re-indents by block (ELSE / WHEN / ON-ERROR one level back, continuation lines keep their offset, compile-time data untouched); `vanthrex.editor.rpgIndent`.
+- **Fixed-format fields**: the status bar shows the RPG or DDS field under the cursor (spec, name, columns); **Ctrl+Alt+]** / **Ctrl+Alt+[** jump to the next / previous field, *Fields of This Line…* lists every field with its value.
+- **CL language support**: an outline (variables with type and length, files, labels, subroutines), Go to Definition for `&variables`, `GOTO` labels and `CALLSUBR`, Find All References, highlights, and hovers with the declaration.
+
+**IFS**
+
+- **Upload Files or a Folder Here…** and **drag and drop** from the Explorer or the desktop onto the IFS view: whole folder trees, parents created, `.git` skipped, one question before replacing, one progress bar.
+- **Download to This PC…** on any IFS file or folder (folders with everything in them).
+
 ## 2.3.0
 
 **Create from anywhere**
