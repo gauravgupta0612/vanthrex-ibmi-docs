@@ -7,7 +7,7 @@ parent: "Reference"
 
 # Commands
 
-All 342 commands contributed by Vanthrex for IBM i 2.4.0. Run any of them from the
+All 354 commands contributed by Vanthrex for IBM i 2.5.0. Run any of them from the
 Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-click menus and view toolbars.
 
 | Command | ID | Keys |
@@ -22,17 +22,29 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Add Note to This Line… | `vanthrex.notes.add` |  |
 | Add User to Authorization List… | `vanthrex.secadm.addAutlEntry` |  |
 | AI: Ask the IBM i Assistant… | `vanthrex.ai.open` |  |
+| AI: Change the Selected Code… | `vanthrex.ai.edit` | Ctrl+Alt+E |
+| AI: Convert File I/O to Embedded SQL | `vanthrex.ai.sqlio` |  |
 | AI: Document This Code | `vanthrex.ai.document` |  |
 | AI: Explain & Fix Compile Errors | `vanthrex.ai.fix` |  |
 | AI: Explain Compile Errors | `vanthrex.ai.errors` |  |
 | AI: Explain Program Dependencies | `vanthrex.ai.dependencies` |  |
 | AI: Explain This Code | `vanthrex.ai.explain` |  |
 | AI: Explain This Object | `vanthrex.ai.explainObject` |  |
+| AI: Explain This Spooled File | `vanthrex.ai.explainSpool` |  |
+| AI: Generate Test Data for This Table | `vanthrex.ai.testData` |  |
 | AI: Generate Unit Tests (RPGUnit) | `vanthrex.ai.test` |  |
+| AI: Is the System Healthy? | `vanthrex.ai.health` |  |
+| AI: Make This SQL Faster | `vanthrex.ai.tune` |  |
 | AI: Modernize to Free-Form RPG | `vanthrex.ai.modernize` |  |
 | AI: Open SQL in Scratchpad | `vanthrex.ai.openSql` |  |
+| AI: Preview What the AI Sees | `vanthrex.ai.previewRedaction` |  |
+| AI: Privacy and Security | `vanthrex.ai.privacy` |  |
+| AI: Review Authorities | `vanthrex.ai.security` |  |
+| AI: Review My Changes | `vanthrex.ai.changes` |  |
 | AI: Review This Code | `vanthrex.ai.review` |  |
+| AI: Show Audit Trail | `vanthrex.ai.showAudit` |  |
 | AI: Why Did This Job Fail? | `vanthrex.ai.jobLog` |  |
+| AI: Write CL from a Description… | `vanthrex.ai.cl` |  |
 | AI: Write SQL from a Description… | `vanthrex.ai.sql` |  |
 | All Member Notes… | `vanthrex.notes.all` |  |
 | Analyze Job Log | `vanthrex.analyzeJobLog` |  |

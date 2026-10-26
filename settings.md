@@ -87,6 +87,19 @@ Open **File → Preferences → Settings** and search for *Vanthrex*, or edit `s
 | `vanthrex.editor.sqlCodeLens` | boolean | `true` | Show **Run**, **Explain** and **RPG code** links above each statement of an SQL file. |
 | `vanthrex.codeGen.arraySize` | number | `100` | Number of elements (`dim`) of arrays in generated RPG (JSON arrays, rows read per FETCH). |
 | `vanthrex.codeGen.insertRows` | number | `1000` | Rows **Copy Rows as SQL INSERT Script** reads at most. |
+| `vanthrex.ai.redact.secrets` | boolean | `true` | Before anything is sent to the AI, replace passwords (CL `PASSWORD(…)`, `pwd = …`), API keys, tokens, private keys and credentials in URLs by placeholders (xxxx1, xxxx2…). The real values are put back only on this computer, in the answer. |
+| `vanthrex.ai.redact.personalData` | boolean | `true` | Replace e-mail addresses, payment card numbers (Luhn-checked) and IBANs (checksum-checked) by placeholders before they are sent to the AI. |
+| `vanthrex.ai.redact.hostNames` | boolean | `true` | Replace IP addresses and the host names of your connections (and of `vanthrex.ai.redact.hostList`) by placeholders before they are sent to the AI. |
+| `vanthrex.ai.redact.hostList` | array | `[]` | More internal host or server names to hide from the AI. |
+| `vanthrex.ai.redact.words` | array | `[]` | Words that must never be sent to the AI (customer names, project code names…): replaced by placeholders. |
+| `vanthrex.ai.sensitiveColumns` | array | `["PASS", "PWD", "SECRET", "TOKEN", "APIKEY", "SSN", "SOCSEC", "NIR", "IBAN", "BIC", "SWIFT", "CARD", "CCNUM", "CVV", "PAN", "SALARY", "SALAIRE", "WAGE", "PAYRATE", "BIRTH", "DOB", "TAXID", "NATID", "PASSPORT", "EMAIL", "MAIL", "PHONE", "TEL", "MOBILE", "ADDRESS", "ADR"]` | Columns whose values are always replaced by `xxxx` in query results sent to the AI (a column matches when its name contains the word; short words must be a whole part of the name). |
+| `vanthrex.ai.deniedLibraries` | array | `[]` | Libraries the AI may never read (source, objects, queries, authorities). `PAY*` matches every library starting with PAY. |
+| `vanthrex.ai.productionData` | string | `"metadata"` | What the AI may read on **protected** connections (production protection *Confirm* or *Read-only*): `metadata` = source, catalog and object facts but no table rows (default), `full` = also query results (masked), `none` = nothing. Values: `full`, `metadata`, `none`. |
+| `vanthrex.ai.otherSystemsData` | string | `"full"` | What the AI may read on connections that are not protected: `full` (query results are still masked), `metadata` or `none`. Values: `full`, `metadata`, `none`. |
+| `vanthrex.ai.audit` | boolean | `true` | Keep an audit trail of what is sent to the AI (time, system, feature, size, number of hidden values — never the content) in the *Vanthrex AI Audit* output and a file in the extension's storage. |
+| `vanthrex.ai.showPrivacyNote` | boolean | `true` | After an answer, say how many values were hidden from the AI. |
+| `vanthrex.ai.codeLens` | boolean | `true` | Show ✨ **Explain · Document · Tests** above each RPG procedure and subroutine. |
+| `vanthrex.ai.modelFamily` | string | `""` | Language model family for **AI: Change the Selected Code** (for example `gpt-4o` or `claude-sonnet-4`); empty = the first available model. The chat uses the model chosen in the chat window. |
 
 ## RPG check rules
 

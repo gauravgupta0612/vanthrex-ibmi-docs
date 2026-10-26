@@ -6,6 +6,38 @@ nav_order: 90
 
 # Changelog
 
+## 2.5.0 (not released yet)
+
+**AI with your data protected**
+
+Everything sent to the AI now goes through one guard, and nothing the AI does can change the IBM i.
+
+- **Secrets never leave your computer**: passwords (CL `PASSWORD(…)` and `CHGVAR` of a password variable, `pwd = …`, `DB_PASSWORD=…`, `password: …`, ODBC / JDBC connection strings, FTP `PASS` and `USER name password`, SQL `USING '…'` and encryption passwords, constants named like a password), API keys, tokens (GitHub, GitLab, npm, AWS, Slack, Google, JWT, Basic and Bearer), private keys and credentials in URLs are replaced by placeholders (xxxx1, xxxx2…) before anything is sent — in the source, query results, job logs, tool results and the chat history. The AI keeps the placeholders; the **real values are put back only on your computer**, in the answer you read and in the code you apply. Special values (`*NONE`, `*USRPRF`) and variables (`&PWD`, `:host`) are left alone.
+- **Personal data and internal names hidden**: e-mail addresses, payment card numbers (Luhn-checked), IBANs (checksum-checked), US social security numbers, international phone numbers, IP addresses, the host names of your connections, and your own list of words (customer names, project code names) — each can be switched in the settings.
+- **Sensitive columns masked**: query results the AI reads show `xxxx` for columns such as PASSWORD, EMAIL, PHONE, IBAN, CARD, SALARY, BIRTH (your own list in `vanthrex.ai.sensitiveColumns`).
+- **Production stays private**: on protected connections the AI reads source and catalog facts (object descriptions, columns, members, indexes, command definitions, message help) but **cannot run queries of its own, read spooled files or non-source IFS files** (`vanthrex.ai.productionData`: metadata / full / none); `vanthrex.ai.otherSystemsData` does the same for the other systems.
+- **Safer AI queries**: a query the AI writes may not call functions that reach other servers or read files, spooled output, journals, data queues or data areas (HTTP_GET, IFS_READ, SPOOLED_FILE_DATA, DISPLAY_JOURNAL, QCMDEXC…); a sensitive column renamed with AS or used in an expression is refused; unqualified tables are refused when a hidden library is in the library list; card numbers stored as numbers are hidden too.
+- **Source means source**: the AI reads members of source files only (never members of data files), refuses /QSYS.LIB paths and key, certificate and credential files.
+- **No way out through links**: real values are put back only for placeholders sent in that request, and never inside a link or URL of an answer (so injected text cannot make the answer send a secret anywhere). Values shown in an answer are hidden again when the chat history is sent back.
+- **Libraries never shared**: `vanthrex.ai.deniedLibraries` (wildcards like `PAY*`) — sources, objects, queries and authorities in them are refused, even when named inside a string.
+- **No surprise reads**: IFS files that look like keys, credentials or system files are refused; every query still asks first and is read-only.
+- **Prompt-injection guard**: source, rows, job logs and messages are sent as framed data the model is told never to obey.
+- **Audit trail and transparency**: after an answer you see how many values were hidden; **AI: Privacy and Security** shows the settings, what was hidden this session and every request (time, system, feature, size — never the content), also kept in the *Vanthrex AI Audit* output and a file; **AI: Preview What the AI Sees** shows the open file side by side with what would be sent.
+
+**New AI features**
+
+- **AI: Change the Selected Code…** (Ctrl+Alt+E): say what to change ("add MONITOR around the I/O", "rename x to customerNumber", "convert to free form"); the proposal opens as a **diff** and is applied only when you click *Apply* (one Ctrl+Z undoes it), never if the source changed meanwhile.
+- **✨ Explain · Document · Tests** above every RPG procedure and subroutine (`vanthrex.ai.codeLens`).
+- **/tune — Make This SQL Faster**: reads each table's size, its indexes (and how often queries used them) and the optimizer's index advice, then rewrites the statement and writes the CREATE INDEX worth creating.
+- **/sqlio — Convert File I/O to Embedded SQL**: CHAIN, READ, SETLL, WRITE, UPDATE… to cursors and SELECT INTO, with SQLSTATE checks and the locking notes.
+- **/changes — Review My Changes**: only the lines you changed are sent and reviewed — against Git HEAD for local files, the copy on the IBM i for unsaved changes, or the latest change day of the source dates for members.
+- **/cl — Write CL from a description**, using the real command definitions of your system.
+- **/data — Test data for a table**: realistic invented INSERTs that respect types, keys and foreign keys — only the table's structure is read, never its rows.
+- **/health — Is the system healthy?**: CPU, storage, jobs waiting for a reply, top CPU jobs, QSYSOPR, subsystems — what needs attention first and the next step.
+- **/security — Review authorities** of an object or a library: *PUBLIC exposure, owners, adopted authority, with the GRTOBJAUT / RVKOBJAUT / CHGOBJOWN to fix each finding.
+- **/spool — Explain a spooled file** (right-click it): a dump, a job log, a compile listing or a report in plain words.
+- **Four more tools for the AI and Copilot agent mode**: `#ibmiMessage` (IBM message help), `#ibmiMembers` (members of a source file), `#ibmiCommand` (CL command definitions), `#ibmiIndexes` (table size, indexes and index advice) — all read-only and through the same guard.
+
 ## 2.4.0
 
 **Local development (like Code for IBM i, with less setup)**
