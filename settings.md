@@ -100,6 +100,9 @@ Open **File → Preferences → Settings** and search for *Vanthrex*, or edit `s
 | `vanthrex.ai.showPrivacyNote` | boolean | `true` | After an answer, say how many values were hidden from the AI. |
 | `vanthrex.ai.codeLens` | boolean | `true` | Show ✨ **Explain · Document · Tests** above each RPG procedure and subroutine. |
 | `vanthrex.ai.modelFamily` | string | `""` | Language model family for **AI: Change the Selected Code** (for example `gpt-4o` or `claude-sonnet-4`); empty = the first available model. The chat uses the model chosen in the chat window. |
+| `vanthrex.editor.checkCharacters` | boolean | `true` | Underline characters that break a compile or a CCSID conversion (tabs, control characters, no-break spaces, curly quotes, characters lost in a conversion) when a source is opened or saved. |
+| `vanthrex.csvSeparator` | string | `","` | Separator of CSV files written by **Report to CSV** (`;` for spreadsheets set up for a comma as decimal separator). Values: `,`, `;`, `	`. |
+| `vanthrex.jobHistoryDays` | number | `30` | Days of history log read by **Job Run History**. |
 
 ## RPG check rules
 

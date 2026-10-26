@@ -48,3 +48,23 @@ More AI help for IBM i developers and operators, and one guard in front of every
 | `/security LIB/OBJ` | Authority review with the commands to fix each finding. |
 | `/spool` | A spooled file explained (right-click it). |
 | Agent-mode tools | `#ibmiMessage`, `#ibmiMembers`, `#ibmiCommand`, `#ibmiIndexes`. |
+
+## Several systems, projects and documentation
+
+| Feature | How |
+|---|---|
+| Run on several systems | *Run SQL on Several Systems…* / *Run CL Command on Several Systems…* (Connections toolbar): rows not on every system first, errors per system. |
+| IBM i Project | Right-click a folder → *Create IBM i Project*: `iproj.json`, `.ibmi.json`, `Rules.mk` with targets and `/COPY` dependencies (Bob naming). |
+| Library documentation | Right-click a library → *Document This Library (Markdown)*: objects, programs and what they use, files and columns, CRUD matrix, Mermaid diagram. |
+| CRUD matrix | Right-click a library → *CRUD Matrix*; *Save as CSV*. |
+
+## Sources, reports and jobs
+
+| Feature | How |
+|---|---|
+| RPG for a display file | Right-click a `.dspf` → *Generate RPG Program for This Display File*: WORKSTN with SFILE / INDDS, EXFMT loop, function keys, subfile clear / load / display / READC. |
+| Problem characters | Underlined in sources; the light bulb fixes them (`vanthrex.editor.checkCharacters`). |
+| TODO notes | *TODO and FIXME Notes in Open Sources…* |
+| Report to CSV | Right-click a spooled file → *Report to CSV (Excel)…* (`vanthrex.csvSeparator`). |
+| Job run history | *Job Run History…*: elapsed and CPU of each run from QHST, slow and failed runs marked (`vanthrex.jobHistoryDays`). |
+| Message in job logs | *Find a Message in Job Logs…* across a user's recent jobs. |

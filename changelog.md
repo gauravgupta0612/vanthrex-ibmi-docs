@@ -38,6 +38,25 @@ Everything sent to the AI now goes through one guard, and nothing the AI does ca
 - **/spool — Explain a spooled file** (right-click it): a dump, a job log, a compile listing or a report in plain words.
 - **Four more tools for the AI and Copilot agent mode**: `#ibmiMessage` (IBM message help), `#ibmiMembers` (members of a source file), `#ibmiCommand` (CL command definitions), `#ibmiIndexes` (table size, indexes and index advice) — all read-only and through the same guard.
 
+**Several systems, projects and documentation**
+
+- **Run SQL on Several Systems…** and **Run CL Command on Several Systems…** (Connections toolbar with two or more systems connected, SQL editor right-click, quick menu): the same statement on DEV, TEST and PROD at once; rows found on only some systems come first, each system's time or error is shown; statements that can change data and every CL command ask first, with the list of systems.
+- **Create IBM i Project (iproj.json, Rules.mk)…** (Explorer right-click on a folder): IBM i Project Explorer / Bob files for a local source folder — `iproj.json` (include path from the folders with copybooks, current library, library list), `.ibmi.json`, and a `Rules.mk` per folder with one target per source (`ord01.pgm.rpgle` → `ORD01.PGM`, `.rpgle` → module, `.pf` / `.dspf` → file, `.bnd` → service program, `.cmd` → command) and its `/COPY` dependencies; the build command is set to `makei build`. Existing files are only replaced when you say so.
+- **Document This Library (Markdown)** (right-click a library): every object, each program with the files it reads / writes / updates and what it calls, each file with its columns and the programs that use it, the CRUD matrix and a Mermaid diagram — opened with the preview beside it, ready for a wiki.
+- **CRUD Matrix** (right-click a library): which program Creates, Reads, Updates or Deletes which file (from DSPPGMREF), with a filter, and **Save as CSV**.
+
+**Sources and reports**
+
+- **Generate RPG Program for This Display File** (right-click a .dspf source): a `**FREE` skeleton with the WORKSTN file (`SFILE` for each subfile, `INDDS` when the file uses INDARA, with the indicators it uses named after their function keys), the main `EXFMT` loop with every CA / CF key, and for each subfile `load…` / `process…` procedures that clear, load, display (SFLDSP / SFLCLR / SFLEND indicators read from the DDS) and read back changed rows with READC.
+- **Problem characters underlined** in RPG, CL, DDS, SQL and COBOL sources when opened or saved: tabs, control characters, no-break spaces, zero-width and byte-order marks, curly quotes and dashes, characters lost in a CCSID conversion — with **Fix every problem character** in the light bulb (`vanthrex.editor.checkCharacters`).
+- **TODO and FIXME Notes in Open Sources…**: TODO / FIXME / HACK / XXX / BUG in RPG (`//`, `*` in column 7), CL (`/* */`), SQL (`--`) and DDS comments, one click to the line.
+- **Report to CSV (Excel)…** (right-click a spooled file, or on an open report): the columns of a printed report are found (header above the underline, page headers and totals left out), IBM i number formats (`1.234,50-`, `12,000.00-`) become plain numbers, saved as a CSV a spreadsheet opens directly (`vanthrex.csvSeparator`).
+
+**Jobs**
+
+- **Job Run History…**: how long each run of a batch job took over the last 30 days (`vanthrex.jobHistoryDays`) from the history log — start, end, elapsed and CPU time, end code — with the average, the longest, failed runs in red and runs twice as long as usual marked; click a run for its job log.
+- **Find a Message in Job Logs…**: where a message ID (CPF4131, CPF41*) or words of a message ("level check") appeared in the job logs of a user's recent jobs, with the program that sent it; click for the whole job log.
+
 ## 2.4.0
 
 **Local development (like Code for IBM i, with less setup)**
