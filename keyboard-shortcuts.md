@@ -17,6 +17,12 @@ nav_order: 3
 | **Ctrl+Alt+J** | Go to anything: members, objects, recent items | Anywhere (connected) |
 | **Ctrl+Alt+Shift+F** | Instant search in indexed sources | Anywhere (connected) |
 | **Ctrl+Alt+R** | Run the selection as CL or SQL | Editor (connected) |
+| **Ctrl+Alt+.** | Close the open block (ENDIF, ENDDO…) | RPG editor |
+| **Ctrl+Alt+W** | Surround the selection with IF, MONITOR, DOW… | RPG editor (selection) |
+| **Ctrl+/** | Toggle RPG comment | RPG editor |
+| **Ctrl+Alt+PageDown / PageUp** | Next / previous procedure | RPG editor |
+| **Ctrl+Alt+A** | IBM i tools for this source (Developer Toolbox) | Editor |
+| **Ctrl+Alt+Shift+T** | Toggle value (*ON / *OFF, AND / OR, = / <>…) | RPG editor |
 | **Ctrl+Alt+B** | Toggle a bookmark on the line | Editor |
 | **Ctrl+Alt+Shift+B** | List bookmarks | Anywhere |
 | **Ctrl+Alt+K** | 5250-style command line | Anywhere (connected) |
