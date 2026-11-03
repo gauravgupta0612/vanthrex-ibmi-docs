@@ -6,7 +6,7 @@ nav_order: 90
 
 # Changelog
 
-## 2.5.0 (not released yet)
+## 2.5.0
 
 **AI with your data protected**
 
@@ -56,6 +56,78 @@ Everything sent to the AI now goes through one guard, and nothing the AI does ca
 
 - **Job Run History…**: how long each run of a batch job took over the last 30 days (`vanthrex.jobHistoryDays`) from the history log — start, end, elapsed and CPU time, end code — with the average, the longest, failed runs in red and runs twice as long as usual marked; click a run for its job log.
 - **Find a Message in Job Logs…**: where a message ID (CPF4131, CPF41*) or words of a message ("level check") appeared in the job logs of a user's recent jobs, with the program that sent it; click for the whole job log.
+
+**Database care**
+
+- **Unused Indexes of a Library…** (right-click a library, quick menu): indexes and keyed logical files no query used and nothing opened for 180 days (`vanthrex.unusedIndexDays`), largest first, with the space they take; unique, primary-key and constraint indexes and new ones are never proposed; **Drop…** on a row shows the `DROP INDEX` / `DLTF` and asks first.
+- **Journal Coverage of a Library…** (right-click a library): every physical file with its journal and images, files not journaled in red, and **Commands to journal the files…**: `STRJRNPF` commands (50 files each, `*BOTH` or `*AFTER`, `OMTJRNE(*OPNCLO)`) opened for review and run only when you confirm.
+- **Programs That Would Get a Level Check…** (right-click a file): compares the record format level of the file now with the level each program was compiled with (DSPFD / DSPPGMREF, in the file library or the user library list) and lists the programs to recompile before they end with CPF4131.
+- **Take a Library Snapshot** / **Compare Library With Snapshot…** (right-click a library): the list of objects with size, change date and source member saved on this computer (never data); after a release, see what was added, changed or removed.
+- **Enable / Disable this trigger** in the options of a trigger in the schema browser (`ALTER TRIGGER … ENABLE / DISABLE`, after a confirmation).
+
+**SQL generators**
+
+- **Create Table From CSV or Excel File…** (Explorer right-click on a .csv / .xlsx, quick menu): column names made valid for Db2, types guessed from the data (INTEGER, BIGINT, DECIMAL with its precision, DATE, TIMESTAMP, VARCHAR; codes with leading zeros stay text; nullable when a value is missing), `LABEL ON` with the original headers; the statements open for review, then **Create and Import** creates the table from the editor text and imports the rows.
+- **JSON_TABLE Query From a JSON Sample** (Explorer right-click on a .json, selected JSON in an editor): a `SELECT` over `JSON_TABLE` with one typed column per value, nested objects flattened and `NESTED PATH` for arrays of objects — reading from an IFS file (`GET_CLOB_FROM_FILE`), a table column or a host variable.
+- **Find a Text in Spooled Files…**: an order number or an error text across the recent spooled files of a user (`vanthrex.spoolSearchDays`), the lines found with one click to open the spooled file.
+
+**Editor**
+
+- **Comment blocks fold** in RPG and CL: three or more comment lines in a row (`//`, `*` in column 7, `/* */`) fold like code, and *Fold All Block Comments* folds them all.
+
+**Understand and modernize code**
+
+- **Flowchart of This Procedure** (right-click an RPG or CL source): the control flow of the main line, a procedure or a subroutine drawn as boxes — runs of statements, IF / ELSEIF / ELSE and SELECT / WHEN decisions, DOW / DOU / FOR loops with their way back, MONITOR / ON-ERROR, RETURN, LEAVE and ITER — for free-form RPG, fixed C specs and CL (IF THEN(DO), ELSE, DOWHILE, SELECT…); click a box to go to its line, zoom, **Copy as Mermaid**.
+- **Matching blocks** in RPG and CL: put the cursor on IF, ELSE, DOW, WHEN, MONITOR, LEAVE or an END and the whole block is highlighted (`vanthrex.editor.matchBlocks`); **Go to Matching IF / ELSE / END** jumps between them (Ctrl+Shift+\\).
+- **Create SQL Procedure for This Program…**: `CREATE PROCEDURE … EXTERNAL NAME` over an RPG or CL program (parameters read from the dcl-pi, *ENTRY PLIST or PGM PARM; CONST / VALUE become IN, the others INOUT), or `CREATE FUNCTION` over an exported procedure that returns a value — so Java, Python, Node, ODBC and SQL can call it.
+- **Convert DDS to SQL**: a physical file becomes `CREATE TABLE … RCDFMT` (types, ALWNULL, DFT, ALIAS, the unique key as PRIMARY KEY, TEXT and COLHDG as labels); a keyed logical file becomes `CREATE INDEX … RCDFMT … ADD` (programs keep working after a recompile), select / omit a view; what needs a check is written at the top.
+- **Generate SQL Statements…** (right-click a table): SELECT INTO, INSERT, UPDATE, DELETE by key, MERGE (upsert) and a cursor, with host variables, identity columns left out and nullable columns pointed out.
+- **Expand SELECT \*** (light bulb in SQL and RPG): the `*` replaced by the column list of the table.
+- **Extract to Named Constant (DCL-C)** (light bulb on a selected literal in RPG): a name proposed from the text, every occurrence replaced if you want.
+- **Add Change Log Entry**: date, user, ticket and text at the top of the source, in its comment style (`vanthrex.editor.changeLogTemplate`).
+
+**Codes and converters**
+
+- **SQLCODE, SQLSTATE and RPG status explained** on hover in RPG, SQL and CL (`if sqlcode = -803`, `sqlstate = '02000'`, `%status = 1218`) and with **Explain SQLCODE / SQLSTATE / RPG Status…** (`-803`, `SQL0204`, `23505`, `01211`, `RNQ1218`): what it means and what to do, offline.
+- **Developer Converters**: packed, zoned and binary to and from hex (what a dump or DSPPFM shows); a date in every IBM i format (*ISO, *USA, *EUR, *MDY, *DMY, *YMD, *JUL, *LONGJUL, *CYMD, *CMDY, *CDMY, day of week, RPG and SQL literals) from any of them; timestamps and epoch; text to and from EBCDIC hex for any CCSID, converted by the system itself. Pick a result to copy it.
+
+**Data quality**
+
+- **Data Profile of a Table…** (right-click a table): for each column the nulls, distinct values, smallest and largest, with columns always null, holding one value, unique (key candidates), mostly null or with dummy dates pointed out; click a column for its most frequent values (`vanthrex.profileSampleRows`).
+- **Find Orphan Rows…** (right-click a table): rows whose parent is missing, for a declared foreign key or any relation you give, grouped by key with counts.
+- **Columns Close to Their Limit…** (right-click a table): numeric columns near the largest value they can hold (a DECIMAL(5,0) counter at 99,000) and text columns filled to their length (values probably cut) (`vanthrex.capacityWarnPercent`).
+- **Unused Objects of a Library…** (right-click a library): objects not used for a year (or never), largest first, with the commands to save them to a save file and delete them, opened for review (`vanthrex.unusedObjectDays`).
+- **Time This SQL Statement**: run a SELECT 2 to 50 times and see the first run, the average after it, median, 90th percentile and each run (`vanthrex.benchmarkRows`).
+
+**System audits**
+
+- **Program Attributes Audit…** (right-click a library): programs that adopt the authority of QSECOFR or an *ALLOBJ owner, adopt their owner, run dynamic SQL as the owner, use adopted authority, or target an old release — with what to do.
+- **Job Schedule for the Next Days**: every scheduled entry laid out day by day with its time, command and user (weekly days, month start / end, "first Monday"…), held entries apart (`vanthrex.scheduleDays`).
+- **Objects Hidden in the Library List**: programs, files, commands and data areas that exist in two libraries of the library list — which one is used and which ones are never reached.
+- **NetServer File Shares**: every share with its path, permissions and users; write access to the root or QSYS.LIB is marked.
+
+**Speed**
+
+- **Instant reopen (member cache)**: members you open are kept on this computer with their change time; when a member did not change on the IBM i it opens again from the cache — one small query instead of copying the member (`vanthrex.memberCache.enabled`, `vanthrex.memberCache.maxMembers`, **Clear the Member Cache**). What you save is cached too.
+- **Index Source Libraries for Instant Search…** (right-click a library): the sources of the chosen libraries are copied to this computer with 150 members per round trip and several source files at a time (`vanthrex.index.membersPerTrip`, `vanthrex.index.parallel`); afterwards only new and changed members are read again.
+- **Instant Search in Indexed Sources…** (Ctrl+Alt+Shift+F): results appear as you type, in milliseconds, with `re:` for regular expressions and `w:` for whole words; pick a line to open the member there.
+- **Go to Anything** (Ctrl+Alt+J): every member of the library list's source files, every program, file, command, data area and more, and your recently opened members and IFS files, filtered as you type from a list kept in memory; objects open with their most useful actions (information, source, call graph, data, where used, locks) (`vanthrex.goTo.maxItems`, `vanthrex.goTo.refreshMinutes`).
+- **Warm-up after connecting**: in the background, the SQL job is started, the Go to Anything list loaded, the source index refreshed and the most recent members put in the cache, so the first actions are instant (`vanthrex.warmUp.enabled`, `vanthrex.warmUp.members`, **Get This Connection Ready**).
+- **Batch compile in parallel**: several members compiled at the same time in separate jobs (`vanthrex.compile.parallel`, default 4).
+- **Recompile the Programs That Use This File…** (right-click a file, or **Recompile the programs now** in the level check report): finds every program that uses the file, its source, and recompiles them all in parallel, with a report.
+- **Go to Definition across members**: F12 on a procedure call that is not defined in the source jumps to its `dcl-proc` in another member — found instantly in the source index, or through the service program that exports it and its bound modules.
+- **Clickable IBM i references** in sources, spooled files and logs: `LIB/FILE(MBR)` opens the member, `PGM(LIB/OBJ)` and `LIB/OBJ *TYPE` the object information, `/home/…` the IFS file, `CPF4131` the message help, `123456/USER/JOB` the job log (`vanthrex.editor.referenceLinks`).
+- **Speed Test of This Connection**: SSH round trip, QSH start, SQL statement, download and upload speed, graded, with what to change to make Vanthrex faster.
+
+**Flexible workflow**
+
+- **Copy, CSV and Excel on every report table**: every table of every report page (active jobs, unused objects, data profile, CRUD matrix, audits…) has *Copy* (paste into a spreadsheet), *CSV* and *Excel* buttons.
+- **File and field help in RPG**: hover a file of a `dcl-f` or an F spec to see its fields with types and texts from Db2 (EXTFILE, EXTDESC, PREFIX and QUALIFIED understood); hover a field to see its type, text and file; field names are completed (also after `file.` for qualified files); Ctrl+click on the file opens its DDS source (`vanthrex.editor.fileFieldHelp`).
+- **SQL watches**: a value from a SELECT in the status bar, refreshed every N seconds, with an alert when it changes or meets a condition (`> 0`, `= ACTIVE`, `contains MSGW`); ready-made watches for messages waiting for a reply, jobs in MSGW, system ASP and job queues; watches start again after VS Code restarts.
+- **CL macros** (`vanthrex.macros`): a named list of CL commands with `${VARIABLES}` asked when it runs (with defaults, remembered), `${USER}`, `${CURLIB}`, `${DATE}`, `${TIME}`; the commands are shown first, run in order and stop at the first error.
+- **Run Selection as CL or SQL** (Ctrl+Alt+R): the selected text — in any file, comments included — runs as SQL or as CL (continuation lines joined, several commands run in order).
+- **Bookmarks** on lines of members and IFS files (Ctrl+Alt+B, list with Ctrl+Alt+Shift+B), kept across sessions and systems.
+- **Sets of sources**: save the members and IFS files open now under a name (a ticket, a project) and open them all again later.
 
 ## 2.4.0
 

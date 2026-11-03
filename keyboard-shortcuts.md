@@ -14,6 +14,14 @@ nav_order: 3
 | **Ctrl+Enter** | Run the SQL statement under the cursor | `.sql` editor |
 | **Ctrl+Shift+Enter** | Run the whole SQL script (or the selection), statement by statement | `.sql` editor |
 | **Ctrl+Alt+L** | Run a CL command with your library list | Anywhere (connected) |
+| **Ctrl+Alt+J** | Go to anything: members, objects, recent items | Anywhere (connected) |
+| **Ctrl+Alt+Shift+F** | Instant search in indexed sources | Anywhere (connected) |
+| **Ctrl+Alt+R** | Run the selection as CL or SQL | Editor (connected) |
+| **Ctrl+Alt+B** | Toggle a bookmark on the line | Editor |
+| **Ctrl+Alt+Shift+B** | List bookmarks | Anywhere |
+| **Ctrl+Alt+K** | 5250-style command line | Anywhere (connected) |
+| **Ctrl+Alt+P** | PASE terminal | Anywhere (connected) |
+| **Ctrl+Alt+E** | AI: change the selected code (shown as a diff first) | Editor |
 | **Ctrl+Alt+O** | Search objects | Anywhere (connected) |
 | **Ctrl+Alt+F** | Search source code | Anywhere (connected) |
 | **Ctrl+Alt+G** | Debug the program of the current source | RPG / CL editor |

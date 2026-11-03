@@ -57,4 +57,4 @@ Something not working? See [Troubleshooting](troubleshooting.md).
 
 ---
 
-Current version: **2.0.0** · [Changelog](changelog.md) · Free and open source under the MIT License.
+Current version: **2.5.0** · [Changelog](changelog.md) · Free and open source under the MIT License.

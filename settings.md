@@ -103,6 +103,30 @@ Open **File → Preferences → Settings** and search for *Vanthrex*, or edit `s
 | `vanthrex.editor.checkCharacters` | boolean | `true` | Underline characters that break a compile or a CCSID conversion (tabs, control characters, no-break spaces, curly quotes, characters lost in a conversion) when a source is opened or saved. |
 | `vanthrex.csvSeparator` | string | `","` | Separator of CSV files written by **Report to CSV** (`;` for spreadsheets set up for a comma as decimal separator). Values: `,`, `;`, `	`. |
 | `vanthrex.jobHistoryDays` | number | `30` | Days of history log read by **Job Run History**. |
+| `vanthrex.unusedIndexDays` | number | `180` | Days without query use or open before **Unused Indexes** proposes an index. |
+| `vanthrex.spoolSearchDays` | number | `7` | Days of spooled files searched by **Find a Text in Spooled Files**. |
+| `vanthrex.editor.matchBlocks` | boolean | `true` | Highlight the matching IF / ELSE / ENDIF, DO / ENDDO, SELECT / WHEN / ENDSL keywords in RPG and CL when the cursor is on one. |
+| `vanthrex.editor.explainCodes` | boolean | `true` | Explain SQLCODE, SQLSTATE and RPG status codes (01218, -803, '23505') when hovering them in RPG, SQL and CL. |
+| `vanthrex.editor.changeLogTemplate` | string | `"{date} {user} {ticket} {text}"` | Text of **Add Change Log Entry**: `{date}`, `{user}`, `{ticket}`, `{text}`. Use `\n` for more lines. |
+| `vanthrex.editor.changeLogUser` | string | `""` | Name written by **Add Change Log Entry** (empty: the IBM i user of the connection). |
+| `vanthrex.profileSampleRows` | number | `0` | **Data Profile**: read only the first N rows (0 = the whole table). |
+| `vanthrex.capacityWarnPercent` | number | `80` | **Columns Close to Their Limit** marks columns that use this percentage of what they can hold. |
+| `vanthrex.unusedObjectDays` | number | `365` | Days without use before **Unused Objects** lists an object. |
+| `vanthrex.benchmarkRows` | number | `1000` | Rows fetched on each run by **Time This SQL Statement**. |
+| `vanthrex.scheduleDays` | number | `7` | Days shown by **Job Schedule for the Next Days**. |
+| `vanthrex.memberCache.enabled` | boolean | `true` | Keep members you open on this computer: a member that did not change on the IBM i opens again instantly (one small query instead of a copy). |
+| `vanthrex.memberCache.maxMembers` | number | `500` | Members kept by the member cache (the least recently used are removed). |
+| `vanthrex.index.membersPerTrip` | number | `150` | Members read in one round trip when indexing sources. |
+| `vanthrex.index.parallel` | number | `3` | Source files read at the same time when indexing sources. |
+| `vanthrex.index.refreshOnConnect` | boolean | `true` | After connecting, read again the indexed members that changed (in the background). |
+| `vanthrex.goTo.maxItems` | number | `40000` | Most members and objects listed by **Go to Anything**. |
+| `vanthrex.goTo.refreshMinutes` | number | `30` | Minutes before **Go to Anything** reloads its list in the background. |
+| `vanthrex.warmUp.enabled` | boolean | `true` | After connecting, prepare in the background: the SQL job, the Go to Anything list, the source index and the most recent members. |
+| `vanthrex.warmUp.members` | number | `5` | Recently opened members loaded into the member cache by the warm-up. |
+| `vanthrex.compile.parallel` | number | `4` | Members compiled at the same time by Batch Compile and Recompile the Programs That Use This File (1 = one after the other). |
+| `vanthrex.editor.referenceLinks` | boolean | `true` | Make IBM i references clickable in sources, spooled files and logs: LIB/FILE(MBR), PGM(LIB/OBJ), IFS paths, message IDs and job names. |
+| `vanthrex.macros` | array | `[]` | CL macros for **Run a CL Macro**: a name and a list of CL commands. `${NAME}` asks for a value when the macro runs (`${LIB:MYLIB}` with a default); `${USER}`, `${CURLIB}`, `${DATE}` and `${TIME}` are filled in. The commands run in order and stop at the first error. |
+| `vanthrex.editor.fileFieldHelp` | boolean | `true` | In RPG, hovering a declared file shows its fields from Db2, hovering a field shows its type and text, field names are completed and Ctrl+click on a file opens its DDS source. |
 
 ## RPG check rules
 
