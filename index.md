@@ -11,7 +11,8 @@ description: "Vanthrex for IBM i — connect, browse, edit, compile, query and m
   <p>One sidebar for everything you do on IBM i: connect, browse, edit, compile, query, monitor and fix — with checks while you type, an AI assistant, Git and a call graph built in. In VS Code, without a green screen.</p>
   <a class="btn btn-primary fs-5" href="https://marketplace.visualstudio.com/items?itemName=gauravgupta0612.vanthrex-ibmi">Install from the Marketplace</a>
   <a class="btn btn-outline fs-5" href="{{ "/installation.html" | relative_url }}">Get started</a>
-  <a class="btn btn-outline fs-5" href="{{ "/screenshots.html" | relative_url }}">See screenshots</a>
+  <a class="btn btn-outline fs-5" href="{{ "/examples.html" | relative_url }}">Try the examples</a>
+  <a class="btn btn-outline fs-5" href="#see-what-it-does">See what it does</a>
   <div class="badges"><span>Version 3.1.0</span><span>Free · MIT License</span><span>RPG · CL · SQL · DDS · COBOL</span><span>8 languages</span></div>
 </div>
 
