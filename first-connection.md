@@ -13,6 +13,9 @@ nav_order: 3
 
 ## Create the connection
 
+![The Vanthrex side bar]({{ "/images/sidebar.png" | relative_url }})
+*The Vanthrex side bar before the first connection: click Add IBM i Connection.*
+
 ![Add an IBM i connection]({{ "/images/add-connection.png" | relative_url }})
 *The connection form, with Test connection.*
 

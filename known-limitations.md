@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Known limitations
-nav_order: 10
+parent: Help
+nav_order: 3
 ---
 
 # Known limitations (2.0)

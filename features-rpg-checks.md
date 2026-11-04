@@ -1,8 +1,9 @@
 ---
 layout: default
 title: "RPG code checks"
-nav_order: 7
-parent: "Features"
+parent: "Develop"
+grand_parent: "Features"
+nav_order: 3
 ---
 
 # RPG code checks

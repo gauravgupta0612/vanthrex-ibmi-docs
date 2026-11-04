@@ -2,62 +2,58 @@
 layout: home
 title: Home
 nav_order: 1
-description: "Vanthrex for IBM i — connect, browse, edit, compile, query and monitor IBM i from VS Code."
 permalink: /
+description: "Vanthrex for IBM i — connect, browse, edit, compile, query and monitor IBM i from VS Code."
 ---
 
-# Vanthrex for IBM i
-{: .fs-9 }
-
-One sidebar for everything you do on IBM i: connect, browse, edit, compile, query, monitor and fix — with an AI assistant, Git and a call graph built in — without leaving VS Code and without a green screen.
-{: .fs-6 .fw-300 }
-
-[Install from the Marketplace](https://marketplace.visualstudio.com/items?itemName=gauravgupta0612.vanthrex-ibmi){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
-[Get started](installation.md){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }
-[View on GitHub](https://github.com/gauravgupta0612/silverlake-ibmi){: .btn .fs-5 .mb-4 .mb-md-0 }
+<div class="hero">
+  <h1>Vanthrex for IBM i</h1>
+  <p>One sidebar for everything you do on IBM i: connect, browse, edit, compile, query, monitor and fix — with checks while you type, an AI assistant, Git and a call graph built in. In VS Code, without a green screen.</p>
+  <a class="btn btn-primary fs-5" href="https://marketplace.visualstudio.com/items?itemName=gauravgupta0612.vanthrex-ibmi">Install from the Marketplace</a>
+  <a class="btn btn-outline fs-5" href="{{ "/installation.html" | relative_url }}">Get started</a>
+  <a class="btn btn-outline fs-5" href="{{ "/screenshots.html" | relative_url }}">See screenshots</a>
+  <div class="badges"><span>Version 3.0.0</span><span>Free · MIT License</span><span>RPG · CL · SQL · DDS · COBOL</span><span>8 languages</span></div>
+</div>
 
 ![Vanthrex in VS Code: RPG checks while you type]({{ "/images/rpg-checks.png" | relative_url }})
-*Checks while you type in RPG, CL and SQL, with the fix one click away. More in the [screenshots](screenshots.md).*
-
----
+*Checks while you type in RPG, CL and SQL, with the fix one click away.*
 
 ## What you can do
 
-| | |
-|---|---|
-| **Connect in a minute** | A guided form with **Test connection**. Only SSH is needed on the IBM i — fast SQL is set up automatically. |
-| **Edit like SEU, but better** | Members open like local files, show each line's **change date**, keep dates on save, and **F4** prompts RPG specs, DDS and CL commands. |
-| **Compile with one key** | **Ctrl+Alt+C** picks the right command and puts compile errors on the exact line. |
-| **Query and edit data** | **Ctrl+Enter** runs Db2 for i SQL with autocomplete; edit table rows in a safe, validated grid. |
-| **Work as a team** | See **who has a member locked**, ask them to release it, and get warned before overwriting someone else's change. |
-| **Keep the system healthy** | Dashboard, active jobs, QSYSOPR replies, spooled files and a CL runner. |
-| **Know your objects** | Object information, who has an object locked, and **compare DEV with PROD** — new in 0.4. |
-| **SQL power tools** | Generate DDL, run whole scripts, SQL history and saved queries — new in 0.4. |
-| **Debug** | Breakpoints, stepping, variables and call stack for RPG, COBOL and CL — **Ctrl+Alt+G**, new in 0.5. |
-| **Ask the AI** | **@vanthrex** in the VS Code chat explains, documents, reviews and modernizes RPG, writes SQL against your real tables and fixes compile errors — [new in 0.6](features-ai.md). |
-| **Source in Git** | Export libraries to Git, move changes both ways and see every version of a member — [new in 0.6](features-git.md). |
-| **See the impact** | Interactive **call graph** of callers and callees before you change a program or file — [new in 0.6](features-call-graph.md). |
-| **DEV, TEST and PROD together** | Several systems connected at once, switch instantly; SQL **Explain** shows scans and advised indexes — new in 0.6. |
-| **Troubleshoot faster** | **Index advisor**, **DEV ↔ PROD data compare**, message help on hover and a **job log analyzer** — [new in 0.8](features-insights.md). |
-| **Look after the system** | **Journal explorer** (who changed this table?), **authority checker** that explains *why* and offers the fix, **data queues & data areas**, and a **PTF & system health** report — [new in 0.9](features-system-tools.md). |
-| **In your language** | English, French, Spanish, German, Italian, Portuguese (Brazil), Japanese and Simplified Chinese — [new in 0.10](languages.md). |
-| **Work with… everything** | Subsystems, job and output queues, job scheduler, user profiles, system values, audit journal, save files, TCP/IP — [new in 0.11](features-work-with.md). |
-| **Run it day to day** | Storage & cleanup advisor, live alerts, message files, field finder, object promotion with backup and undo — [new in 1.0](features-operations.md). |
-| **Data, performance & quality** | Excel / CSV / JSON import & export, live performance charts, code metrics, docs from source, RPGUnit tests — [new in 1.1](features-data-quality.md). |
-| **Safe on production** | Mark a system Production (every change asks) or Read-only, a self-check with fixes, errors that explain what to do — [new in 1.2](features-safety.md). |
-| **See and share** | 5250 screen preview for display files, database diagrams, DEV ↔ PROD system compare, spooled files to PDF and e-mail — [new in 1.3](features-see-share.md). |
-| **2.0: 20 new helpers** | RPG code from a table, SQL formatter, find & replace in members, batch compile, print preview, test data, submit & watch, library list sets… — [new in 2.0](features-2-0.md). |
-| **Understand the code** | Object and source search, **where used**, go to definition into /COPY members, scoped rename and RPG code checks. |
+<div class="cards">
+  <a class="card" href="{{ "/features-explore.html" | relative_url }}"><span class="card-icon">🔌</span><span class="card-title">Connect & explore</span><span class="card-text">Several systems at once, libraries, objects, the IFS, PDM in one screen and the System Tracker.</span></a>
+  <a class="card" href="{{ "/features-develop.html" | relative_url }}"><span class="card-icon">✍️</span><span class="card-title">Develop</span><span class="card-text">SEU source dates and F4, Ctrl+Alt+C compile, 50+ checks with quick fixes, call graph, Git, debug and AI.</span></a>
+  <a class="card" href="{{ "/features-data.html" | relative_url }}"><span class="card-icon">🗄️</span><span class="card-title">Db2 for i & data</span><span class="card-text">SQL with autocomplete, a safe data grid, Explain, index advisor, DEV ↔ PROD compare, Excel / CSV / JSON.</span></a>
+  <a class="card" href="{{ "/features-operate.html" | relative_url }}"><span class="card-icon">⚙️</span><span class="card-title">Operate the system</span><span class="card-text">Jobs, QSYSOPR, spooled files, subsystems, user profiles, journals, authorities, storage — production-safe.</span></a>
+  <a class="card" href="{{ "/coming-from-code-for-ibmi.html" | relative_url }}"><span class="card-icon">👥</span><span class="card-title">Work as a team</span><span class="card-text">Import from Code for IBM i, one team setup file, shared coding standards and a code health report.</span></a>
+  <a class="card" href="{{ "/features-3-0.html" | relative_url }}"><span class="card-icon">🆕</span><span class="card-title">What's new in 3.0</span><span class="card-text">AS/400 GO menus, team setup, team coding standards and the code health report of whole libraries.</span></a>
+</div>
 
-## Start here
+## See it in action
 
-1. [Install the extension](installation.md)
-2. [Check the IBM i requirements](ibm-i-setup.md) (usually just `STRTCPSVR SERVER(*SSHD)`)
-3. [Create your first connection](first-connection.md)
-4. See the [screenshots](screenshots.md), then browse the [features](features.md) or the [keyboard shortcuts](keyboard-shortcuts.md)
+<div class="shot-grid">
+  <figure><a href="{{ "/screenshots.html" | relative_url }}"><img src="{{ "/images/quick-fix.png" | relative_url }}" alt="Quick fix after CHAIN" loading="lazy"></a><figcaption>Quick fix after CHAIN</figcaption></figure>
+  <figure><a href="{{ "/screenshots.html" | relative_url }}"><img src="{{ "/images/suggestions.png" | relative_url }}" alt="Suggestions while you type" loading="lazy"></a><figcaption>Suggestions while you type</figcaption></figure>
+  <figure><a href="{{ "/screenshots.html" | relative_url }}"><img src="{{ "/images/fixed-to-free-compare.png" | relative_url }}" alt="Fixed → free in one command" loading="lazy"></a><figcaption>Fixed → free in one command</figcaption></figure>
+  <figure><a href="{{ "/screenshots.html" | relative_url }}"><img src="{{ "/images/flowchart.png" | relative_url }}" alt="Flowchart of a procedure" loading="lazy"></a><figcaption>Flowchart of a procedure</figcaption></figure>
+  <figure><a href="{{ "/screenshots.html" | relative_url }}"><img src="{{ "/images/developer-toolbox.png" | relative_url }}" alt="Developer Toolbox (Ctrl+Alt+A)" loading="lazy"></a><figcaption>Developer Toolbox (Ctrl+Alt+A)</figcaption></figure>
+  <figure><a href="{{ "/screenshots.html" | relative_url }}"><img src="{{ "/images/team-standards.png" | relative_url }}" alt="Team coding standards" loading="lazy"></a><figcaption>Team coding standards</figcaption></figure>
+</div>
 
-Something not working? See [Troubleshooting](troubleshooting.md).
+[All screenshots]({{ "/screenshots.html" | relative_url }}){: .btn }
+
+## Start in five minutes
+
+<ol class="steps">
+  <li><a href="{{ "/installation.html" | relative_url }}"><strong>Install the extension</strong></a> from the Marketplace, or run <code>code --install-extension gauravgupta0612.vanthrex-ibmi</code>.</li>
+  <li><a href="{{ "/ibm-i-setup.html" | relative_url }}"><strong>Check the IBM i</strong></a>: usually only the SSH server is needed (<code>STRTCPSVR SERVER(*SSHD)</code>).</li>
+  <li><a href="{{ "/first-connection.html" | relative_url }}"><strong>Create your first connection</strong></a> with the guided form and <em>Test connection</em>.</li>
+  <li>Coming from Code for IBM i? <a href="{{ "/coming-from-code-for-ibmi.html" | relative_url }}"><strong>Import your setup</strong></a> in one step.</li>
+  <li>Press <kbd>Ctrl+Alt+A</kbd> in any source to see every tool that fits it, and learn the <a href="{{ "/keyboard-shortcuts.html" | relative_url }}">keyboard shortcuts</a>.</li>
+</ol>
+
+Something not working? See [Troubleshooting](troubleshooting.md) and the [FAQ](faq.md).
 
 ---
 
-Current version: **3.0.0** · [Changelog](changelog.md) · Free and open source under the MIT License.
+Current version: **3.0.0** · [What's new](whats-new.md) · [Changelog](changelog.md) · Free and open source under the MIT License.

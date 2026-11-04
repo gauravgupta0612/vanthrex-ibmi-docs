@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Troubleshooting
-nav_order: 8
+parent: Help
+nav_order: 1
 ---
 
 # Troubleshooting

@@ -1,7 +1,8 @@
 ---
 layout: default
 title: "Changelog"
-nav_order: 90
+parent: "What's new"
+nav_order: 99
 ---
 
 # Changelog

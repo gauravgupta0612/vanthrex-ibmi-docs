@@ -1,7 +1,8 @@
 ---
 layout: default
 title: FAQ
-nav_order: 9
+parent: Help
+nav_order: 2
 ---
 
 # Frequently asked questions

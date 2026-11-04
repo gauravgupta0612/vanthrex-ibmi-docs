@@ -1,8 +1,9 @@
 ---
 layout: default
 title: "System, jobs & messages"
-nav_order: 8
-parent: "Features"
+parent: "Operate the system"
+grand_parent: "Features"
+nav_order: 1
 ---
 
 # System, jobs & messages

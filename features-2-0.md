@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "New in 2.0"
-nav_order: 22
-parent: "Features"
+parent: "What's new"
+nav_order: 6
 ---
 
 # New in 2.0

@@ -10,21 +10,20 @@ User documentation for **[Vanthrex for IBM i](https://github.com/gauravgupta0612
 
 ## Contents
 
-| Page | What's in it |
+| Section | Pages |
 |---|---|
-| [Home](index.md) | What Vanthrex is and where to start |
-| [Why Vanthrex](why-vanthrex.md) | What it replaces and why it is useful |
-| [Installation](installation.md) | Marketplace, offline VSIX, building from source |
-| [IBM i setup](ibm-i-setup.md) | SSH, Java and SQL engine requirements on the server |
-| [Your first connection](first-connection.md) | The connection form, step by step |
-| [Features](features.md) | Every feature: what, why and how |
-| [Commands](commands.md) · [Settings](settings.md) · [Keyboard shortcuts](keyboard-shortcuts.md) | Full reference |
-| [How it works](how-it-works.md) | What happens on the IBM i when you open, save, compile and query |
-| [Troubleshooting](troubleshooting.md) · [FAQ](faq.md) · [Known limitations](known-limitations.md) | Help |
-| [Changelog](changelog.md) · [Contributing](contributing.md) | Project |
+| **Start** | [Home](index.md) · [Why Vanthrex](why-vanthrex.md) · [Screenshots](screenshots.md) |
+| **[Getting started](getting-started.md)** | [Installation](installation.md) · [IBM i setup](ibm-i-setup.md) · [Your first connection](first-connection.md) · [Coming from Code for IBM i](coming-from-code-for-ibmi.md) |
+| **[Features](features.md)** | [Connect & explore](features-explore.md) · [Develop](features-develop.md) · [Db2 for i & data](features-data.md) · [Operate the system](features-operate.md) |
+| **[What's new](whats-new.md)** | [3.0](features-3-0.md) · [2.6](features-2-6.md) · [2.5](features-2-5.md) · [2.4](features-2-4.md) · [2.3](features-2-3.md) · [2.0](features-2-0.md) · [Changelog](changelog.md) |
+| **[Reference](reference.md)** | [Commands](commands.md) · [Settings](settings.md) · [Keyboard shortcuts](keyboard-shortcuts.md) · [How it works](how-it-works.md) · [Languages](languages.md) |
+| **[Help](help.md)** | [Troubleshooting](troubleshooting.md) · [FAQ](faq.md) · [Known limitations](known-limitations.md) |
+| **[Project](project.md)** | [Roadmap](roadmap.md) · [Contributing](contributing.md) |
+
+Pictures are in [`images/`](images); the site is published by the [GitHub Actions workflow](.github/workflows/pages.yml) on every push to `main`.
 
 ## Editing these docs
 
-The site is built by GitHub Pages with the [Just the Docs](https://just-the-docs.com) theme. Every page is a Markdown file in the root of this repository; the navigation comes from the `title`, `parent` and `nav_order` lines at the top of each file. Click **Edit this page on GitHub** at the bottom of any page to propose a change.
+The site is built by GitHub Pages with the [Just the Docs](https://just-the-docs.com) theme. Every page is a Markdown file in the root of this repository, so the web addresses never change; the menu comes from the `title`, `parent`, `grand_parent` and `nav_order` lines at the top of each file. Click **Edit this page on GitHub** at the bottom of any page to propose a change.
 
 Licensed under the [MIT License](LICENSE).

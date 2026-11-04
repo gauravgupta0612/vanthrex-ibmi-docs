@@ -1,8 +1,9 @@
 ---
 layout: default
 title: "Safe on production"
-nav_order: 20
-parent: "Features"
+parent: "Operate the system"
+grand_parent: "Features"
+nav_order: 6
 ---
 
 # Safe on production

@@ -1,8 +1,9 @@
 ---
 layout: default
 title: "Search & navigation"
-nav_order: 6
-parent: "Features"
+parent: "Develop"
+grand_parent: "Features"
+nav_order: 4
 ---
 
 # Search & navigation

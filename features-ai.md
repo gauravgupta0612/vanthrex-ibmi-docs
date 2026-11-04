@@ -1,8 +1,9 @@
 ---
 layout: default
 title: "AI assistant"
-nav_order: 12
-parent: "Features"
+parent: "Develop"
+grand_parent: "Features"
+nav_order: 9
 ---
 
 # AI assistant (`@vanthrex`)

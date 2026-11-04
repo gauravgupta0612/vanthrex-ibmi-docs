@@ -1,8 +1,9 @@
 ---
 layout: default
 title: "Security Admin"
-nav_order: 23
-parent: "Features"
+parent: "Operate the system"
+grand_parent: "Features"
+nav_order: 5
 ---
 
 # Security Admin and more (2.1)

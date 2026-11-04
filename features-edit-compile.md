@@ -1,8 +1,9 @@
 ---
 layout: default
 title: "Edit & compile"
-nav_order: 2
-parent: "Features"
+parent: "Develop"
+grand_parent: "Features"
+nav_order: 1
 ---
 
 # Edit & compile
@@ -27,6 +28,9 @@ Compile with one key, see errors on the right line, convert fixed format and nev
 - Add your own commands in *Settings → Vanthrex: Compile Actions*, using variables such as `&LIB`, `&OBJLIB`, `&NAME` and `&SRCFILE`.
 
 ## Fixed → free format conversion
+
+![Fixed format converted to free]({{ "/images/fixed-to-free-compare.png" | relative_url }})
+*One command converts H, F, D, P and C specs; what needs a decision is marked // TODO.*
 
 **What it is:** Converts fixed-format RPG IV into free format:
 

@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "New in 2.5"
-nav_order: 28
-parent: "Features"
+parent: "What's new"
+nav_order: 3
 ---
 
 # New in 2.5
@@ -96,6 +96,9 @@ AI with your data protected, several systems at once, database care, modernizati
 | Change log | *Add Change Log Entry* (`vanthrex.editor.changeLogTemplate`). |
 | Codes explained | Hover SQLCODE, SQLSTATE, %STATUS values; *Explain SQLCODE / SQLSTATE / RPG Status…*. |
 | Converters | *Developer Converters*: packed / zoned / binary, IBM i date formats, timestamps, EBCDIC hex for any CCSID. |
+
+![Flowchart of a procedure]({{ "/images/flowchart.png" | relative_url }})
+*Flowchart of a procedure: click a box to go to its line, or copy it as Mermaid.*
 
 ## Data quality and audits
 

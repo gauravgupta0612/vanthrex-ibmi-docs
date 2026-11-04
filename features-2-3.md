@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "New in 2.3"
-nav_order: 26
-parent: "Features"
+parent: "What's new"
+nav_order: 5
 ---
 
 # New in 2.3: create, check and stay connected
@@ -84,6 +84,9 @@ Right-click a library, or *PUBLIC on a library in the System Tracker. Objects th
 With two systems connected: Connections view (… menu) or the *All systems* tab of the System Tracker. Values that differ come first; values that differ on purpose (dates, serial numbers, devices) are listed apart.
 
 ## Data Structure Layout
+
+![Data Structure Layout]({{ "/images/ds-layout.png" | relative_url }})
+*Every subfield with its type, positions and length — without compiling.*
 
 Right-click in an RPG source → *Data Structure Layout (Positions and Lengths)*, with the cursor in a data structure (otherwise you pick one). You get every subfield with its type, from and to positions and length in bytes, like the compile listing — without compiling:
 

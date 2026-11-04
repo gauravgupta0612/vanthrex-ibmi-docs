@@ -1,8 +1,9 @@
 ---
 layout: default
 title: "Object tools"
-nav_order: 9
-parent: "Features"
+parent: "Connect & explore"
+grand_parent: "Features"
+nav_order: 3
 ---
 
 # Object tools

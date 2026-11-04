@@ -1,8 +1,9 @@
 ---
 layout: default
 title: "Insights"
-nav_order: 15
-parent: "Features"
+parent: "Db2 for i & data"
+grand_parent: "Features"
+nav_order: 3
 ---
 
 # Insights

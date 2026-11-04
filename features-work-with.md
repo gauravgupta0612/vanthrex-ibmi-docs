@@ -1,8 +1,9 @@
 ---
 layout: default
 title: "Work with… (WRK screens)"
-nav_order: 17
-parent: "Features"
+parent: "Operate the system"
+grand_parent: "Features"
+nav_order: 2
 ---
 
 # Work with… (WRK screens)

@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "Commands"
+parent: Reference
 nav_order: 1
-parent: "Reference"
 ---
 
 # Commands

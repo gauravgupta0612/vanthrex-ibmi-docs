@@ -1,8 +1,9 @@
 ---
 layout: default
 title: "Connect & browse"
+parent: "Connect & explore"
+grand_parent: "Features"
 nav_order: 1
-parent: "Features"
 ---
 
 # Connect & browse

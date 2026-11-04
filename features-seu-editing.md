@@ -1,8 +1,9 @@
 ---
 layout: default
 title: "SEU-style editing"
-nav_order: 4
-parent: "Features"
+parent: "Develop"
+grand_parent: "Features"
+nav_order: 2
 ---
 
 # SEU-style editing

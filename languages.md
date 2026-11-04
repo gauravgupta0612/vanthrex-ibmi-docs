@@ -1,7 +1,8 @@
 ---
 layout: default
 title: "Languages"
-nav_order: 8
+parent: Reference
+nav_order: 5
 ---
 
 # Languages

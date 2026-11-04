@@ -1,8 +1,9 @@
 ---
 layout: default
 title: "Git for IBM i source"
-nav_order: 13
-parent: "Features"
+parent: "Develop"
+grand_parent: "Features"
+nav_order: 8
 ---
 
 # Git for IBM i source

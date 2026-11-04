@@ -1,8 +1,9 @@
 ---
 layout: default
 title: "SQL & table data"
-nav_order: 3
-parent: "Features"
+parent: "Db2 for i & data"
+grand_parent: "Features"
+nav_order: 1
 ---
 
 # SQL & table data

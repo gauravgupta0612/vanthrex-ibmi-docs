@@ -1,8 +1,9 @@
 ---
 layout: default
 title: "Data, performance & quality"
-nav_order: 19
-parent: "Features"
+parent: "Db2 for i & data"
+grand_parent: "Features"
+nav_order: 4
 ---
 
 # Data, performance & quality
@@ -27,6 +28,9 @@ Import and export to Excel / CSV / JSON, a live performance monitor, code metric
 **How:** *Jobs* view toolbar → **Performance Monitor** (or the quick menu). Click a job for its job log; **Pause** stops sampling. The interval is `vanthrex.performance.intervalSeconds` (5 s by default).
 
 ## Code metrics and documentation
+
+![Code metrics]({{ "/images/code-metrics.png" | relative_url }})
+*Code metrics of a source: lines, procedures, complexity, nesting, with a grade.*
 
 - **Code metrics:** right-click a source file for every RPG/CL member (up to 300), or use **Code Metrics** in a member's editor menu for one source. Per member: code lines, % free form, procedures, subroutines, complexity, nesting, numbered indicators, GOTOs, SQL — and a grade A–D with advice.
 - **Generate documentation:** in an RPG or CL member, **Generate Documentation (Markdown)** opens a Markdown document with the description (from the leading comments), parameters, files, called programs and procedures, copybooks, the procedures with their comments, and metrics — ready to complete and keep in Git or a wiki.

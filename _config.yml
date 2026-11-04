@@ -11,7 +11,7 @@ baseurl: /vanthrex-ibmi-docs
 
 logo: /icon.png
 favicon_ico: /icon.png
-color_scheme: light
+color_scheme: vanthrex
 search_enabled: true
 heading_anchors: true
 
@@ -35,3 +35,18 @@ footer_content: "Vanthrex for IBM i by Gaurav Gupta · MIT License · Not affili
 exclude:
   - README.md
   - LICENSE
+
+callouts:
+  new:
+    title: New
+    color: green
+  note:
+    title: Note
+    color: blue
+  warning:
+    title: Warning
+    color: red
+
+back_to_top: true
+back_to_top_text: "Back to top"
+last_edit_timestamp: false

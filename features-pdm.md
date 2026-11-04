@@ -1,8 +1,9 @@
 ---
 layout: default
 title: "PDM in one screen"
-nav_order: 24
-parent: "Features"
+parent: "Connect & explore"
+grand_parent: "Features"
+nav_order: 2
 ---
 
 # PDM in one screen (2.2)

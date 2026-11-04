@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Debugging
-nav_order: 5
+title: "Debugging"
+parent: "Develop"
+grand_parent: "Features"
+nav_order: 10
 ---
 
 # Debugging RPG, COBOL and CL

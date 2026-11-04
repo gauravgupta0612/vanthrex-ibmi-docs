@@ -1,8 +1,9 @@
 ---
 layout: default
 title: "Call graph & impact analysis"
-nav_order: 14
-parent: "Features"
+parent: "Develop"
+grand_parent: "Features"
+nav_order: 6
 ---
 
 # Call graph & impact analysis

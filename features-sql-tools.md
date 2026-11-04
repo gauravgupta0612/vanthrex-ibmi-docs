@@ -1,8 +1,9 @@
 ---
 layout: default
 title: "SQL power tools"
-nav_order: 10
-parent: "Features"
+parent: "Db2 for i & data"
+grand_parent: "Features"
+nav_order: 2
 ---
 
 # SQL power tools

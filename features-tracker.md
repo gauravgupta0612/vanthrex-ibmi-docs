@@ -1,8 +1,9 @@
 ---
 layout: default
 title: "System Tracker"
-nav_order: 25
-parent: "Features"
+parent: "Connect & explore"
+grand_parent: "Features"
+nav_order: 4
 ---
 
 # System Tracker (2.2)

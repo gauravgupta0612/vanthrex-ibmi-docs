@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Getting started
-nav_order: 3
+nav_order: 4
 has_children: true
 ---
 
@@ -13,3 +13,4 @@ Go from nothing to editing and compiling a member in about five minutes.
 1. [Installation](installation.md) — install the extension in VS Code.
 2. [IBM i setup](ibm-i-setup.md) — what the server needs (usually only the SSH server).
 3. [Your first connection](first-connection.md) — connect, open a member, compile it and run a query.
+4. [Coming from Code for IBM i](coming-from-code-for-ibmi.md) — import your connections, library lists and compile actions in one step.

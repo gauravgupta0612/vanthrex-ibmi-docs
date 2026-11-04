@@ -1,8 +1,9 @@
 ---
 layout: default
 title: "Procedure & copybook tools"
-nav_order: 11
-parent: "Features"
+parent: "Develop"
+grand_parent: "Features"
+nav_order: 5
 ---
 
 # Procedure & copybook tools

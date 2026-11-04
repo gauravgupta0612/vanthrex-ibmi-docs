@@ -1,8 +1,9 @@
 ---
 layout: default
 title: "See and share"
-nav_order: 21
-parent: "Features"
+parent: "Connect & explore"
+grand_parent: "Features"
+nav_order: 5
 ---
 
 # See and share

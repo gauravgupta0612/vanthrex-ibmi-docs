@@ -1,8 +1,9 @@
 ---
 layout: default
 title: "Locks & conflicts"
-nav_order: 5
-parent: "Features"
+parent: "Develop"
+grand_parent: "Features"
+nav_order: 7
 ---
 
 # Locks & conflicts

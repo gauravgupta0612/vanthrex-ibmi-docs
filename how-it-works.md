@@ -1,7 +1,8 @@
 ---
 layout: default
 title: How it works
-nav_order: 7
+parent: Reference
+nav_order: 4
 ---
 
 # How it works

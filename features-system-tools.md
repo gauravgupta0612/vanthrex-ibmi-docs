@@ -1,8 +1,9 @@
 ---
 layout: default
 title: "System tools"
-nav_order: 16
-parent: "Features"
+parent: "Operate the system"
+grand_parent: "Features"
+nav_order: 3
 ---
 
 # System tools

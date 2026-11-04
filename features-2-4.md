@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "New in 2.4"
-nav_order: 27
-parent: "Features"
+parent: "What's new"
+nav_order: 4
 ---
 
 # New in 2.4: local development, notebooks and a smarter editor
