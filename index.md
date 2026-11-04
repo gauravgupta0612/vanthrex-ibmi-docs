@@ -48,6 +48,7 @@ description: "Vanthrex for IBM i — connect, browse, edit, compile, query and m
   <li><a href="{{ "/installation.html" | relative_url }}"><strong>Install the extension</strong></a> from the Marketplace, or run <code>code --install-extension gauravgupta0612.vanthrex-ibmi</code>.</li>
   <li><a href="{{ "/ibm-i-setup.html" | relative_url }}"><strong>Check the IBM i</strong></a>: usually only the SSH server is needed (<code>STRTCPSVR SERVER(*SSHD)</code>).</li>
   <li><a href="{{ "/first-connection.html" | relative_url }}"><strong>Create your first connection</strong></a> with the guided form and <em>Test connection</em>.</li>
+  <li>No IBM i at hand? <a href="{{ "/examples.html" | relative_url }}"><strong>Try it with examples</strong></a>: sample sources to see the checks and conversions offline.</li>
   <li>Coming from Code for IBM i? <a href="{{ "/coming-from-code-for-ibmi.html" | relative_url }}"><strong>Import your setup</strong></a> in one step.</li>
   <li>Press <kbd>Ctrl+Alt+A</kbd> in any source to see every tool that fits it, and learn the <a href="{{ "/keyboard-shortcuts.html" | relative_url }}">keyboard shortcuts</a>.</li>
 </ol>

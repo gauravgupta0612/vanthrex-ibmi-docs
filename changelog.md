@@ -22,7 +22,7 @@ nav_order: 99
 **Fixes**
 
 - A prototype (`DCL-PR`) and the procedure with the same name (`DCL-PROC`) are no longer reported as a duplicate declaration.
-- The README and the documentation now have screenshots, and the documentation is organised by area (Getting started, Features, What's new, Reference, Help).
+- The README and the documentation now have screenshots, a "Try it with examples" page with sample RPG, CL, SQL and DDS sources, and the documentation is organised by area (Getting started, Features, What's new, Reference, Help).
 
 ## 3.0.0
 
