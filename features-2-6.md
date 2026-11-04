@@ -16,6 +16,9 @@ Daily RPG development: about 150 small features that work on the open source, in
 
 ## 19 new code checks
 
+![Quick fix after CHAIN]({{ "/images/quick-fix.png" | relative_url }})
+*Ctrl+. on a warning adds the missing code — here an IF NOT %FOUND test after CHAIN.*
+
 Each one can be switched off in `vanthrex.lint.rules`.
 
 - Old fixed-format operation codes (MOVE, Z-ADD, CAT, SCAN…) with their free-form equivalent, and a quick fix that converts the line.
@@ -55,6 +58,9 @@ Each one can be switched off in `vanthrex.lint.rules`.
 
 ## Suggestions while you type
 
+![Suggestion while typing]({{ "/images/suggestions.png" | relative_url }})
+*The next line appears in grey; Tab accepts it.*
+
 Shown in grey: **Tab** accepts, Esc ignores.
 
 - **The next statement you usually write**, offline and instant: `IF %FOUND(file)` after CHAIN, `READE` / `READ` after SETLL, `EXEC SQL OPEN` after DECLARE CURSOR and `FETCH NEXT` after OPEN, an SQLCODE test after SELECT INTO / INSERT / UPDATE / DELETE / FETCH, `DCL-PI` after `DCL-PROC`, CTL-OPT right after `**FREE`.
@@ -65,6 +71,9 @@ Shown in grey: **Tab** accepts, Esc ignores.
 - **AI suggestions (off by default)**: `vanthrex.ai.inlineSuggestions` also asks your AI model when you pause typing (`vanthrex.ai.inlineDelay`, 500 ms) and no offline suggestion applies, in RPG, CL, SQL and DDS. The code around the cursor goes through the same guard as the chat (secrets and personal data replaced, denied libraries and protected systems never sent, every request in the audit trail); after three failures in a row it stops until turned on again. **AI: Turn Suggestions While Typing On or Off** asks for confirmation first.
 
 ## Developer Toolbox
+
+![Developer Toolbox]({{ "/images/developer-toolbox.png" | relative_url }})
+*Ctrl+Alt+A: every tool that fits the file you are in.*
 
 Every tool in one menu: **Ctrl+Alt+A**, the **IBM i** button in the status bar, or right-click → *IBM i Tools for This Source*.
 
@@ -127,6 +136,9 @@ Every tool in one menu: **Ctrl+Alt+A**, the **IBM i** button in the status bar, 
 
 ## CL checks while you type
 
+![CL checks]({{ "/images/cl-checks.png" | relative_url }})
+*CL checks in the Problems view.*
+
 Switched with `vanthrex.lint.cl`, and each one in `vanthrex.lint.rules`.
 
 - Variables used but not declared (quick fix: a DCL with a type from the name) and declared but never used (quick fix: remove the DCL).
@@ -135,6 +147,9 @@ Switched with `vanthrex.lint.cl`, and each one in `vanthrex.lint.rules`.
 - Library names written in commands (QSYS, QTEMP, QGPL… are fine). A DCLF or INCLUDE turns the undeclared-variable check off, since they bring variables the source does not show.
 
 ## SQL checks
+
+![SQL checks]({{ "/images/sql-checks.png" | relative_url }})
+*SQL checks before you run a script.*
 
 In SQL scripts (`vanthrex.lint.sql`) and in embedded SQL in RPG.
 

@@ -13,6 +13,9 @@ nav_order: 3
 
 ## Create the connection
 
+![Add an IBM i connection]({{ "/images/add-connection.png" | relative_url }})
+*The connection form, with Test connection.*
+
 1. Click the **Vanthrex** icon in the activity bar.
 2. In the *Connections* view, click **+** (**Add IBM i Connection**).
 3. Fill in the form:

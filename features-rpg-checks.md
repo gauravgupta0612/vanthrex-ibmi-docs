@@ -16,6 +16,9 @@ Warnings as you type, with quick fixes and per-rule switches.
 
 ## RPG code checks
 
+![RPG code checks]({{ "/images/rpg-checks.png" | relative_url }})
+*RPG checks in the editor and the Problems view.*
+
 **What it is:** Warnings as you type:
 
 - unused variables

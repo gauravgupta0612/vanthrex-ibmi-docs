@@ -16,6 +16,9 @@ One sidebar for everything you do on IBM i: connect, browse, edit, compile, quer
 [Get started](installation.md){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }
 [View on GitHub](https://github.com/gauravgupta0612/silverlake-ibmi){: .btn .fs-5 .mb-4 .mb-md-0 }
 
+![Vanthrex in VS Code: RPG checks while you type]({{ "/images/rpg-checks.png" | relative_url }})
+*Checks while you type in RPG, CL and SQL, with the fix one click away. More in the [screenshots](screenshots.md).*
+
 ---
 
 ## What you can do
@@ -51,7 +54,7 @@ One sidebar for everything you do on IBM i: connect, browse, edit, compile, quer
 1. [Install the extension](installation.md)
 2. [Check the IBM i requirements](ibm-i-setup.md) (usually just `STRTCPSVR SERVER(*SSHD)`)
 3. [Create your first connection](first-connection.md)
-4. Browse the [features](features.md) or the [keyboard shortcuts](keyboard-shortcuts.md)
+4. See the [screenshots](screenshots.md), then browse the [features](features.md) or the [keyboard shortcuts](keyboard-shortcuts.md)
 
 Something not working? See [Troubleshooting](troubleshooting.md).
 

@@ -31,6 +31,9 @@ Everything for IBM i development in one extension: AS/400 GO menus, import from 
 - **Team coding standards** (`vanthrex.standards`, all off until chosen): constants in upper case, names written as declared, QUALIFIED data structures, no globals in procedures, no global or local subroutines, no OCCURS or CTDATA, no SQL joins or EXECUTE IMMEDIATE in programs, a description above each procedure, conditions in parentheses, indentation, prototypes with EXTPGM / EXTPROC, directive case, a naming pattern and a procedure size limit — checked while you type. **Import Coding Standards from rpglint.json** reads the rules a team already uses with Code for IBM i.
 - **Code Health Report of a Library**: every Vanthrex check (RPG, CL, SQL and your standards) on every indexed member of a library — or all of them — in seconds and offline: a score and grade, the members to look at first (click to open), and the findings by check, with CSV and Excel export. Run it before a release and compare after.
 
+![Team coding standards]({{ "/images/team-standards.png" | relative_url }})
+*Team coding standards: tick the rules your team follows, they are checked while you type.*
+
 ## Marketplace and README
 
 - Marketplace listing: clearer name (*Vanthrex – IBM i Development Tools (RPG, CL, SQL)*) and description, 30 search keywords (IBM i, AS400, iSeries, RPGLE, ILE RPG, SQLRPGLE, CL, Db2 for i, IFS, DSPPGMREF, F4 prompt, PDM, SEU, fixed to free…) and the Linters, Formatters and Notebooks categories.
