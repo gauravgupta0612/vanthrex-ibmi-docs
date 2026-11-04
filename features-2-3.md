@@ -2,7 +2,7 @@
 layout: default
 title: "New in 2.3"
 parent: "What's new"
-nav_order: 5
+nav_order: 6
 ---
 
 # New in 2.3: create, check and stay connected

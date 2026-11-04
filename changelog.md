@@ -7,6 +7,23 @@ nav_order: 99
 
 # Changelog
 
+## 3.1.0
+
+**More power in the editor**
+
+- **DDS checks while you type** (PF, LF, DSPF, PRTF; `vanthrex.lint.dds`): names longer than 10 characters, a field or record format declared twice, fields with no length (and no reference), more decimals than the length, lengths beyond the data type, key fields that are not in the record, display fields or constants outside the screen (DSPSIZ, *DS3 / *DS4) and display fields on top of each other. Reference fields, logical files and conditioned fields are left alone. DDS members are part of the Code Health Report too.
+- **Format Document for CL** (Shift+Alt+F): the prompter layout — labels in column 1, commands in column 14, parameters from column 25, long commands split with `+` before column 80. Statements with a comment inside are kept as they are.
+- **RPG semantic highlighting** (`vanthrex.editor.semanticHighlighting`): parameters, constants and CONST parameters (read-only), data structures and subfields, procedures, files and subroutines each get their own colour, and a global variable used inside a procedure is marked — on top of the existing syntax colours.
+- **Names edited together**: renaming a procedure or a data structure on its `DCL-PROC` / `DCL-DS` line changes the name on its `END-PROC` / `END-DS` line at the same time, and the other way round.
+- **END lines indented as you type** (`vanthrex.editor.indentOnType`): typing the `;` of ENDIF, ENDDO, ELSE, WHEN, OTHER, ON-ERROR, END-PROC… moves the line under its opener.
+- **Links that open a member at a line**: *Copy a Link That Opens This Line* (right-click, or Ctrl+Alt+A → Copy) gives a `vscode://…` link for tickets, chats and e-mails; whoever clicks it, with Vanthrex installed, opens the same member (or IFS file) at the same line, on the named system after a confirmation.
+- **Clickable IBM i references in every terminal** (`vanthrex.editor.terminalLinks`): `LIB/FILE(MEMBER)` opens the member, message IDs such as `CPF9801` or `MCH1210` are explained, IFS paths open the file — in the PASE terminal, build output, and any other terminal.
+
+**Fixes**
+
+- A prototype (`DCL-PR`) and the procedure with the same name (`DCL-PROC`) are no longer reported as a duplicate declaration.
+- The README and the documentation now have screenshots, and the documentation is organised by area (Getting started, Features, What's new, Reference, Help).
+
 ## 3.0.0
 
 **Vanthrex 3.0 — everything for IBM i development in one extension.** AS/400 GO menus and green-screen commands, one-step import from Code for IBM i, team setup files, team coding standards and a code health report for whole libraries, on top of the 2.6 suggestions, checks and Developer Toolbox.

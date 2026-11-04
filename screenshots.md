@@ -46,6 +46,12 @@ Undeclared variables, missing labels, values too long and hard-coded libraries i
 
 [![SQL checks]({{ "/images/sql-checks.png" | relative_url }})]({{ "/images/sql-checks.png" | relative_url }})
 
+### DDS checks
+
+Names, decimals, lengths, fields outside the screen and overlapping fields in PF, LF, DSPF and PRTF sources. [Read more](features-3-1.md)
+
+[![DDS checks]({{ "/images/dds-checks.png" | relative_url }})]({{ "/images/dds-checks.png" | relative_url }})
+
 ### Team coding standards
 
 Tick the rules your team follows (or import your rpglint.json); they are checked while you type. [Read more](features-3-0.md)
@@ -77,6 +83,12 @@ Every subfield with its positions and length, like the compile listing — witho
 Lines, procedures, complexity and nesting, with a grade. [Read more](features-data-quality.md#code-metrics-and-documentation)
 
 [![Code metrics]({{ "/images/code-metrics.png" | relative_url }})]({{ "/images/code-metrics.png" | relative_url }})
+
+### Format Document for CL
+
+`Shift+Alt+F` puts CL in the prompter layout and splits long commands. [Read more](features-3-1.md)
+
+[![Format Document for CL]({{ "/images/cl-format-compare.png" | relative_url }})]({{ "/images/cl-format-compare.png" | relative_url }})
 
 ## Work faster
 

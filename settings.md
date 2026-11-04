@@ -144,6 +144,10 @@ Open **File → Preferences → Settings** and search for *Vanthrex*, or edit `s
 | `vanthrex.editor.toolboxButton` | boolean | `true` | Show the **$(tools) IBM i** button in the status bar for RPG, CL, SQL and DDS sources: it opens the tools that fit the file and the selection (also **Ctrl+Alt+A**). |
 | `vanthrex.editor.sizeHovers` | boolean | `true` | Hovering a literal shows its length (bytes for X'…' hex literals); hovering a declared RPG variable shows its storage size. |
 | `vanthrex.standards` | object | `{}` | Team coding standards for RPG, checked while you type and in the Code Health Report. All off by default; set them with **Team Coding Standards…** or import an **rpglint.json**. Put them in the workspace settings so the whole team uses the same ones. |
+| `vanthrex.lint.dds` | boolean | `true` | Check DDS sources (PF, LF, DSPF, PRTF) while you type: names longer than 10 characters, duplicate fields or record formats, missing lengths, decimals and length limits, key fields not in the record, display fields outside the screen or on top of each other. |
+| `vanthrex.editor.semanticHighlighting` | boolean | `true` | Colour RPG names by what they are: parameters, constants (read-only), data structures and subfields, procedures, files and subroutines; globals used inside a procedure are marked. |
+| `vanthrex.editor.indentOnType` | boolean | `true` | In free-form RPG, typing the `;` of ENDIF, ENDDO, ELSE, WHEN, END-PROC… moves the line to the indentation of its opener. |
+| `vanthrex.editor.terminalLinks` | boolean | `true` | In every terminal, LIB/FILE(MEMBER), message IDs (CPF9801, MCH1210…) and IFS paths become links: click to open the member or file, or explain the message. |
 
 ## RPG check rules
 

@@ -8,11 +8,12 @@ has_toc: false
 
 # What's new
 
-What each version brought. Current version: **3.0.0**.
+What each version brought. Current version: **3.1.0**.
 {: .fs-6 .fw-300 }
 
 | Version | Highlights |
 |---|---|
+| [New in 3.1](features-3-1.md) | DDS checks while you type, Format Document for CL, RPG semantic highlighting, names edited together, END lines indented as you type, links that open a member at a line, clickable terminal output. |
 | [New in 3.0](features-3-0.md) | AS/400 GO menus, import from Code for IBM i, team setup files, team coding standards, code health report. |
 | [New in 2.6](features-2-6.md) | Suggestions while you type, 44 new checks for RPG, CL and SQL, the Developer Toolbox (Ctrl+Alt+A). |
 | [New in 2.5](features-2-5.md) | AI with your data protected, several systems at once, database care, modernization, data quality, system audits, speed and a more flexible workflow — 60 new features. |

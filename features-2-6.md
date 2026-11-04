@@ -2,7 +2,7 @@
 layout: default
 title: "New in 2.6"
 parent: "What's new"
-nav_order: 2
+nav_order: 3
 ---
 
 # New in 2.6

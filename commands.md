@@ -7,7 +7,7 @@ nav_order: 1
 
 # Commands
 
-All 500 commands contributed by Vanthrex for IBM i 3.0.0. Run any of them from the
+All 501 commands contributed by Vanthrex for IBM i 3.1.0. Run any of them from the
 Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-click menus and view toolbars.
 
 | Command | ID | Keys |
@@ -127,6 +127,7 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Convert Packed / Zoned / Binary ↔ Hex… | `vanthrex.convertNumber` |  |
 | Convert Text ↔ EBCDIC Hex… | `vanthrex.convertEbcdic` |  |
 | Copy a call of this procedure | `vanthrex.dev.copyCall` |  |
+| Copy a Link That Opens This Line | `vanthrex.copyLink` |  |
 | Copy a reference to this line | `vanthrex.dev.copyLineRef` |  |
 | Copy as an SQL call (QSYS2.QCMDEXC) | `vanthrex.dev.toQcmdexc` |  |
 | Copy as embedded SQL for RPG | `vanthrex.dev.sqlToEmbedded` |  |
