@@ -143,6 +143,7 @@ Open **File → Preferences → Settings** and search for *Vanthrex*, or edit `s
 | `vanthrex.lint.sql` | boolean | `true` | Check SQL scripts while you type: UPDATE / DELETE without WHERE, DROP / TRUNCATE, = NULL instead of IS NULL, SELECT INTO without WHERE. |
 | `vanthrex.editor.toolboxButton` | boolean | `true` | Show the **$(tools) IBM i** button in the status bar for RPG, CL, SQL and DDS sources: it opens the tools that fit the file and the selection (also **Ctrl+Alt+A**). |
 | `vanthrex.editor.sizeHovers` | boolean | `true` | Hovering a literal shows its length (bytes for X'…' hex literals); hovering a declared RPG variable shows its storage size. |
+| `vanthrex.standards` | object | `{}` | Team coding standards for RPG, checked while you type and in the Code Health Report. All off by default; set them with **Team Coding Standards…** or import an **rpglint.json**. Put them in the workspace settings so the whole team uses the same ones. |
 
 ## RPG check rules
 
