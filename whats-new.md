@@ -13,7 +13,7 @@ What each version brought. Current version: **3.2.0**.
 
 | Version | Highlights |
 |---|---|
-| [New in 3.2](features-3-2.md) | Visual insights: Library Space Map, Batch Job Timeline, Index Advice Chart, IFS Space Map and Source Change Calendar. |
+| [New in 3.2](features-3-2.md) | Visual insights: Library and IFS Space Maps, Active Jobs Map, Batch Job Timeline, Journal Activity Heat Map, Index Advice Chart and Source Change Calendar. |
 | [New in 3.1](features-3-1.md) | DDS checks while you type, Format Document for CL, RPG semantic highlighting, names edited together, END lines indented as you type, links that open a member at a line, clickable terminal output. |
 | [New in 3.0](features-3-0.md) | AS/400 GO menus, import from Code for IBM i, team setup files, team coding standards, code health report. |
 | [New in 2.6](features-2-6.md) | Suggestions while you type, 44 new checks for RPG, CL and SQL, the Developer Toolbox (Ctrl+Alt+A). |

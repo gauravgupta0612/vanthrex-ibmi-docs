@@ -7,12 +7,13 @@ nav_order: 1
 
 # Commands
 
-All 506 commands contributed by Vanthrex for IBM i 3.2.0. Run any of them from the
+All 508 commands contributed by Vanthrex for IBM i 3.2.0. Run any of them from the
 Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-click menus and view toolbars.
 
 | Command | ID | Keys |
 |---|---|---|
 | *PUBLIC Authority Scan | `vanthrex.publicAuthorityScan` |  |
+| Active Jobs Map (Visual) | `vanthrex.jobsMap` |  |
 | Add a global error handler | `vanthrex.dev.clErrorHandler` |  |
 | Add a Header to Every Procedure | `vanthrex.rpg.documentAll` |  |
 | Add Binding Directory Entry… | `vanthrex.bnddir.add` |  |
@@ -282,6 +283,7 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Jobs in Subsystem | `vanthrex.wrkSubsystemJobs` |  |
 | Jobs on Job Queue | `vanthrex.wrkJobQueue` |  |
 | Join the Lines of a Statement | `vanthrex.rpg.joinLines` |  |
+| Journal Activity Heat Map (Visual)… | `vanthrex.journalHeatMap` |  |
 | Journal Coverage of a Library… | `vanthrex.journalCoverage` |  |
 | Journal Explorer: Who Changed This Table? | `vanthrex.journalExplorer` |  |
 | Journal Options | `vanthrex.journals.row` |  |

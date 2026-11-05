@@ -22,6 +22,8 @@ Jobs, messages, subsystems, security and day-to-day operations — without a gre
 | [Safe on production](features-safety.md) | Production and read-only connections, a self-check of the system, errors that explain what to do. |
 | [Library Space Map](features-3-2.md#library-space-map) *(3.2)* | Every object of a library as a tile sized by its disk space, coloured by kind or by last use. |
 | [Batch Job Timeline](features-3-2.md#batch-job-timeline) *(3.2)* | A night of batch jobs on a time axis: what overlapped, what failed, what ran longest. |
+| [Active Jobs Map](features-3-2.md#active-jobs-map) *(3.2)* | Every active job as a tile in its subsystem; the one waiting for a reply is red. |
+| [Journal Activity Heat Map](features-3-2.md#journal-activity-heat-map) *(3.2)* | Which tables a journal saw change, hour by hour. |
 
 ## Examples
 

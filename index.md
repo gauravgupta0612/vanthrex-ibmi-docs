@@ -31,7 +31,7 @@ description: "Vanthrex for IBM i — connect, browse, edit, compile, query and m
   <a class="card" href="{{ "/features-data.html" | relative_url }}"><span class="card-icon">🗄️</span><span class="card-title">Db2 for i & data</span><span class="card-text">SQL with autocomplete, a safe data grid, Explain, index advisor, DEV ↔ PROD compare, Excel / CSV / JSON.</span></a>
   <a class="card" href="{{ "/features-operate.html" | relative_url }}"><span class="card-icon">⚙️</span><span class="card-title">Operate the system</span><span class="card-text">Jobs, QSYSOPR, spooled files, subsystems, user profiles, journals, authorities, storage — production-safe.</span></a>
   <a class="card" href="{{ "/coming-from-code-for-ibmi.html" | relative_url }}"><span class="card-icon">👥</span><span class="card-title">Work as a team</span><span class="card-text">Import from Code for IBM i, one team setup file, shared coding standards and a code health report.</span></a>
-  <a class="card" href="{{ "/features-3-2.html" | relative_url }}"><span class="card-icon">🆕</span><span class="card-title">What's new in 3.2</span><span class="card-text">Visual insights: library and IFS space maps, a batch job timeline, an index advice chart and a source change calendar.</span></a>
+  <a class="card" href="{{ "/features-3-2.html" | relative_url }}"><span class="card-icon">🆕</span><span class="card-title">What's new in 3.2</span><span class="card-text">Visual insights: space maps, an active jobs map, a batch job timeline, a journal heat map, an index advice chart and a change calendar.</span></a>
 </div>
 
 ## See what it does

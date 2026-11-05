@@ -7,7 +7,7 @@ nav_order: 99
 
 # Changelog
 
-## 3.2.0 (not released yet)
+## 3.2.0
 
 **Visual insights — see a library and a night of batch work at a glance.**
 
@@ -16,6 +16,8 @@ nav_order: 99
 - **Index Advice Chart**: the indexes the Db2 optimizer asked for while running queries over a library (QSYS2.SYSIXADV), with advice for the same table merged when the keys start the same way, ranked by how often slow queries asked for them (bar chart), and the temporary indexes (MTI) the system had to build. One click writes the `CREATE INDEX` (or encoded vector index) statement — or all of them as one script — into an SQL editor; nothing is created until you run it. Right-click a library → *Index Advice Chart* (the table report *Index Advisor* is still there).
 - **IFS Space Map**: a treemap of the folders and files below an IFS folder, sized by disk space and coloured by kind (folders, source, logs, archives and save files, data, documents). Click a folder to go in, use the path at the top or *Up one level* to go back, click a file to open it; the 15 largest files are listed. Right-click a folder in the IFS view → *IFS Space Map*.
 - **Source Change Calendar**: a year of source changes in a library or source file as a heat map, one square per day; click a day to list the members changed that day and click a member to open it. Tiles show the members changed this year, the active days, the busiest day and the longest run of days; a bar chart shows the changes by source type. Right-click a library or source file → *Source Change Calendar*.
+- **Active Jobs Map**: every active job as a tile inside its subsystem, sized by CPU time, temporary storage, threads or disk I/O, and coloured by status — red (and pulsing) when it waits for a reply (MSGW), orange in a lock wait, green running, blue waiting. Highlight jobs by typing, refresh every 15 seconds if you like; click a job for its job log, right-click for Work with Active Jobs (option 7 answers the message). The jobs waiting for a reply and the top 10 are listed under the map.
+- **Journal Activity Heat Map**: which tables a journal saw change in the last 6 hours to 7 days, one row per table and one square per hour (the darker, the more changes), with inserts, updates and deletes per table as a stacked bar, the busiest hour and the totals. Click a table for its journal entries — who changed which row, from which program.
 
 **Improvements**
 

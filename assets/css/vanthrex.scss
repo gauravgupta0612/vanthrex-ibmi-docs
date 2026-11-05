@@ -162,3 +162,4 @@ svg.viz .vtick { fill: #6b778c; font: 10px $body-font-family; } svg.viz .vg { st
 .viz-legend i { display: inline-block; width: 11px; height: 11px; border-radius: 2px; margin-right: .35rem; vertical-align: -1px; }
 table.viz-table { width: 100%; } .viz-table td, .viz-table th { vertical-align: middle; }
 .viz-barcell { width: 30%; min-width: 120px; } .viz-bar { height: 12px; border-radius: 3px; background: #4e79a7; } .viz-bar.evi { background: #b07aa1; }
+svg.viz .vlabel { fill: #14213d; font: 600 12px $body-font-family; }
