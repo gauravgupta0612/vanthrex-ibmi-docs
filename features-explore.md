@@ -22,6 +22,7 @@ Connect to one or several IBM i systems and find your way around them.
 | [Object tools](features-object-tools.md) | Object information, who has an object locked, compare two libraries, modules and exports. |
 | [System Tracker](features-tracker.md) | The whole system in one page: what needs attention, libraries, jobs, storage, QSYSOPR, users, PTFs. |
 | [See and share](features-see-share.md) | 5250 screen preview, database diagrams, compare two systems, spooled files to PDF and e-mail. |
+| [IFS Space Map](features-3-2.md#ifs-space-map) *(3.2)* | Folders and files below an IFS folder as a treemap; click to go in. |
 
 ## Examples
 

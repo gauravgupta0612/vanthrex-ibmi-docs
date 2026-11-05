@@ -7,7 +7,7 @@ nav_order: 1
 
 # Commands
 
-All 501 commands contributed by Vanthrex for IBM i 3.1.0. Run any of them from the
+All 506 commands contributed by Vanthrex for IBM i 3.2.0. Run any of them from the
 Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-click menus and view toolbars.
 
 | Command | ID | Keys |
@@ -62,6 +62,7 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Authorization List Entries | `vanthrex.secadm.autlEntries` |  |
 | Authorization List Entry Options | `vanthrex.secadm.autlRow` |  |
 | Authorization Lists | `vanthrex.secadm.autl` |  |
+| Batch Job Timeline (Visual) | `vanthrex.jobTimeline` |  |
 | Bookmarks | `vanthrex.bookmark.list` | Ctrl+Alt+Shift+B |
 | Browse Schema (SQL Objects)… | `vanthrex.schemaBrowser` |  |
 | Build Project on IBM i | `vanthrex.build` |  |
@@ -255,11 +256,13 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | IBM i Tools for This Source… | `vanthrex.dev.toolbox` | Ctrl+Alt+A |
 | IBM i: Work with… | `vanthrex.workWith` |  |
 | IFS Folders by Size… | `vanthrex.ifsStorage` |  |
+| IFS Space Map (Visual)… | `vanthrex.ifsSpaceMap` |  |
 | Impact Analysis (Who Uses This?)… | `vanthrex.impactAnalysis` |  |
 | Import a Team Setup File… | `vanthrex.team.import` |  |
 | Import Coding Standards from rpglint.json… | `vanthrex.standards.importRpglint` |  |
 | Import CSV or Excel into Table… | `vanthrex.importData` |  |
 | Import My Code for IBM i Setup (Connections, Library Lists, Actions)… | `vanthrex.importCodeForIbmi` |  |
+| Index Advice Chart (Visual)… | `vanthrex.indexAdviceChart` |  |
 | Index Advisor | `vanthrex.indexAdvisor` |  |
 | Index Source Libraries for Instant Search… | `vanthrex.index.build` |  |
 | Indicator Usage | `vanthrex.indicatorUsage` |  |
@@ -287,6 +290,7 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Keep the line as a comment before changing it | `vanthrex.dev.keepAsComment` |  |
 | Library List from a Job Description or User Profile… | `vanthrex.libraryListFromJobd` |  |
 | Library List Sets… | `vanthrex.librarySets` |  |
+| Library Space Map (Visual)… | `vanthrex.spaceMap` |  |
 | Limit to 100 rows | `vanthrex.dev.limitSelect` |  |
 | Lines to an SQL IN list | `vanthrex.dev.inList` |  |
 | Lines to named constants | `vanthrex.dev.linesToConstants` |  |
@@ -441,6 +445,7 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Simplify "= *ON" / "= *OFF" | `vanthrex.dev.simplifyIndicators` |  |
 | Sort Declarations by Name | `vanthrex.rpg.sortDeclarations` |  |
 | Sort Members by Name / Date | `vanthrex.sortMembers` |  |
+| Source Change Calendar (Visual)… | `vanthrex.changeCalendar` |  |
 | Source Quality Report | `vanthrex.sourceQuality` |  |
 | Speed Test of This Connection | `vanthrex.speedTest` |  |
 | Spooled Files on Output Queue | `vanthrex.wrkOutputQueue` |  |

@@ -7,6 +7,21 @@ nav_order: 99
 
 # Changelog
 
+## 3.2.0 (not released yet)
+
+**Visual insights — see a library and a night of batch work at a glance.**
+
+- **Library Space Map**: every object of a library as a tile sized by its disk space (a treemap), grouped and coloured by kind — programs, files, source files, save files, journals, data objects. Switch to *Colour by last used* to see what has not been used for a year, type to highlight objects, click a kind in the legend to hide it, click a tile for the object information. Totals, the biggest kind, the space not used for a year and the 15 largest objects are listed under the map. Right-click a library → *Library Space Map*, or from the quick menu.
+- **Batch Job Timeline**: the batch jobs of the last 6 hours to 7 days as bars on a time axis (from the history log), green when they ended normally, red when abnormally, blue while still running; overlapping jobs get their own lane, so you see what ran at the same time. Filter by job name (`ORD*`) or user; click a bar for the job log, right-click for its run history. Tiles show runs, failures, jobs still running, the longest run and the CPU used; the failed and the longest runs are listed below.
+- **Index Advice Chart**: the indexes the Db2 optimizer asked for while running queries over a library (QSYS2.SYSIXADV), with advice for the same table merged when the keys start the same way, ranked by how often slow queries asked for them (bar chart), and the temporary indexes (MTI) the system had to build. One click writes the `CREATE INDEX` (or encoded vector index) statement — or all of them as one script — into an SQL editor; nothing is created until you run it. Right-click a library → *Index Advice Chart* (the table report *Index Advisor* is still there).
+- **IFS Space Map**: a treemap of the folders and files below an IFS folder, sized by disk space and coloured by kind (folders, source, logs, archives and save files, data, documents). Click a folder to go in, use the path at the top or *Up one level* to go back, click a file to open it; the 15 largest files are listed. Right-click a folder in the IFS view → *IFS Space Map*.
+- **Source Change Calendar**: a year of source changes in a library or source file as a heat map, one square per day; click a day to list the members changed that day and click a member to open it. Tiles show the members changed this year, the active days, the busiest day and the longest run of days; a bar chart shows the changes by source type. Right-click a library or source file → *Source Change Calendar*.
+
+**Improvements**
+
+- **Library Space Map**: an object that was never used is coloured by its creation date, so an object created last week no longer shows as "not used for over a year"; its tooltip says when it was created. The same library on two systems opens two maps instead of reusing the first one.
+- **Batch Job Timeline**: `_` in a job or user name is matched as a character, not as a wildcard (only `*` is the wildcard), so `ORD_EXT` no longer also shows `ORDXEXT`.
+
 ## 3.1.0
 
 **More power in the editor**

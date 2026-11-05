@@ -21,6 +21,7 @@ Query, edit, compare, import and export the data in Db2 for i.
 | [SQL power tools](features-sql-tools.md) | Generate DDL, run whole scripts, Explain, SQL history and saved queries. |
 | [Insights](features-insights.md) | Index advisor, DEV ↔ PROD data compare, message help on hover, job log analyzer. |
 | [Data, performance & quality](features-data-quality.md) | Excel / CSV / JSON import and export, performance monitor, code metrics, RPGUnit tests. |
+| [Index Advice Chart](features-3-2.md#index-advice-chart) *(3.2)* | The indexes Db2 asked for, merged and ranked, with the CREATE INDEX for each. |
 
 ## Examples
 

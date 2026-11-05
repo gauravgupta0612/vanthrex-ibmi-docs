@@ -20,6 +20,8 @@ Jobs, messages, subsystems, security and day-to-day operations — without a gre
 | [Operations](features-operations.md) | Storage and cleanup advisor, live alerts, message files, field finder, object promotion. |
 | [Security Admin](features-security-admin.md) | User profiles, groups and authorization lists, exit points, bulk authority, QHST and more. |
 | [Safe on production](features-safety.md) | Production and read-only connections, a self-check of the system, errors that explain what to do. |
+| [Library Space Map](features-3-2.md#library-space-map) *(3.2)* | Every object of a library as a tile sized by its disk space, coloured by kind or by last use. |
+| [Batch Job Timeline](features-3-2.md#batch-job-timeline) *(3.2)* | A night of batch jobs on a time axis: what overlapped, what failed, what ran longest. |
 
 ## Examples
 
