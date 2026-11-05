@@ -7,7 +7,7 @@ nav_order: 1
 
 # Commands
 
-All 508 commands contributed by Vanthrex for IBM i 3.2.0. Run any of them from the
+All 508 commands contributed by Vanthrex for IBM i 3.2.1. Run any of them from the
 Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-click menus and view toolbars.
 
 | Command | ID | Keys |

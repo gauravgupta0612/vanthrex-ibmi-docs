@@ -117,3 +117,7 @@ You switched systems after opening the member. Switch back (status bar or **Swit
 ## Still stuck?
 
 [Open an issue](https://github.com/gauravgupta0612/silverlake-ibmi/issues/new/choose) with the lines from the output log (remove host names and user names you don't want to share).
+
+## IFS Space Map: SQL0443 INVALID OMIT_LIST PARAMETER
+
+Fixed in **3.2.1**. Update the extension (Extensions view → Vanthrex → Update), then open the map again.

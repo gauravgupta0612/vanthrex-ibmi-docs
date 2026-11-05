@@ -13,7 +13,7 @@ description: "Vanthrex for IBM i — connect, browse, edit, compile, query and m
   <a class="btn btn-outline fs-5" href="{{ "/installation.html" | relative_url }}">Get started</a>
   <a class="btn btn-outline fs-5" href="{{ "/examples.html" | relative_url }}">Try the examples</a>
   <a class="btn btn-outline fs-5" href="#see-what-it-does">See what it does</a>
-  <div class="badges"><span>Version 3.2.0</span><span>Free · MIT License</span><span>RPG · CL · SQL · DDS · COBOL</span><span>8 languages</span></div>
+  <div class="badges"><span>Version 3.2.1</span><span>Free · MIT License</span><span>RPG · CL · SQL · DDS · COBOL</span><span>8 languages</span></div>
 </div>
 
 <div class="stats">
@@ -70,4 +70,4 @@ Something not working? See [Troubleshooting](troubleshooting.md) and the [FAQ](f
 
 ---
 
-Current version: **3.2.0** · [What's new](whats-new.md) · [Changelog](changelog.md) · Free and open source under the MIT License.
+Current version: **3.2.1** · [What's new](whats-new.md) · [Changelog](changelog.md) · Free and open source under the MIT License.

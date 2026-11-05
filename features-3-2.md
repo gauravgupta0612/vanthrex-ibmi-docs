@@ -118,6 +118,10 @@ A year of source changes in a library or a source file as a heat map, one square
 - **Library Space Map:** objects never used are coloured by their creation date, so a new object does not show as "not used for over a year"; the same library on two systems opens two maps.
 - **Batch Job Timeline:** `_` in a job or user name is matched as a character, not as a wildcard.
 
+## Fixed in 3.2.1
+
+- **IFS Space Map** on a folder such as `/home/USER` no longer fails with `SQL0443 INVALID OMIT_LIST PARAMETER SPECIFIED`: the file systems to leave out (QSYS.LIB, QNTC, QFileSvr.400, QOPT, QDLS) are only passed from `/`, and if a system still refuses the list, the map is read again without it.
+
 ## Where to find them
 
 | Page | Right-click | Command palette |

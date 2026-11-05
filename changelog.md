@@ -7,6 +7,12 @@ nav_order: 99
 
 # Changelog
 
+## 3.2.1
+
+**Fixes**
+
+- **IFS Space Map**: opening it on a folder such as `/home/USER` failed with `SQL0443 INVALID OMIT_LIST PARAMETER SPECIFIED`. The file systems to leave out (QSYS.LIB, QNTC, QFileSvr.400, QOPT, QDLS) are now passed only when they are inside the folder, that is from `/`; and if a system still refuses the list, the map is read again without it.
+
 ## 3.2.0
 
 **Visual insights — see a library and a night of batch work at a glance.**

@@ -8,7 +8,7 @@ has_toc: false
 
 # What's new
 
-What each version brought. Current version: **3.2.0**.
+What each version brought. Current version: **3.2.1**.
 {: .fs-6 .fw-300 }
 
 | Version | Highlights |
