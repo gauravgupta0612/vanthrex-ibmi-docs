@@ -8,7 +8,7 @@ nav_order: 1
 # New in 3.3
 {: .no_toc }
 
-System health and security, and 50 more developer tools: one overview page, which job blocks which, what is close to an IBM i limit, a security score, the security audit journal hour by hour, the disk units of each ASP, the statistics of the SQL inside your programs, and VS Code tasks that run on the IBM i.
+System health and security, and 100 more developer tools: one overview page, which job blocks which, what is close to an IBM i limit, a security score, the security audit journal hour by hour, the disk units of each ASP, the statistics of the SQL inside your programs, and VS Code tasks that run on the IBM i.
 {: .fs-6 .fw-300 }
 
 {: .note }
@@ -214,6 +214,98 @@ Fifty new tools in the **Developer Toolbox** (`Ctrl+Alt+A`, or *Vanthrex Tools: 
 | Put the selection between OVRDBF and DLTOVR | `OVRDBF FILE(…) TOFILE(…) … DLTOVR` |
 | Insert RTVSYSVAL with its variable | `DCL … RTVSYSVAL SYSVAL(…) RTNVAR(…)` |
 
+## 50 more developer tools, second batch
+
+Fifty more tools in the **Developer Toolbox** (`Ctrl+Alt+A`, or *Vanthrex Tools: …* in the command palette) for the code IBM i developers write again and again: IFS files, data areas and queues, job log messages and commit blocks in RPG; JSON, views, safe previews, audit columns and triggers in SQL; a CL program with error handling, retries and batch jobs; and the conversions you otherwise look up. `Ctrl+Z` undoes any of them.
+
+<div class="showcase"><div class="showcase-text"><h3>A SELECT as one JSON array</h3><p>Put the cursor in a SELECT and pick <strong>SELECT → one JSON array (JSON_ARRAYAGG)</strong>: one JSON object per row, named after the columns — ready for a web service or an IFS file.</p></div><div class="showcase-demo"><div class="before-after"><div><div class="ba-label">Before</div><div class="demo"><div class="demo-bar"><span class="dots"><i></i><i></i><i></i></span><span class="file">orders.sql</span></div><pre class="demo-code"><span class="line"><span class="k">SELECT</span> ORDNO, CUSTNO, TOTAL</span><span class="line">  <span class="k">FROM</span> APPLIB.ORDERS</span><span class="line"> <span class="k">WHERE</span> STATUS = <span class="s">'O'</span></span></pre></div></div><div><div class="ba-label after">After</div><div class="demo"><div class="demo-bar"><span class="dots"><i></i><i></i><i></i></span><span class="file">orders.sql</span></div><pre class="demo-code"><span class="line"><span class="k">SELECT</span> JSON_ARRAYAGG(</span><span class="line">         JSON_OBJECT(<span class="s">'ordno'</span> VALUE ORDNO, <span class="s">'custno'</span> VALUE CUSTNO, <span class="s">'total'</span> VALUE TOTAL)</span><span class="line">       ) AS JSON</span><span class="line">  <span class="k">FROM</span> (</span><span class="line">    <span class="k">SELECT</span> ORDNO, CUSTNO, TOTAL</span><span class="line">      <span class="k">FROM</span> APPLIB.ORDERS</span><span class="line">     <span class="k">WHERE</span> STATUS = <span class="s">'O'</span></span><span class="line">  ) X</span></pre></div></div></div></div></div>
+<div class="showcase"><div class="showcase-text"><h3>See the rows before you delete them</h3><p><strong>DELETE → SELECT</strong> (and <strong>UPDATE → SELECT</strong>) writes the SELECT of the very rows the statement would touch, with the same WHERE.</p></div><div class="showcase-demo"><div class="before-after"><div><div class="ba-label">Before</div><div class="demo"><div class="demo-bar"><span class="dots"><i></i><i></i><i></i></span><span class="file">cleanup.sql</span></div><pre class="demo-code"><span class="line"><span class="k">DELETE</span> <span class="k">FROM</span> APPLIB.ORDERS</span><span class="line"> <span class="k">WHERE</span> STATUS = <span class="s">'X'</span></span><span class="line">   <span class="k">AND</span> ORDDATE &lt; CURRENT DATE - <span class="n">1</span> YEAR</span></pre></div></div><div><div class="ba-label after">After</div><div class="demo"><div class="demo-bar"><span class="dots"><i></i><i></i><i></i></span><span class="file">cleanup.sql</span></div><pre class="demo-code"><span class="line"><span class="k">SELECT</span> *</span><span class="line">  <span class="k">FROM</span> APPLIB.ORDERS</span><span class="line"> <span class="k">WHERE</span> STATUS = <span class="s">'X'</span></span><span class="line">   <span class="k">AND</span> ORDDATE &lt; CURRENT DATE - <span class="n">1</span> YEAR</span></pre></div></div></div></div></div>
+<div class="showcase"><div class="showcase-text"><h3>Audit columns filled by Db2</h3><p><strong>Add audit columns to this CREATE TABLE</strong>: who created each row and when, and a ROW CHANGE TIMESTAMP that Db2 updates by itself.</p></div><div class="showcase-demo"><div class="before-after"><div><div class="ba-label">Before</div><div class="demo"><div class="demo-bar"><span class="dots"><i></i><i></i><i></i></span><span class="file">orders.sql</span></div><pre class="demo-code"><span class="line">CREATE <span class="k">TABLE</span> APPLIB.ORDERS (</span><span class="line">  ORDNO INTEGER <span class="k">NOT</span> <span class="k">NULL</span> PRIMARY KEY,</span><span class="line">  TOTAL DECIMAL(<span class="n">11</span>, <span class="n">2</span>)</span><span class="line">)</span></pre></div></div><div><div class="ba-label after">After</div><div class="demo"><div class="demo-bar"><span class="dots"><i></i><i></i><i></i></span><span class="file">orders.sql</span></div><pre class="demo-code"><span class="line">CREATE <span class="k">TABLE</span> APPLIB.ORDERS (</span><span class="line">  ORDNO INTEGER <span class="k">NOT</span> <span class="k">NULL</span> PRIMARY KEY,</span><span class="line">  TOTAL DECIMAL(<span class="n">11</span>, <span class="n">2</span>),</span><span class="line">  CREATED_AT TIMESTAMP <span class="k">NOT</span> <span class="k">NULL</span> DEFAULT CURRENT TIMESTAMP,</span><span class="line">  CREATED_BY VARCHAR(<span class="n">18</span>) <span class="k">NOT</span> <span class="k">NULL</span> DEFAULT USER,</span><span class="line">  CHANGED_AT TIMESTAMP <span class="k">NOT</span> <span class="k">NULL</span> GENERATED ALWAYS FOR EACH ROW ON <span class="k">UPDATE</span> AS ROW CHANGE TIMESTAMP</span><span class="line">)</span></pre></div></div></div></div></div>
+<div class="showcase"><div class="showcase-text"><h3>Who has this table locked?</h3><p>An IBM i Services query for the table of the statement at the cursor — run it with Ctrl+Enter.</p></div><div class="showcase-demo"><div class="demo"><div class="demo-bar"><span class="dots"><i></i><i></i><i></i></span><span class="file">orders.sql</span><span class="label">QSYS2.OBJECT_LOCK_INFO</span></div><pre class="demo-code"><span class="line"><span class="k">SELECT</span> JOB_NAME, LOCK_STATE, LOCK_STATUS, LOCK_SCOPE</span><span class="line">  <span class="k">FROM</span> QSYS2.OBJECT_LOCK_INFO</span><span class="line"> <span class="k">WHERE</span> SYSTEM_OBJECT_SCHEMA = <span class="s">'APPLIB'</span></span><span class="line">   <span class="k">AND</span> SYSTEM_OBJECT_NAME = <span class="s">'ORDERS'</span></span></pre></div></div></div>
+<div class="showcase"><div class="showcase-text"><h3>A CL command from RPG</h3><p>Select a CL command in RPG and pick <strong>CL command → RPG call (QSYS2.QCMDEXC)</strong>: the quotes are doubled for you.</p></div><div class="showcase-demo"><div class="before-after"><div><div class="ba-label">Before</div><div class="demo"><div class="demo-bar"><span class="dots"><i></i><i></i><i></i></span><span class="file">ORDERS.rpgle</span></div><pre class="demo-code"><span class="line">CPYF FROMFILE(APPLIB/ORDERS) TOFILE(QTEMP/ORDERS) CRTFILE(<span class="sp">*YES</span>)</span></pre></div></div><div><div class="ba-label after">After</div><div class="demo"><div class="demo-bar"><span class="dots"><i></i><i></i><i></i></span><span class="file">ORDERS.rpgle</span></div><pre class="demo-code"><span class="line"><span class="k">exec</span> <span class="k">sql</span> call qsys2.qcmdexc(<span class="s">'CPYF FROMFILE(APPLIB/ORDERS) TOFILE(QTEMP/ORDERS) CRTFILE(*YES)'</span>);</span><span class="line"><span class="k">if</span> sqlcode &lt; <span class="n">0</span>;</span><span class="line">  <span class="c">// the command failed: the CPF message is in the job log</span></span><span class="line"><span class="k">endif</span>;</span></pre></div></div></div></div></div>
+<div class="showcase"><div class="showcase-text"><h3>JSON from RPG variables</h3><p>Select DCL-S lines and pick <strong>A JSON object from the selected variables (SQL)</strong>.</p></div><div class="showcase-demo"><div class="before-after"><div><div class="ba-label">Before</div><div class="demo"><div class="demo-bar"><span class="dots"><i></i><i></i><i></i></span><span class="file">ORDERS.rpgle</span></div><pre class="demo-code"><span class="line"><span class="k">dcl-s</span> custNo packed(<span class="n">7</span>:<span class="n">0</span>);</span><span class="line"><span class="k">dcl-s</span> name char(<span class="n">30</span>);</span><span class="line"><span class="k">dcl-s</span> created date;</span></pre></div></div><div><div class="ba-label after">After</div><div class="demo"><div class="demo-bar"><span class="dots"><i></i><i></i><i></i></span><span class="file">ORDERS.rpgle</span></div><pre class="demo-code"><span class="line"><span class="k">exec</span> <span class="k">sql</span> values json_object(</span><span class="line">    <span class="s">'custNo'</span> value :custNo,</span><span class="line">    <span class="s">'name'</span> value :name,</span><span class="line">    <span class="s">'created'</span> value :created</span><span class="line">  ) <span class="k">into</span> :json;</span></pre></div></div></div></div></div>
+<div class="showcase"><div class="showcase-text"><h3>Retry while an object is in use</h3><p><strong>Insert a retry loop with DLYJOB</strong> asks for the command; it is tried 3 times, 10 seconds apart, then the program stops with a clear message.</p></div><div class="showcase-demo"><div class="demo"><div class="demo-bar"><span class="dots"><i></i><i></i><i></i></span><span class="file">NIGHTLY.clle</span></div><pre class="demo-code"><span class="line"><span class="k">DCL</span> <span class="k">VAR</span>(<span class="v">&amp;TRY</span>) <span class="k">TYPE</span>(<span class="sp">*DEC</span>) <span class="k">LEN</span>(<span class="n">3</span> <span class="n">0</span>) <span class="k">VALUE</span>(<span class="n">0</span>) /* put it with the other DCLs */</span><span class="line">&#8203;</span><span class="line">RETRY: <span class="k">CHGVAR</span> <span class="k">VAR</span>(<span class="v">&amp;TRY</span>) <span class="k">VALUE</span>(<span class="v">&amp;TRY</span> + <span class="n">1</span>)</span><span class="line">ALCOBJ <span class="k">OBJ</span>((APPLIB/ORDERS <span class="sp">*FILE</span> <span class="sp">*EXCL</span>)) WAIT(<span class="n">0</span>)</span><span class="line"><span class="k">MONMSG</span> <span class="k">MSGID</span>(CPF0000) <span class="k">EXEC</span>(<span class="k">DO</span>)</span><span class="line">  <span class="k">IF</span> <span class="k">COND</span>(<span class="v">&amp;TRY</span> <span class="sp">*LT</span> <span class="n">3</span>) <span class="k">THEN</span>(<span class="k">DO</span>)</span><span class="line">    DLYJOB DLY(<span class="n">10</span>)</span><span class="line">    <span class="k">GOTO</span> <span class="k">CMDLBL</span>(RETRY)</span><span class="line">  <span class="k">ENDDO</span></span><span class="line">  <span class="k">SNDPGMMSG</span> <span class="k">MSGID</span>(CPF9898) <span class="k">MSGF</span>(QCPFMSG) <span class="k">MSGDTA</span>(<span class="s">'Still failing after the retries'</span>) <span class="k">MSGTYPE</span>(<span class="sp">*ESCAPE</span>)</span><span class="line"><span class="k">ENDDO</span></span></pre></div></div></div>
+<div class="showcase"><div class="showcase-text"><h3>Submit to batch</h3><p>Select a command and pick <strong>Submit the selected command to batch (SBMJOB)</strong>.</p></div><div class="showcase-demo"><div class="before-after"><div><div class="ba-label">Before</div><div class="demo"><div class="demo-bar"><span class="dots"><i></i><i></i><i></i></span><span class="file">NIGHTLY.clle</span></div><pre class="demo-code"><span class="line"><span class="k">CALL</span> <span class="k">PGM</span>(APPLIB/NIGHTLY) <span class="k">PARM</span>(<span class="s">'2026'</span>)</span></pre></div></div><div><div class="ba-label after">After</div><div class="demo"><div class="demo-bar"><span class="dots"><i></i><i></i><i></i></span><span class="file">NIGHTLY.clle</span></div><pre class="demo-code"><span class="line">SBMJOB CMD(<span class="k">CALL</span> <span class="k">PGM</span>(APPLIB/NIGHTLY) <span class="k">PARM</span>(<span class="s">'2026'</span>)) JOB(NIGHTLY) JOBQ(QBATCH)</span></pre></div></div></div></div></div>
+<div class="showcase"><div class="showcase-text"><h3>One date, every IBM i format</h3><p>Select <code>1261106</code> (or 2026-11-06, 06.11.2026, 26310…) and pick <strong>Convert a date between IBM i formats</strong>: choose the format to replace it with.</p></div><div class="showcase-demo"><div class="demo"><div class="demo-bar"><span class="dots"><i></i><i></i><i></i></span><span class="file">Quick pick</span><span class="label">Replace with which format?</span></div><pre class="demo-code"><span class="line"><span class="n">2026</span>-<span class="n">11</span>-<span class="n">06</span>   <span class="sp">*ISO</span></span><span class="line"><span class="n">20261106</span>     <span class="sp">*ISO</span>0</span><span class="line"><span class="n">1261106</span>      <span class="sp">*CYMD</span></span><span class="line"><span class="n">261106</span>       <span class="sp">*YMD</span></span><span class="line"><span class="n">110626</span>       <span class="sp">*MDY</span></span><span class="line"><span class="n">061126</span>       <span class="sp">*DMY</span></span><span class="line"><span class="n">06.11</span>.<span class="n">2026</span>   <span class="sp">*EUR</span></span><span class="line"><span class="n">11</span>/<span class="n">06</span>/<span class="n">2026</span>   <span class="sp">*USA</span></span><span class="line"><span class="n">26310</span>        <span class="sp">*JUL</span></span><span class="line"><span class="n">2026310</span>      <span class="sp">*LONGJUL</span></span></pre></div></div></div>
+
+### RPG snippets
+
+In an RPG source: put the cursor where the code goes, or select the variables or the CL command first. *(Source: `src/rpg/rpgSnippets.ts`.)*
+
+| Tool | Example |
+|---|---|
+| Insert a date conversion between formats | `%char(%date(x: *ymd): *iso) in MONITOR` |
+| Insert writing lines to an IFS file (SQL) | `QSYS2.IFS_WRITE_UTF8 REPLACE / APPEND` |
+| Insert reading an IFS file line by line (SQL) | `QSYS2.IFS_READ_UTF8 in a cursor` |
+| CL command → RPG call (QSYS2.QCMDEXC) | `exec sql call qsys2.qcmdexc('…');` |
+| Insert reading and writing a data area | `DTAARA data structure, IN *LOCK / OUT` |
+| Insert sending and receiving a data queue entry | `QSNDDTAQ / QRCVDTAQ prototypes and calls` |
+| Insert a job log message (QMHSNDPM) | `CPF9898 *INFO in the job log` |
+| Insert a time measurement (milliseconds) | `%diff(%timestamp(): started: *mseconds)` |
+| Insert a commit / rollback block | `MONITOR … COMMIT … ON-ERROR … ROLLBACK` |
+| Insert a %LOOKUP in a sorted array | `SORTA + %LOOKUP (binary search)` |
+| A CSV line from the selected variables | `csv = %trim(a) + ';' + %char(b)…` |
+| A JSON object from the selected variables (SQL) | `exec sql values json_object('a' value :a, …) into :json;` |
+| Getter and setter procedures for the selected variables | `getName() / setName(value)` |
+| Insert a retry loop with a delay | `FOR … MONITOR … DLYJOB` |
+| Insert sending an e-mail (SNDSMTPEMM) | `QSYS2.QCMDEXC with SNDSMTPEMM` |
+
+### SQL builders — on the statement at the cursor
+
+In an SQL source: put the cursor in the statement; the result is added below it. *(Source: `src/core/sqlBuilders.ts`.)*
+
+| Tool | Example |
+|---|---|
+| SELECT → one JSON array (JSON_ARRAYAGG) | `JSON_ARRAYAGG(JSON_OBJECT(…))` |
+| CREATE VIEW from this SELECT | `CREATE OR REPLACE VIEW … AS SELECT …` |
+| A table from this SELECT (CREATE TABLE AS … WITH DATA) | `CREATE TABLE … AS (SELECT …) WITH DATA` |
+| DELETE → SELECT (see the rows first) | `DELETE FROM t WHERE … → SELECT * FROM t WHERE …` |
+| UPDATE → SELECT (see the rows first) | `UPDATE t SET … WHERE … → SELECT * FROM t WHERE …` |
+| Add audit columns to this CREATE TABLE | `CREATED_AT, CREATED_BY, CHANGED_AT (ROW CHANGE TIMESTAMP)` |
+| Add an identity column to this CREATE TABLE | `ID BIGINT GENERATED ALWAYS AS IDENTITY` |
+| DROP TABLE IF EXISTS for this CREATE TABLE | `DROP TABLE … IF EXISTS` |
+| Insert an SQL procedure skeleton | `CREATE OR REPLACE PROCEDURE … with an error handler` |
+| Insert an SQL function skeleton | `CREATE OR REPLACE FUNCTION … RETURNS …` |
+| Audit trigger for this CREATE TABLE | `AFTER INSERT OR UPDATE OR DELETE → T_AUDIT` |
+| Find duplicate rows in this table | `GROUP BY … HAVING COUNT(*) > 1` |
+| Only the last days (date filter) | `WHERE col >= CURRENT TIMESTAMP - n DAYS` |
+| Who has this table locked? (IBM i Services) | `QSYS2.OBJECT_LOCK_INFO` |
+| Size and rows of this table (IBM i Services) | `QSYS2.SYSTABLESTAT` |
+
+### CL snippets
+
+In a CL source; RUNSQL also works from an SQL source and copies the command to the clipboard. *(Source: `src/core/clSnippets.ts`.)*
+
+| Tool | Example |
+|---|---|
+| Insert a CL program skeleton with error handling | `PGM … MONMSG CPF0000 … RCVMSG … SNDPGMMSG … ENDPGM` |
+| Insert a retry loop with DLYJOB | `RETRY: … MONMSG … DLYJOB … GOTO RETRY` |
+| Put the selection between ALCOBJ and DLCOBJ | `ALCOBJ … *EXCL … DLCOBJ` |
+| Submit the selected command to batch (SBMJOB) | `SBMJOB CMD(…) JOB(…) JOBQ(QBATCH)` |
+| Insert CPYF (created when missing) | `CPYF … MBROPT(*REPLACE) CRTFILE(*YES)` |
+| Insert saving a library to a save file | `CRTSAVF / CLRSAVF / SAVOBJ` |
+| Insert a date conversion (CVTDAT) | `CVTDAT … FROMFMT(*YMD) TOFMT(*ISO)` |
+| SQL statement → RUNSQL for CL | `RUNSQL SQL('…') COMMIT(*NONE)` |
+| Insert a question to the user (SNDUSRMSG) | `SNDUSRMSG … VALUES(Y N) MSGRPY(&REPLY)` |
+| Insert RTVOBJD (exists, last used, changed) | `RTVOBJD … CHGDATE USEDATE TEXT` |
+
+### IBM i converters — any source
+
+Select the value (or put the cursor on it) in any file. *(Source: `src/core/ibmiConverters.ts`.)*
+
+| Tool | Example |
+|---|---|
+| Convert a date between IBM i formats | `1261106 → 2026-11-06, 06.11.2026, 26310…` |
+| Insert today's date in an IBM i format | `*ISO, *CYMD, *YMD, *JUL…` |
+| Hex ↔ decimal | `31 ↔ x'1F'` |
+| Short system name for a long SQL name | `CUSTOMER_ORDER_HISTORY → CSTORDHSTR (FOR SYSTEM NAME)` |
+| What is this CCSID? | `37, 297, 1208, 65535…` |
+| Copy DSPMSGD for the message ID | `CPF9801 → DSPMSGD RANGE(CPF9801) MSGF(QCPFMSG)` |
+| SQL types → RPG types | `DECIMAL(9, 2) → packed(9:2)` |
+| RPG types → SQL types | `packed(9:2) → DECIMAL(9, 2)` |
+| Seconds ↔ h:mm:ss | `3725 ↔ 1:02:05` |
+| Size and range of a numeric type | `packed(9:2) → 5 bytes, ±9999999.99` |
+
 ## Where to find them
 
 | Page | Command palette | Also |
@@ -226,6 +318,6 @@ Fifty new tools in the **Developer Toolbox** (`Ctrl+Alt+A`, or *Vanthrex Tools: 
 | Disk Units Map | Disk Units Map (Visual) | quick menu, a card of the overview |
 | Embedded SQL Statement Statistics | Embedded SQL Statement Statistics… | right-click a library or a program |
 | Tasks | Terminal → Run Task… | `.vscode/tasks.json` |
-| 50 developer tools | Vanthrex Tools: … | `Ctrl+Alt+A` in a source |
+| 100 developer tools | Vanthrex Tools: … | `Ctrl+Alt+A` in a source |
 
 All the pages only read: nothing is created or changed on the IBM i. The developer tools only change the source in the editor.

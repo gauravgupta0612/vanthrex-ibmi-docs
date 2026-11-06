@@ -13,7 +13,7 @@ What each version brought. Current version: **3.2.1**.
 
 | Version | Highlights |
 |---|---|
-| [New in 3.3](features-3-3.md) *(coming)* | System health and security: System Health Overview, Lock Wait Chains, Limits Watch, Security Scorecard with a Markdown report, Security Audit Journal, Disk Units Map, embedded SQL statement statistics, VS Code tasks for IBM i and 50 more developer tools. |
+| [New in 3.3](features-3-3.md) *(coming)* | System health and security: System Health Overview, Lock Wait Chains, Limits Watch, Security Scorecard with a Markdown report, Security Audit Journal, Disk Units Map, embedded SQL statement statistics, VS Code tasks for IBM i and 100 more developer tools. |
 | [New in 3.2](features-3-2.md) | Visual insights: Library and IFS Space Maps, Active Jobs Map, Batch Job Timeline, Journal Activity Heat Map, Index Advice Chart and Source Change Calendar. |
 | [New in 3.1](features-3-1.md) | DDS checks while you type, Format Document for CL, RPG semantic highlighting, names edited together, END lines indented as you type, links that open a member at a line, clickable terminal output. |
 | [New in 3.0](features-3-0.md) | AS/400 GO menus, import from Code for IBM i, team setup files, team coding standards, code health report. |
