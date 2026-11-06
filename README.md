@@ -15,7 +15,7 @@ User documentation for **[Vanthrex for IBM i](https://github.com/gauravgupta0612
 | **Start** | [Home](index.md) · [Why Vanthrex](why-vanthrex.md) · [Screenshots](screenshots.md) |
 | **[Getting started](getting-started.md)** | [Installation](installation.md) · [IBM i setup](ibm-i-setup.md) · [Your first connection](first-connection.md) · [Coming from Code for IBM i](coming-from-code-for-ibmi.md) · [Try it with examples](examples.md) |
 | **[Features](features.md)** | [Connect & explore](features-explore.md) · [Develop](features-develop.md) · [Db2 for i & data](features-data.md) · [Operate the system](features-operate.md) |
-| **[What's new](whats-new.md)** | [3.2](features-3-2.md) · [3.1](features-3-1.md) · [3.0](features-3-0.md) · [2.6](features-2-6.md) · [2.5](features-2-5.md) · [2.4](features-2-4.md) · [2.3](features-2-3.md) · [2.0](features-2-0.md) · [Changelog](changelog.md) |
+| **[What's new](whats-new.md)** | [3.3](features-3-3.md) · [3.2](features-3-2.md) · [3.1](features-3-1.md) · [3.0](features-3-0.md) · [2.6](features-2-6.md) · [2.5](features-2-5.md) · [2.4](features-2-4.md) · [2.3](features-2-3.md) · [2.0](features-2-0.md) · [Changelog](changelog.md) |
 | **[Reference](reference.md)** | [Commands](commands.md) · [Settings](settings.md) · [Keyboard shortcuts](keyboard-shortcuts.md) · [How it works](how-it-works.md) · [Languages](languages.md) |
 | **[Help](help.md)** | [Troubleshooting](troubleshooting.md) · [FAQ](faq.md) · [Known limitations](known-limitations.md) |
 | **[Project](project.md)** | [Roadmap](roadmap.md) · [Contributing](contributing.md) |

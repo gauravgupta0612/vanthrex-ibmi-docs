@@ -7,6 +7,20 @@ nav_order: 99
 
 # Changelog
 
+## 3.3.0 (not released yet)
+
+**System and security insights — what Code for IBM i and Db2 for i users had to look for elsewhere.**
+
+- **Security Audit Journal**: the security audit journal (QAUDJRN) of the last 6 hours to 7 days as a heat map, one row per entry type and one square per hour — authority and sign-on failures in red, changes to authorities, profiles and system values in orange, other activity in blue. Next to it, the users with the most entries (with their AF and PW counts) and the latest failures and security changes; click one for the job log of its job. Needs *AUDIT or *ALLOBJ.
+- **Disk Units Map**: every disk unit grouped by ASP, drawn as a can filled to its % used, with a bar for how busy its disk arm is; orange from 80 % used or 40 % busy, red from 90 % or 60 %. Says when the units of an ASP are filled unevenly (STRASPBAL balances them) and when a disk arm is so busy that jobs wait.
+- **Embedded SQL Statement Statistics**: every SQL statement in the programs of a library (or one program), from QSYS2.SYSPROGRAMSTMTSTAT — how often it ran, total, average and longest time, how often its access plan was rebuilt — slowest first, with hints for statements never run, rebuilt on most runs or reading SELECT *. Right-click a library or a program, or use the command palette.
+- **VS Code tasks for IBM i**: a `vanthrex` task type for `tasks.json` that runs a CL command (with extra libraries on the library list) or a PASE command (in an IFS folder) over the connection, with the Code for IBM i style variables &CURLIB, &USER, &HOST, &NAME, &EXT, &FILENAME and &RELATIVEPATH. Run Task offers ready-made tasks: compile RPG from the IFS, build with makei, show the library list. Bind a task to a key or run it before a launch, like any other task.
+- **Lock Wait Chains**: which job blocks which, right now — every object and row a job waits for (QSYS2.OBJECT_LOCK_INFO and RECORD_LOCK_INFO), with the jobs holding it on one side and those waiting on the other, and the head blockers (jobs that hold a lock others wait for and wait for nothing themselves) with how many jobs each blocks, directly or through others. Click a job for its job log, right-click for Work with Active Jobs; refresh every 10 seconds if you like.
+- **Limits Watch**: what is getting close to an IBM i limit (QSYS2.SYSLIMITS) — rows in a table, locks in a job, objects in an IFS directory, members in a file… — as gauges of % of the maximum, the closest first, orange from 75 % and red from 90 %, filtered by category or text.
+- **Security Scorecard**: a score from 0 to 100 for 14 security system values (QSECURITY, QPWDLVL, QPWDEXPITV, QMAXSIGN, QAUDCTL, QCRTAUT, QALWOBJRST…) against common recommendations, each with its current value and why it matters, plus the enabled profiles with *ALLOBJ, with a password older than a year or unused for 180 days. Nothing is changed from the page.
+- **System Health Overview**: one page with disk space per ASP, limits close to their maximum, jobs waiting for a lock, jobs waiting for a reply (MSGW) and the security score, each as a card with a traffic light and a button to its detail page, under one overall status ("Everything looks fine", "Some things are worth a look", "Something needs attention now"). Each card is read on its own, so one you are not authorized to read says why and the others still work; *Refresh every minute* keeps it current on a second screen.
+- **Security Scorecard → Copy as a Markdown report**: the score, every system value with its state and recommendation, and the profiles to look at, as Markdown on the clipboard (or in an editor) for an audit file, a ticket or an e-mail.
+
 ## 3.2.1
 
 **Fixes**

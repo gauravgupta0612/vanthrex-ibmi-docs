@@ -24,6 +24,12 @@ Jobs, messages, subsystems, security and day-to-day operations — without a gre
 | [Batch Job Timeline](features-3-2.md#batch-job-timeline) *(3.2)* | A night of batch jobs on a time axis: what overlapped, what failed, what ran longest. |
 | [Active Jobs Map](features-3-2.md#active-jobs-map) *(3.2)* | Every active job as a tile in its subsystem; the one waiting for a reply is red. |
 | [Journal Activity Heat Map](features-3-2.md#journal-activity-heat-map) *(3.2)* | Which tables a journal saw change, hour by hour. |
+| [System Health Overview](features-3-3.md#system-health-overview) *(3.3)* | Disk, limits, lock waits, messages waiting and security on one page, with traffic lights. |
+| [Lock Wait Chains](features-3-3.md#lock-wait-chains) *(3.3)* | Which job blocks which, and the head blocker. |
+| [Limits Watch](features-3-3.md#limits-watch) *(3.3)* | What is close to an IBM i limit. |
+| [Security Scorecard](features-3-3.md#security-scorecard) *(3.3)* | A 0–100 security score with a Markdown report. |
+| [Security Audit Journal](features-3-3.md#security-audit-journal) *(3.3)* | QAUDJRN hour by hour: failures and security changes. |
+| [Disk Units Map](features-3-3.md#disk-units-map) *(3.3)* | Every disk unit by ASP: % used and % busy. |
 
 ## Examples
 

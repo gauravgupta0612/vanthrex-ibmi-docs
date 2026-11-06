@@ -22,6 +22,7 @@ Query, edit, compare, import and export the data in Db2 for i.
 | [Insights](features-insights.md) | Index advisor, DEV ↔ PROD data compare, message help on hover, job log analyzer. |
 | [Data, performance & quality](features-data-quality.md) | Excel / CSV / JSON import and export, performance monitor, code metrics, RPGUnit tests. |
 | [Index Advice Chart](features-3-2.md#index-advice-chart) *(3.2)* | The indexes Db2 asked for, merged and ranked, with the CREATE INDEX for each. |
+| [Embedded SQL Statement Statistics](features-3-3.md#embedded-sql-statement-statistics) *(3.3)* | How often each SQL statement in your programs ran, how long it took and how often its plan was rebuilt. |
 
 ## Examples
 

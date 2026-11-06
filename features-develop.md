@@ -28,6 +28,7 @@ Write, check, compile and debug RPG, CL, COBOL and DDS — alone or as a team.
 | [AI assistant](features-ai.md) | `@vanthrex` in the chat: explain, document, review, modernize, tests, fix compile errors, SQL on your tables. |
 | [Debugging](debugging.md) | Breakpoints, stepping, variables and call stack for RPG, COBOL and CL. |
 | [Source Change Calendar](features-3-2.md#source-change-calendar) *(3.2)* | A year of member changes as a heat map; click a day to list the members. |
+| [VS Code tasks for IBM i](features-3-3.md#vs-code-tasks-for-ibm-i) *(3.3)* | Run CL or PASE commands on the IBM i from `tasks.json`. |
 
 ## Examples
 

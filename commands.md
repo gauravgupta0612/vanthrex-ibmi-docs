@@ -7,7 +7,7 @@ nav_order: 1
 
 # Commands
 
-All 508 commands contributed by Vanthrex for IBM i 3.2.1. Run any of them from the
+All 515 commands contributed by Vanthrex for IBM i 3.3.0. Run any of them from the
 Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-click menus and view toolbars.
 
 | Command | ID | Keys |
@@ -177,6 +177,7 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Disable Unused Profiles | `vanthrex.secadm.disableInactive` |  |
 | Disconnect | `vanthrex.disconnect` |  |
 | Disconnect All Systems | `vanthrex.disconnectAll` |  |
+| Disk Units Map (Visual) | `vanthrex.diskUnitsMap` |  |
 | Document This Library (Markdown) | `vanthrex.documentLibrary` |  |
 | Download Save File… | `vanthrex.downloadSaveFile` |  |
 | Download to This PC… | `vanthrex.ifsDownload` |  |
@@ -184,6 +185,7 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | E-mail Query Result (Excel)… | `vanthrex.emailQuery` |  |
 | Edit Connection… | `vanthrex.editConnection` |  |
 | Edit Table Data… | `vanthrex.editData` |  |
+| Embedded SQL Statement Statistics… | `vanthrex.sqlStatementStats` |  |
 | End Job… | `vanthrex.endJob` |  |
 | Exit Points and Exit Programs | `vanthrex.exitPoints` |  |
 | Expand SELECT * Into Columns | `vanthrex.expandStar` |  |
@@ -294,10 +296,12 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Library List Sets… | `vanthrex.librarySets` |  |
 | Library Space Map (Visual)… | `vanthrex.spaceMap` |  |
 | Limit to 100 rows | `vanthrex.dev.limitSelect` |  |
+| Limits Watch (Visual) | `vanthrex.limitsWatch` |  |
 | Lines to an SQL IN list | `vanthrex.dev.inList` |  |
 | Lines to named constants | `vanthrex.dev.linesToConstants` |  |
 | Live Alerts | `vanthrex.alerts.show` |  |
 | Live Job Log | `vanthrex.jobLogLive` |  |
+| Lock Wait Chains (Visual) | `vanthrex.lockWaitChains` |  |
 | Manage SQL Watches | `vanthrex.sqlWatch.manage` |  |
 | Member Lock: Ask Holder to Release… | `vanthrex.lockAskRelease` |  |
 | Member Lock: Check Again | `vanthrex.lockRefresh` |  |
@@ -421,6 +425,8 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Search Text in Files… | `vanthrex.searchIfs` |  |
 | Security Admin (*SECADM) | `vanthrex.securityCenter` |  |
 | Security Audit Journal (QAUDJRN)… | `vanthrex.auditJournal` |  |
+| Security Audit Journal (Visual) | `vanthrex.auditJournalMap` |  |
+| Security Scorecard (Visual) | `vanthrex.securityScorecard` |  |
 | Select for Compare | `vanthrex.selectForCompare` |  |
 | Select the current block | `vanthrex.dev.selectBlock` |  |
 | Select the current procedure | `vanthrex.dev.selectProcedure` |  |
@@ -461,6 +467,7 @@ Command Palette (**Ctrl+Shift+P**, type *Vanthrex*). Most are also on right-clic
 | Submit to Batch and Watch… | `vanthrex.submitAndWatch` |  |
 | Surround With (IF, MONITOR, DOW, FOR…)… | `vanthrex.rpg.surround` | Ctrl+Alt+W |
 | Switch IBM i System… | `vanthrex.switchConnection` |  |
+| System Health Overview (Visual) | `vanthrex.healthOverview` |  |
 | System History Log (QHST)… | `vanthrex.historyLog` |  |
 | System Tracker (Everything in One Place) | `vanthrex.systemTracker` | Ctrl+Alt+T |
 | Table Statistics | `vanthrex.tableStatistics` |  |
