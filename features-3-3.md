@@ -8,7 +8,7 @@ nav_order: 1
 # New in 3.3
 {: .no_toc }
 
-System health and security: one overview page, which job blocks which, what is close to an IBM i limit, a security score, the security audit journal hour by hour, the disk units of each ASP, the statistics of the SQL inside your programs, and VS Code tasks that run on the IBM i.
+System health and security, and 50 more developer tools: one overview page, which job blocks which, what is close to an IBM i limit, a security score, the security audit journal hour by hour, the disk units of each ASP, the statistics of the SQL inside your programs, and VS Code tasks that run on the IBM i.
 {: .fs-6 .fw-300 }
 
 {: .note }
@@ -132,6 +132,88 @@ A `vanthrex` task type for `.vscode/tasks.json` that runs a CL command (with ext
 
 **Run it:** **Terminal → Run Task…**; Vanthrex also offers ready-made tasks (compile RPG from the IFS, build with makei, show the library list). The output appears in the terminal panel.
 
+## 50 more developer tools
+
+Fifty new tools in the **Developer Toolbox** (`Ctrl+Alt+A`, or *Vanthrex Tools: …* in the command palette): the small edits that eat a developer's day, done in one step. Select the lines (or put the cursor in the SQL statement), press `Ctrl+Alt+A` and type a word of the tool; `Ctrl+Z` undoes any of them.
+
+<div class="showcase"><div class="showcase-text"><h3>From a CREATE TABLE to its MERGE</h3><p>Put the cursor in the CREATE TABLE and pick <strong>MERGE (insert or update) from this CREATE TABLE</strong>: the key comes from PRIMARY KEY (or the first column).</p></div><div class="showcase-demo"><div class="before-after"><div><div class="ba-label">Before</div><div class="demo"><div class="demo-bar"><span class="dots"><i></i><i></i><i></i></span><span class="file">orders.sql</span></div><pre class="demo-code"><span class="line">CREATE <span class="k">TABLE</span> APP.ORDERS (</span><span class="line">  ORDER_NO DECIMAL(<span class="n">9</span>, <span class="n">0</span>) <span class="k">NOT</span> <span class="k">NULL</span>,</span><span class="line">  CUSTNO DECIMAL(<span class="n">7</span>, <span class="n">0</span>),</span><span class="line">  STATUS CHAR(<span class="n">1</span>),</span><span class="line">  PRIMARY KEY (ORDER_NO)</span><span class="line">);</span></pre></div></div><div><div class="ba-label after">After</div><div class="demo"><div class="demo-bar"><span class="dots"><i></i><i></i><i></i></span><span class="file">orders.sql</span></div><pre class="demo-code"><span class="line">MERGE <span class="k">INTO</span> APP.ORDERS T</span><span class="line">USING (<span class="k">VALUES</span> (?, ?, ?)) S (ORDER_NO, CUSTNO, STATUS)</span><span class="line">   ON T.ORDER_NO = S.ORDER_NO</span><span class="line"> WHEN MATCHED THEN <span class="k">UPDATE</span> <span class="k">SET</span> CUSTNO = S.CUSTNO, STATUS = S.STATUS</span><span class="line"> WHEN <span class="k">NOT</span> MATCHED THEN <span class="k">INSERT</span> (ORDER_NO, CUSTNO, STATUS) <span class="k">VALUES</span> (S.ORDER_NO, S.CUSTNO, S.STATUS)</span></pre></div></div></div></div></div>
+<div class="showcase"><div class="showcase-text"><h3>LABEL ON for every column</h3><p>The text that 5250 tools, Query and DSPFFD show, from the column names — then adjust the words.</p></div><div class="showcase-demo"><div class="demo"><div class="demo-bar"><span class="dots"><i></i><i></i><i></i></span><span class="file">orders.sql</span></div><pre class="demo-code"><span class="line">LABEL ON <span class="k">TABLE</span> APP.ORDERS <span class="k">IS</span> <span class="s">'Orders'</span>;</span><span class="line">&#8203;</span><span class="line">LABEL ON COLUMN APP.ORDERS (</span><span class="line">  ORDER_NO     TEXT <span class="k">IS</span> <span class="s">'Order No'</span>,</span><span class="line">  CUSTNO       TEXT <span class="k">IS</span> <span class="s">'Custno'</span>,</span><span class="line">  STATUS       TEXT <span class="k">IS</span> <span class="s">'Status'</span></span><span class="line">);</span></pre></div></div></div>
+<div class="showcase"><div class="showcase-text"><h3>An index for this SELECT</h3><p>The columns compared with = in the WHERE, then the ORDER BY — the shape of index the optimizer can use.</p></div><div class="showcase-demo"><div class="before-after"><div><div class="ba-label">Before</div><div class="demo"><div class="demo-bar"><span class="dots"><i></i><i></i><i></i></span><span class="file">report.sql</span></div><pre class="demo-code"><span class="line"><span class="k">SELECT</span> * <span class="k">FROM</span> APP.ORDERS</span><span class="line"> <span class="k">WHERE</span> CUSTNO = ? <span class="k">AND</span> STATUS = <span class="s">'O'</span></span><span class="line"> ORDER BY ORDDATE DESC</span></pre></div></div><div><div class="ba-label after">After</div><div class="demo"><div class="demo-bar"><span class="dots"><i></i><i></i><i></i></span><span class="file">report.sql</span></div><pre class="demo-code"><span class="line">CREATE INDEX APP.ORDERS_IX_CUSTNO</span><span class="line">  ON APP.ORDERS (CUSTNO, STATUS, ORDDATE)</span></pre></div></div></div></div></div>
+<div class="showcase"><div class="showcase-text"><h3>Variables set to empty, or shown while testing</h3><p>Select DCL-S lines: <strong>Set the selected variables to empty</strong> writes the right empty value for each type; <strong>DSPLY the selected variables</strong> writes one line each.</p></div><div class="showcase-demo"><div class="before-after"><div><div class="ba-label">Before</div><div class="demo"><div class="demo-bar"><span class="dots"><i></i><i></i><i></i></span><span class="file">ORDERS.rpgle</span></div><pre class="demo-code"><span class="line"><span class="k">dcl-s</span> custName char(<span class="n">30</span>);</span><span class="line"><span class="k">dcl-s</span> total packed(<span class="n">11</span>:<span class="n">2</span>);</span><span class="line"><span class="k">dcl-s</span> found ind;</span><span class="line"><span class="k">dcl-s</span> note varchar(<span class="n">100</span>);</span></pre></div></div><div><div class="ba-label after">After</div><div class="demo"><div class="demo-bar"><span class="dots"><i></i><i></i><i></i></span><span class="file">ORDERS.rpgle</span></div><pre class="demo-code"><span class="line">custName = <span class="sp">*blanks</span>;</span><span class="line">total = <span class="n">0</span>;</span><span class="line">found = <span class="sp">*off</span>;</span><span class="line">note = <span class="s">''</span>;</span><span class="line"><span class="k">dsply</span> (<span class="s">'custName='</span> + <span class="f">%trimr</span>(custName));</span><span class="line"><span class="k">dsply</span> (<span class="s">'total='</span> + <span class="f">%char</span>(total));</span><span class="line"><span class="k">dsply</span> (<span class="s">'found='</span> + <span class="f">%char</span>(found));</span><span class="line"><span class="k">dsply</span> (<span class="s">'note='</span> + <span class="f">%trimr</span>(note));</span></pre></div></div></div></div></div>
+<div class="showcase"><div class="showcase-text"><h3>READ and cursor loops</h3><p><strong>Insert a READ loop over a file</strong> asks for the file and the key; <strong>Insert an SQL cursor loop</strong> asks for the SELECT.</p></div><div class="showcase-demo"><div class="before-after"><div><div class="ba-label">Before</div><div class="demo"><div class="demo-bar"><span class="dots"><i></i><i></i><i></i></span><span class="file">ORDERS.rpgle</span></div><pre class="demo-code"><span class="line">setll (custNo) orders;</span><span class="line">reade (custNo) orders;</span><span class="line"><span class="k">dow</span> <span class="k">not</span> <span class="f">%eof</span>(orders);</span><span class="line">  <span class="c">// process the record</span></span><span class="line">  reade (custNo) orders;</span><span class="line"><span class="k">enddo</span>;</span></pre></div></div><div><div class="ba-label after">After</div><div class="demo"><div class="demo-bar"><span class="dots"><i></i><i></i><i></i></span><span class="file">ORDERS.rpgle</span></div><pre class="demo-code"><span class="line"><span class="k">exec</span> <span class="k">sql</span> declare C1 cursor <span class="k">for</span></span><span class="line">  <span class="k">SELECT</span> ORDER_NO, AMOUNT <span class="k">FROM</span> ORDERS <span class="k">WHERE</span> STATUS = ?;</span><span class="line"><span class="k">exec</span> <span class="k">sql</span> open C1;</span><span class="line"><span class="k">dow</span> <span class="n">1</span> = <span class="n">1</span>;</span><span class="line">  <span class="k">exec</span> <span class="k">sql</span> fetch next <span class="k">from</span> C1 <span class="k">into</span> :row;</span><span class="line">  <span class="k">if</span> sqlcode = <span class="n">100</span> <span class="k">or</span> sqlcode &lt; <span class="n">0</span>;</span><span class="line">    <span class="k">leave</span>;</span><span class="line">  <span class="k">endif</span>;</span><span class="line">  <span class="c">// process the row</span></span><span class="line"><span class="k">enddo</span>;</span><span class="line"><span class="k">if</span> sqlcode &lt; <span class="n">0</span>;</span><span class="line">  <span class="c">// handle the SQL error (SQLSTATE in sqlstate)</span></span><span class="line"><span class="k">endif</span>;</span><span class="line"><span class="k">exec</span> <span class="k">sql</span> close C1;</span></pre></div></div></div></div></div>
+<div class="showcase"><div class="showcase-text"><h3>CHKOBJ with its MONMSG</h3><p>A CL check that stops with a clear message when the object is missing.</p></div><div class="showcase-demo"><div class="demo"><div class="demo-bar"><span class="dots"><i></i><i></i><i></i></span><span class="file">NIGHTLY.clle</span></div><pre class="demo-code"><span class="line"><span class="k">CHKOBJ</span> <span class="k">OBJ</span>(APPLIB/ORDERS) <span class="k">OBJTYPE</span>(<span class="sp">*FILE</span>)</span><span class="line"><span class="k">MONMSG</span> <span class="k">MSGID</span>(CPF9801) <span class="k">EXEC</span>(<span class="k">DO</span>)</span><span class="line">  <span class="k">SNDPGMMSG</span> <span class="k">MSGID</span>(CPF9898) <span class="k">MSGF</span>(QCPFMSG) <span class="k">MSGDTA</span>(<span class="s">'ORDERS *FILE not found in APPLIB'</span>) <span class="k">MSGTYPE</span>(<span class="sp">*ESCAPE</span>)</span><span class="line"><span class="k">ENDDO</span></span></pre></div></div></div>
+<div class="showcase"><div class="showcase-text"><h3>Text to EBCDIC hex</h3><p>For a hex literal in RPG, CL or SQL, or to read one back: CCSID 37.</p></div><div class="showcase-demo"><div class="demo"><div class="demo-bar"><span class="dots"><i></i><i></i><i></i></span><span class="file">Selection</span></div><pre class="demo-code"><span class="line">ORDER <span class="n">42</span>  →  x<span class="s">'D6D9C4C5D940F4F2'</span></span></pre></div></div></div>
+
+### Text — any source, on the selection
+
+| Tool | What it does |
+|---|---|
+| Sort the lines (A → Z) | `B, A, C10, C9 → A, B, C9, C10` |
+| Sort the lines (Z → A) | `C, B, A` |
+| Remove duplicate lines | `A, B, A → A, B` |
+| Reverse the lines | `1, 2, 3 → 3, 2, 1` |
+| Trim the lines | `'  a  ' → 'a'` |
+| Upper case (literals untouched) | `if name = 'Abc' → IF NAME = 'Abc'` |
+| Lower case (literals untouched) | `IF NAME = 'Abc' → if name = 'Abc'` |
+| Join the lines with commas | `A⏎B⏎C → A, B, C` |
+| Split a comma list into lines | `A, B; C → A⏎B⏎C` |
+| Quote each line | `it's → 'it''s',` |
+| Number the lines | `1 a, 2 b…` |
+| Count lines, words and characters | Of the selection, or of the whole source |
+| Text to an EBCDIC hex literal | `AB → x'C1C2' (CCSID 37)` |
+| EBCDIC hex literal to text | `x'C1C2' → AB (CCSID 37)` |
+| Put the lines in a comment box | `// ====⏎// Title⏎// ====` |
+| Names to camelCase | `CUSTOMER_NAME → customerName` |
+| Names to UPPER_SNAKE (SQL style) | `customerName → CUSTOMER_NAME` |
+| Align the selection as a table | Columns separated by two spaces or a tab |
+
+### SQL — on the statement at the cursor
+
+| Tool | What it does |
+|---|---|
+| SELECT → SELECT COUNT(*) | `SELECT a, b FROM t WHERE … → SELECT COUNT(*) FROM t WHERE …` |
+| Wrap in a common table expression (WITH) | `WITH X AS (…) SELECT * FROM X` |
+| Add a row number column | `ROW_NUMBER() OVER (…) AS RN` |
+| Add paging (OFFSET … FETCH NEXT) | `OFFSET 0 ROWS FETCH NEXT 100 ROWS ONLY` |
+| Read without waiting for locks (WITH UR) | `SELECT … WITH UR` |
+| CREATE TABLE → CREATE OR REPLACE TABLE | `ON REPLACE PRESERVE ROWS` |
+| LABEL ON for every column of this CREATE TABLE | `LABEL ON COLUMN T (A TEXT IS '…')` |
+| COMMENT ON for every column of this CREATE TABLE | `COMMENT ON COLUMN T (A IS '…')` |
+| INSERT from this CREATE TABLE | `INSERT INTO T (A, B) VALUES (?, ?)` |
+| SELECT by key from this CREATE TABLE | `SELECT A, B FROM T WHERE KEY = ?` |
+| UPDATE by key from this CREATE TABLE | `UPDATE T SET B = ? WHERE KEY = ?` |
+| MERGE (insert or update) from this CREATE TABLE | `MERGE INTO T USING (VALUES …) ON KEY …` |
+| CREATE INDEX for this SELECT | Columns compared with = in the WHERE, then the ORDER BY |
+
+### RPG
+
+| Tool | What it does |
+|---|---|
+| CLEAR the selected variables | `dcl-s a … → clear a;` |
+| RESET the selected variables | `dcl-s a … → reset a;` |
+| Set the selected variables to empty | `a = 0; b = *blanks; c = ''; d = *off;` |
+| DSPLY the selected variables (for testing) | `dsply ('a=' + %char(a));` |
+| DCL-S lines → a parameter list (DCL-PI) | `dcl-s a char(10); → dcl-pi … a char(10) const;` |
+| Parameter lines → DCL-S | `a char(10) const; → dcl-s a char(10);` |
+| Values → a SELECT / WHEN | `A⏎B → select; when x = 'A'; … endsl;` |
+| Values → an array initialised with them | `dcl-ds …; *n char(5) inz('A'); … dim(n) pos(1);` |
+| Insert a READ loop over a file | `setll / read / dow not %eof / enddo` |
+| Insert an SQL cursor loop | `declare / open / fetch until SQLCODE 100 / close` |
+| Insert the program status data structure (PSDS) | `program, status, message ID, job, user` |
+| Insert a file information data structure (INFDS) | `file, status, opcode, record, RRN` |
+| Comment out with a date, author and reason | `// 2026-11-06 GG: reason` |
+
+### CL
+
+| Tool | What it does |
+|---|---|
+| Insert RTVJOBA with its variables | `JOB, USER, NBR, TYPE, CURLIB` |
+| Insert CHKOBJ with MONMSG | `CHKOBJ … MONMSG CPF9801 EXEC(DO) SNDPGMMSG … *ESCAPE` |
+| Insert a RCVF loop over a file | `DCLF, RCVF, MONMSG CPF0864` |
+| Insert SNDPGMMSG (escape, completion…) | `SNDPGMMSG MSGID(CPF9898) MSGF(QCPFMSG) …` |
+| Put the selection between OVRDBF and DLTOVR | `OVRDBF FILE(…) TOFILE(…) … DLTOVR` |
+| Insert RTVSYSVAL with its variable | `DCL … RTVSYSVAL SYSVAL(…) RTNVAR(…)` |
+
 ## Where to find them
 
 | Page | Command palette | Also |
@@ -144,5 +226,6 @@ A `vanthrex` task type for `.vscode/tasks.json` that runs a CL command (with ext
 | Disk Units Map | Disk Units Map (Visual) | quick menu, a card of the overview |
 | Embedded SQL Statement Statistics | Embedded SQL Statement Statistics… | right-click a library or a program |
 | Tasks | Terminal → Run Task… | `.vscode/tasks.json` |
+| 50 developer tools | Vanthrex Tools: … | `Ctrl+Alt+A` in a source |
 
-All the pages only read: nothing is created or changed on the IBM i.
+All the pages only read: nothing is created or changed on the IBM i. The developer tools only change the source in the editor.

@@ -29,6 +29,7 @@ Write, check, compile and debug RPG, CL, COBOL and DDS — alone or as a team.
 | [Debugging](debugging.md) | Breakpoints, stepping, variables and call stack for RPG, COBOL and CL. |
 | [Source Change Calendar](features-3-2.md#source-change-calendar) *(3.2)* | A year of member changes as a heat map; click a day to list the members. |
 | [VS Code tasks for IBM i](features-3-3.md#vs-code-tasks-for-ibm-i) *(3.3)* | Run CL or PASE commands on the IBM i from `tasks.json`. |
+| [50 more developer tools](features-3-3.md#50-more-developer-tools) *(3.3)* | Sort, quote and join lines, SQL from a CREATE TABLE, READ and cursor loops, CL templates… in `Ctrl+Alt+A`. |
 
 ## Examples
 
