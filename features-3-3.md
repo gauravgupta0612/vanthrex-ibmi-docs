@@ -8,7 +8,7 @@ nav_order: 1
 # New in 3.3
 {: .no_toc }
 
-System health and security, and 100 more developer tools: one overview page, which job blocks which, what is close to an IBM i limit, a security score, the security audit journal hour by hour, the disk units of each ASP, the statistics of the SQL inside your programs, and VS Code tasks that run on the IBM i.
+System health and security, System Checks, and 124 more developer tools: one overview page, which job blocks which, what is close to an IBM i limit, a security score, the security audit journal hour by hour, the disk units of each ASP, the statistics of the SQL inside your programs, and VS Code tasks that run on the IBM i.
 {: .fs-6 .fw-300 }
 
 {: .note }
@@ -131,6 +131,25 @@ A `vanthrex` task type for `.vscode/tasks.json` that runs a CL command (with ext
 ```
 
 **Run it:** **Terminal → Run Task…**; Vanthrex also offers ready-made tasks (compile RPG from the IFS, build with makei, show the library list). The output appears in the terminal panel.
+
+
+## System Checks
+
+One menu — *System Checks (Backups, Sign-on, Security…)…* in the command palette or the quick menu (`Ctrl+Alt+I`) — for the questions asked when something feels wrong, with five new pages. Every page only reads; a fix opens the CL prompter (F4), so nothing changes until you press Enter there.
+
+| Check | What it answers | Read from |
+|---|---|---|
+| **Backup freshness** | Which user libraries were never saved, or not for more than `vanthrex.backupDays` days (7 by default)? | QSYS2.OBJECT_STATISTICS (*ALLUSR *LIB) |
+| **Sign-on problems** | Who is locked out, close to it, or has a password or profile expired or expiring — and the CHGUSRPRF that fixes it | QSYS2.USER_INFO, QMAXSIGN |
+| **Job descriptions that name a user** | Which job descriptions run jobs as a named user instead of USER(*RQD), and can *PUBLIC use them? | QSYS2.JOB_DESCRIPTION_INFO, OBJECT_PRIVILEGES |
+| **User objects in IBM libraries** | Which of our programs, files or commands sit in QSYS, QSYS2 or QGPL, at risk on a release upgrade? | QSYS2.OBJECT_STATISTICS |
+| **Environment variables** | What are JAVA_HOME, QIBM_QSH_CMD_OUTPUT, PASE_PATH… set to, at the system level and in my job? | QSYS2.ENVIRONMENT_VARIABLE_INFO |
+
+The menu also leads to the System Health Overview, Lock Wait Chains, Limits Watch and Failed Jobs, and to the new System Diagnostics (problems logged, ended jobs, temporary storage, watches, JVMs), Security Configuration, Fix Currency, Hardware and Devices, Network Configuration, Subsystem Setup and Save Files and Tapes pages.
+
+<div class="showcase"><div class="showcase-text"><h3>Backup freshness</h3><p>Every user library with the date of its last SAVLIB or SAVCHGOBJ, the oldest first. Click a library for its information.</p></div><div class="showcase-demo"><div class="demo"><div class="demo-bar"><span class="dots"><i></i><i></i><i></i></span><span class="file">Backup freshness</span><span class="label">sample data</span></div><pre class="demo-code"><span class="line">Level     Library  Last saved  Days  Finding</span><span class="line">────────  ───────  ──────────  ────  ───────────────────────</span><span class="line">● High    TESTLIB  —                 Never saved.</span><span class="line">● High    ARCHIVE  <span class="n">2026</span>-<span class="n">06</span>-<span class="n">30</span>  <span class="n">134</span>   Not saved for <span class="n">134</span> days.</span><span class="line">● Medium  APPDTA   <span class="n">2026</span>-<span class="n">10</span>-<span class="n">20</span>  <span class="n">22</span>    Not saved for <span class="n">22</span> days.</span><span class="line">  Info    APPLIB   <span class="n">2026</span>-<span class="n">11</span>-<span class="n">11</span>  <span class="n">0</span>     Saved <span class="n">0</span> day(s) ago.</span></pre></div></div></div>
+<div class="showcase"><div class="showcase-text"><h3>Sign-on problems</h3><p>For the help desk: who cannot sign on and why. <strong>Fix (F4)…</strong> opens CHGUSRPRF in the prompter, filled in.</p></div><div class="showcase-demo"><div class="demo"><div class="demo-bar"><span class="dots"><i></i><i></i><i></i></span><span class="file">Sign-on problems</span><span class="label">QMAXSIGN = 3</span></div><pre class="demo-code"><span class="line">Level     User      Problem                                                      Fix (F4)</span><span class="line">────────  ────────  ───────────────────────────────────────────────────────────  ─────────────────────────────────────────</span><span class="line">● High    BATCHUSR  Password expired on <span class="n">2026</span>-<span class="n">11</span>-<span class="n">04</span>.                              CHGUSRPRF USRPRF(BATCHUSR) PWDEXP(<span class="sp">*YES</span>)</span><span class="line">● High    JSMITH    Disabled after <span class="n">3</span> invalid sign-on attempts.                   CHGUSRPRF USRPRF(JSMITH) STATUS(<span class="sp">*ENABLED</span>)</span><span class="line">● High    MLEROY    <span class="n">2</span> invalid sign-on attempt(s): the profile is disabled at <span class="n">3</span>.</span><span class="line">● Medium  APARKER   Password expires in <span class="n">3</span> day(s).</span></pre></div></div></div>
+<div class="showcase"><div class="showcase-text"><h3>Job descriptions that name a user</h3><p>A job description with USER(APPADMIN) that *PUBLIC may use lets anyone submit jobs that run as APPADMIN.</p></div><div class="showcase-demo"><div class="demo"><div class="demo-bar"><span class="dots"><i></i><i></i><i></i></span><span class="file">Job descriptions that name a user</span><span class="label">sample data</span></div><pre class="demo-code"><span class="line">Level   Job description  User      <span class="sp">*PUBLIC</span>   Finding</span><span class="line">──────  ───────────────  ────────  ────────  ──────────────────────────────────────────────────────────────────────────────</span><span class="line">● High  APPLIB/NIGHTLY   APPADMIN  <span class="sp">*USE</span>      <span class="sp">*PUBLIC</span> <span class="sp">*USE</span>: anyone can submit jobs that run as APPADMIN, a powerful profile.</span><span class="line">  Info  APPLIB/BATCH     APPUSR    <span class="sp">*EXCLUDE</span>  Runs as APPUSR.</span></pre></div></div></div>
 
 ## 50 more developer tools
 
@@ -306,6 +325,63 @@ Select the value (or put the cursor on it) in any file. *(Source: `src/core/ibmi
 | Seconds ↔ h:mm:ss | `3725 ↔ 1:02:05` |
 | Size and range of a numeric type | `packed(9:2) → 5 bytes, ±9999999.99` |
 
+
+## 24 more developer tools, third batch
+
+Twenty-four more tools in the **Developer Toolbox** (`Ctrl+Alt+A`): error handling that is easy to forget, modern RPG whose syntax few remember, the SQL analytic queries people search the web for, and the CL loops every shop writes again. `Ctrl+Z` undoes any of them.
+
+<div class="showcase"><div class="showcase-text"><h3>An SQLSTATE check after every EXEC SQL</h3><p>Select the code (or nothing for the whole source) and pick <strong>Add an SQLSTATE check after every EXEC SQL</strong>. Statements already followed by a check of SQLSTATE or SQLCODE, and DECLARE or SET OPTION, are left alone.</p></div><div class="showcase-demo"><div class="before-after"><div><div class="ba-label">Before</div><div class="demo"><div class="demo-bar"><span class="dots"><i></i><i></i><i></i></span><span class="file">ORDERS.rpgle</span></div><pre class="demo-code"><span class="line"><span class="k">exec</span> <span class="k">sql</span> <span class="k">update</span> orders</span><span class="line">  <span class="k">set</span> status = :st</span><span class="line">  <span class="k">where</span> ordno = :ordNo;</span><span class="line"><span class="k">exec</span> <span class="k">sql</span> delete <span class="k">from</span> ordwork <span class="k">where</span> ordno = :ordNo;</span></pre></div></div><div><div class="ba-label after">After</div><div class="demo"><div class="demo-bar"><span class="dots"><i></i><i></i><i></i></span><span class="file">ORDERS.rpgle</span></div><pre class="demo-code"><span class="line"><span class="k">exec</span> <span class="k">sql</span> <span class="k">update</span> orders</span><span class="line">  <span class="k">set</span> status = :st</span><span class="line">  <span class="k">where</span> ordno = :ordNo;</span><span class="line"><span class="k">if</span> <span class="f">%subst</span>(sqlstate: <span class="n">1</span>: <span class="n">2</span>) &gt; <span class="s">'02'</span>;</span><span class="line">  <span class="c">// SQL error: the message is in the job log (or use GET DIAGNOSTICS)</span></span><span class="line"><span class="k">endif</span>;</span><span class="line"><span class="k">exec</span> <span class="k">sql</span> delete <span class="k">from</span> ordwork <span class="k">where</span> ordno = :ordNo;</span><span class="line"><span class="k">if</span> <span class="f">%subst</span>(sqlstate: <span class="n">1</span>: <span class="n">2</span>) &gt; <span class="s">'02'</span>;</span><span class="line">  <span class="c">// SQL error: the message is in the job log (or use GET DIAGNOSTICS)</span></span><span class="line"><span class="k">endif</span>;</span></pre></div></div></div></div></div>
+<div class="showcase"><div class="showcase-text"><h3>Top rows per group</h3><p>Put the cursor in a SELECT and pick <strong>Top rows per group (ROW_NUMBER)</strong>: the group, the order and how many rows — here the last 3 orders of each customer.</p></div><div class="showcase-demo"><div class="before-after"><div><div class="ba-label">Before</div><div class="demo"><div class="demo-bar"><span class="dots"><i></i><i></i><i></i></span><span class="file">orders.sql</span></div><pre class="demo-code"><span class="line"><span class="k">SELECT</span> CUSTNO, ORDDATE, AMOUNT</span><span class="line">  <span class="k">FROM</span> APPLIB.ORDERS</span><span class="line"> <span class="k">WHERE</span> STATUS = <span class="s">'O'</span></span></pre></div></div><div><div class="ba-label after">After</div><div class="demo"><div class="demo-bar"><span class="dots"><i></i><i></i><i></i></span><span class="file">orders.sql</span></div><pre class="demo-code"><span class="line"><span class="k">SELECT</span> *</span><span class="line">  <span class="k">FROM</span> (</span><span class="line">    <span class="k">SELECT</span> X.*, ROW_NUMBER() OVER (PARTITION BY CUSTNO ORDER BY ORDDATE DESC) AS RN</span><span class="line">      <span class="k">FROM</span> (</span><span class="line">        <span class="k">SELECT</span> CUSTNO, ORDDATE, AMOUNT</span><span class="line">          <span class="k">FROM</span> APPLIB.ORDERS</span><span class="line">         <span class="k">WHERE</span> STATUS = <span class="s">'O'</span></span><span class="line">      ) X</span><span class="line">  ) Y</span><span class="line"> <span class="k">WHERE</span> RN &lt;= <span class="n">3</span></span><span class="line"> ORDER BY CUSTNO, RN</span></pre></div></div></div></div></div>
+<div class="showcase"><div class="showcase-text"><h3>Pivot: one column per value</h3><p>The values of STATUS become columns, the AMOUNT added up for each customer.</p></div><div class="showcase-demo"><div class="demo"><div class="demo-bar"><span class="dots"><i></i><i></i><i></i></span><span class="file">orders.sql</span></div><pre class="demo-code"><span class="line"><span class="k">SELECT</span> CUSTNO,</span><span class="line">       SUM(CASE WHEN STATUS = <span class="s">'O'</span> THEN AMOUNT ELSE <span class="n">0</span> END) AS "O",</span><span class="line">       SUM(CASE WHEN STATUS = <span class="s">'C'</span> THEN AMOUNT ELSE <span class="n">0</span> END) AS "C",</span><span class="line">       SUM(CASE WHEN STATUS = <span class="s">'X'</span> THEN AMOUNT ELSE <span class="n">0</span> END) AS "X",</span><span class="line">       SUM(AMOUNT) AS TOTAL</span><span class="line">  <span class="k">FROM</span> (</span><span class="line">    <span class="k">SELECT</span> CUSTNO, ORDDATE, STATUS, AMOUNT</span><span class="line">      <span class="k">FROM</span> APPLIB.ORDERS</span><span class="line">  ) X</span><span class="line"> GROUP BY CUSTNO</span><span class="line"> ORDER BY CUSTNO</span></pre></div></div></div>
+<div class="showcase"><div class="showcase-text"><h3>Delete duplicates, safely</h3><p>First the SELECT of the rows that would go, then the DELETE that keeps the first row (lowest RRN) of each EMAIL.</p></div><div class="showcase-demo"><div class="demo"><div class="demo-bar"><span class="dots"><i></i><i></i><i></i></span><span class="file">cleanup.sql</span></div><pre class="demo-code"><span class="line"><span class="c">-- 1. The rows that would be deleted (all but the first of each EMAIL):</span></span><span class="line"><span class="k">SELECT</span> RRN(A) AS RRN, A.*</span><span class="line">  <span class="k">FROM</span> APPLIB.CUSTOMERS A</span><span class="line"> <span class="k">WHERE</span> RRN(A) &gt; (<span class="k">SELECT</span> MIN(RRN(B)) <span class="k">FROM</span> APPLIB.CUSTOMERS B <span class="k">WHERE</span> B.EMAIL = A.EMAIL);</span><span class="line">&#8203;</span><span class="line"><span class="c">-- 2. Delete them (rows with a null key are kept):</span></span><span class="line"><span class="k">DELETE</span> <span class="k">FROM</span> APPLIB.CUSTOMERS A</span><span class="line"> <span class="k">WHERE</span> RRN(A) &gt; (<span class="k">SELECT</span> MIN(RRN(B)) <span class="k">FROM</span> APPLIB.CUSTOMERS B <span class="k">WHERE</span> B.EMAIL = A.EMAIL)</span></pre></div></div></div>
+<div class="showcase"><div class="showcase-text"><h3>100 rows at a time</h3><p><strong>Insert a multi-row FETCH</strong>: a cursor read into a data structure array, much faster than one FETCH per row.</p></div><div class="showcase-demo"><div class="demo"><div class="demo-bar"><span class="dots"><i></i><i></i><i></i></span><span class="file">CUSTLIST.rpgle</span></div><pre class="demo-code"><span class="line"><span class="k">dcl-ds</span> rows <span class="k">qualified</span> dim(<span class="n">100</span>);</span><span class="line">  <span class="c">// the columns of the SELECT, in the same order</span></span><span class="line"><span class="k">end-ds</span>;</span><span class="line"><span class="k">dcl-s</span> fetched int(<span class="n">10</span>);</span><span class="line"><span class="k">dcl-s</span> r int(<span class="n">10</span>);</span><span class="line">&#8203;</span><span class="line"><span class="k">exec</span> <span class="k">sql</span> declare rowsCur cursor <span class="k">for</span></span><span class="line">  <span class="k">select</span> custno, name <span class="k">from</span> customers</span><span class="line">  <span class="k">for</span> read only;</span><span class="line"><span class="k">exec</span> <span class="k">sql</span> open rowsCur;</span><span class="line">dou fetched &lt; <span class="f">%elem</span>(rows);</span><span class="line">  <span class="k">exec</span> <span class="k">sql</span> fetch next <span class="k">from</span> rowsCur <span class="k">for</span> <span class="n">100</span> rows <span class="k">into</span> :rows;</span><span class="line">  <span class="k">if</span> sqlcode &lt; <span class="n">0</span>;</span><span class="line">    <span class="k">leave</span>;</span><span class="line">  <span class="k">endif</span>;</span><span class="line">  <span class="k">exec</span> <span class="k">sql</span> get diagnostics :fetched = row_count;</span><span class="line">  <span class="k">for</span> r = <span class="n">1</span> to fetched;</span><span class="line">    <span class="c">// process rows(r)</span></span><span class="line">  <span class="k">endfor</span>;</span><span class="line"><span class="k">enddo</span>;</span><span class="line"><span class="k">exec</span> <span class="k">sql</span> close rowsCur;</span></pre></div></div></div>
+<div class="showcase"><div class="showcase-text"><h3>A QShell command CL can monitor</h3><p>With QIBM_QSH_CMD_ESCAPE_MSG set, a failing command sends QSH0005 — the program stops with a clear message instead of carrying on.</p></div><div class="showcase-demo"><div class="demo"><div class="demo-bar"><span class="dots"><i></i><i></i><i></i></span><span class="file">ARCHIVE.clle</span></div><pre class="demo-code"><span class="line">ADDENVVAR ENVVAR(QIBM_QSH_CMD_ESCAPE_MSG) <span class="k">VALUE</span>(Y) REPLACE(<span class="sp">*YES</span>)</span><span class="line">ADDENVVAR ENVVAR(QIBM_QSH_CMD_OUTPUT) <span class="k">VALUE</span>(NONE) REPLACE(<span class="sp">*YES</span>) /* or FILE=/tmp/qsh.log */</span><span class="line">QSH CMD(<span class="s">'cp /home/app/in.csv /home/app/archive/'</span>)</span><span class="line"><span class="k">MONMSG</span> <span class="k">MSGID</span>(QSH0005 QSH0006 QSH0007) <span class="k">EXEC</span>(<span class="k">DO</span>)</span><span class="line">  <span class="k">SNDPGMMSG</span> <span class="k">MSGID</span>(CPF9898) <span class="k">MSGF</span>(QCPFMSG) <span class="k">MSGDTA</span>(<span class="s">'The QShell command failed'</span>) <span class="k">MSGTYPE</span>(<span class="sp">*ESCAPE</span>)</span><span class="line"><span class="k">ENDDO</span></span></pre></div></div></div>
+
+### RPG recipes
+
+*(Source: `src/rpg/rpgRecipes.ts`.)*
+
+| Tool | Example |
+|---|---|
+| Add an SQLSTATE check after every EXEC SQL | `if %subst(sqlstate: 1: 2) > '02'; … endif;` |
+| Insert GET DIAGNOSTICS (message of the last SQL error) | `get diagnostics condition 1 :msg = message_text` |
+| Insert splitting a text into an array | `%scan loop (and %split on 7.4 TR)` |
+| Insert a FOR-EACH loop over an array | `for-each item in array; … endfor; (7.4 TR)` |
+| Insert sorting a data structure array by a subfield | `sorta orders(*).total;` |
+| Insert the first and last day of the month | `firstDay / lastDay of a date` |
+| Insert days, months and years between two dates | `%diff(to: from: *days / *months / *years)` |
+| Insert SND-MSG (job log or escape message) | `snd-msg 'text'; (7.4 TR)` |
+| Insert a multi-row FETCH (100 rows at a time) | `fetch next from c for 100 rows into :rows` |
+| Insert a check that an object exists (SQL) | `qsys2.object_statistics(lib, type) where objname = …` |
+
+### SQL recipes — on the SELECT at the cursor
+
+*(Source: `src/core/sqlRecipes.ts`.)*
+
+| Tool | Example |
+|---|---|
+| Top rows per group (ROW_NUMBER) | `ROW_NUMBER() OVER (PARTITION BY … ORDER BY …) <= n` |
+| Add a running total column | `SUM(x) OVER (ORDER BY … ROWS UNBOUNDED PRECEDING)` |
+| Add the previous row's value and the change (LAG) | `LAG(x) OVER (ORDER BY …), x - LAG(x)` |
+| Add each row's percent of the total | `x * 100.0 / SUM(x) OVER ()` |
+| Pivot: one column per value | `SUM(CASE WHEN col = 'A' THEN x ELSE 0 END) AS A, …` |
+| Values of a column as one list per group (LISTAGG) | `LISTAGG(x, ', ') WITHIN GROUP (ORDER BY x)` |
+| Rows that differ from another table (EXCEPT) | `ONLY IN A / ONLY IN B` |
+| Delete duplicate rows, keep the first (preview first) | `RRN(A) > (SELECT MIN(RRN(B)) …)` |
+| Missing numbers in a numbered column (gaps) | `LEAD(x) OVER (ORDER BY x) > x + 1` |
+| Insert a recursive query (parent / child tree) | `WITH TREE … UNION ALL … JOIN TREE` |
+
+### CL recipes
+
+*(Source: `src/core/clRecipes.ts`.)*
+
+| Tool | Example |
+|---|---|
+| Insert a loop over the objects of a library | `DSPOBJD … OUTFILE + RCVF (QADSPOBJ)` |
+| Insert a loop over the members of a file | `DSPFD *MBRLIST … OUTFILE + RCVF (QAFDMBRL)` |
+| Insert a QShell command that stops on failure | `QIBM_QSH_CMD_ESCAPE_MSG + QSH + MONMSG QSH0005` |
+| Insert a library list change that is put back | `RTVJOBA USRLIBL … CHGLIBL … QCMDEXC` |
+
 ## Where to find them
 
 | Page | Command palette | Also |
@@ -318,6 +394,7 @@ Select the value (or put the cursor on it) in any file. *(Source: `src/core/ibmi
 | Disk Units Map | Disk Units Map (Visual) | quick menu, a card of the overview |
 | Embedded SQL Statement Statistics | Embedded SQL Statement Statistics… | right-click a library or a program |
 | Tasks | Terminal → Run Task… | `.vscode/tasks.json` |
-| 100 developer tools | Vanthrex Tools: … | `Ctrl+Alt+A` in a source |
+| System Checks | System Checks (Backups, Sign-on, Security…)… | quick menu |
+| 124 developer tools | Vanthrex Tools: … | `Ctrl+Alt+A` in a source |
 
 All the pages only read: nothing is created or changed on the IBM i. The developer tools only change the source in the editor.

@@ -148,6 +148,8 @@ Open **File → Preferences → Settings** and search for *Vanthrex*, or edit `s
 | `vanthrex.editor.semanticHighlighting` | boolean | `true` | Colour RPG names by what they are: parameters, constants (read-only), data structures and subfields, procedures, files and subroutines; globals used inside a procedure are marked. |
 | `vanthrex.editor.indentOnType` | boolean | `true` | In free-form RPG, typing the `;` of ENDIF, ENDDO, ELSE, WHEN, END-PROC… moves the line to the indentation of its opener. |
 | `vanthrex.editor.terminalLinks` | boolean | `true` | In every terminal, LIB/FILE(MEMBER), message IDs (CPF9801, MCH1210…) and IFS paths become links: click to open the member or file, or explain the message. |
+| `vanthrex.backupDays` | number | `7` | Days after which **Backup Freshness** marks a library as not saved lately. |
+| `vanthrex.sharedSnippets.folder` | string | `""` | IFS folder of shared snippets: set it to a folder your team can write to, for example /shared/vanthrex/snippets, so everyone sees the same snippets. {user} is replaced by the user profile. Empty: /home/{user}/.vanthrex/snippets (only yours). |
 
 ## RPG check rules
 

@@ -30,6 +30,7 @@ Jobs, messages, subsystems, security and day-to-day operations — without a gre
 | [Security Scorecard](features-3-3.md#security-scorecard) *(3.3)* | A 0–100 security score with a Markdown report. |
 | [Security Audit Journal](features-3-3.md#security-audit-journal) *(3.3)* | QAUDJRN hour by hour: failures and security changes. |
 | [Disk Units Map](features-3-3.md#disk-units-map) *(3.3)* | Every disk unit by ASP: % used and % busy. |
+| [System Checks](features-3-3.md#system-checks) *(3.3)* | Backup freshness, sign-on problems, job descriptions that name a user, user objects in IBM libraries, environment variables. |
 
 ## Examples
 
